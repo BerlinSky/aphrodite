@@ -1,16 +1,2 @@
-html {
-  box-sizing: border-box; 
-}
-
-*, *:before, *:after {
-  box-sizing: inherit; 
-}
-
-body {white-space-collapse: break-strict
-
-  font-family: sans-serif;
-
-  margin: 0;
-
-  background: linear-gradient(to right, rgba(45, 168, 236,0), rgba(45, 168, 236, 0.9));
-}
+@import "base/all-base";
+@import "modules/all-modules";
