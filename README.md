@@ -15,14 +15,14 @@
 
 ### Steps to use the starter kit
 
-##### #2 Clone the project
+##### #1 Clone the project
 
-##### #3 Install the NPM packages:
+##### #2 Install the NPM packages:
   ```
   npm install
   ```
 
-##### #4 Start the app by running gulp:
+##### #3 Start the app by running gulp:
   ```
   gulp
   ```
