@@ -15,10 +15,11 @@
 
 ### Import JQuery in ES6 Syntax
 
-### Steps to use the starter kit
-  ```
+```
   import $ from 'jquery';
-  ```
+```
+
+### Steps to use the starter kit
 
 ##### #1 Clone the project
 
