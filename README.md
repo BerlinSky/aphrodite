@@ -1,4 +1,5 @@
-# Web Application Starter Kit for Gulp, ES6, Browser-sync 
+# Web Application Starter Kit
+##### (for Gulp, ES6, Browser-sync) 
 
 ### Features and Components
 1. Compile sass with gulp-sass
