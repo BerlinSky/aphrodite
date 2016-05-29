@@ -1,4 +1,4 @@
-# Starter Kit for Gulp, ES6, Browser-sync 
+# Web Application Starter Kit for Gulp, ES6, Browser-sync 
 
 ### Features and Components
 1. Compile sass with gulp-sass
@@ -12,6 +12,9 @@
 1. Gulp-uglify: only used in production environment
 1. Watch changes with watchify for html, scss, and js files
 1. Run the default task by invoking gulp
+
+### Web Application Basic Structure
+1. Flexbox navigation 
 
 ### Import JQuery in ES6 Syntax
 

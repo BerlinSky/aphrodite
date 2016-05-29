@@ -1,7 +1,7 @@
 import $ from 'jquery';
 
-$(document).ready(function(){
-  console.info("ready to use jquery");
+$(function () {
+	console.info("ready to use jquery");
 
-  $(".main").hide();
+	$(".main").hide();
 });

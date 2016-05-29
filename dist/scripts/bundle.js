@@ -9823,10 +9823,10 @@ var _jquery2 = _interopRequireDefault(_jquery);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-(0, _jquery2.default)(document).ready(function () {
-  console.info("ready to use jquery");
+(0, _jquery2.default)(function () {
+	console.info("ready to use jquery");
 
-  (0, _jquery2.default)(".main").hide();
+	(0, _jquery2.default)(".main").hide();
 });
 
 },{"jquery":1}]},{},[2])
