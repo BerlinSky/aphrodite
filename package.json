@@ -1,0 +1,32 @@
+{
+  "name": "aphrodite",
+  "version": "1.0.0",
+  "description": "starter for a Browserify JS app",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "gulp-autoprefixer": "^3.1.0",
+    "gulp-sass": "^2.3.1",
+    "gulp-sourcemaps": "^1.6.0",
+    "gulp-util": "^3.0.7",
+    "babel-core": "^6.7.6",
+    "babel-preset-es2015": "^6.1.18",
+    "babel-register": "^6.7.2",
+    "babelify": "^7.2.0",
+    "browser-sync": "^2.11.2",
+    "browserify": "^12.0.1",
+    "eslint": "^2.7.0",
+    "exorcist": "^0.4.0",
+    "gulp": "^3.9.0",
+    "gulp-eslint": "^2.0.0",
+    "gulp-if-else": "^1.0.3",
+    "gulp-uglify": "^1.5.3",
+    "jquery": "^2.2.2",
+    "vinyl-buffer": "^1.0.0",
+    "vinyl-source-stream": "^1.1.0",
+    "watchify": "^3.7.0"
+  }
+}

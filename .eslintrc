@@ -1,0 +1,17 @@
+{
+  "parserOptions": {
+    "ecmaVersion": 6,
+    "sourceType": "module",
+    "ecmaFeatures": {
+    }
+  },
+  "env": {
+    "browser": true,
+    "node": true,
+    "es6": true
+  },
+  "rules": {
+    "no-unused-vars": 2,
+    "prefer-const": 2
+  }
+}
