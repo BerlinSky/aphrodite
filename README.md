@@ -13,7 +13,12 @@
 1. Watch changes with watchify for html, scss, and js files
 1. Run the default task by invoking gulp
 
+### Import JQuery in ES6 Syntax
+
 ### Steps to use the starter kit
+  ```
+  import $ from 'jquery';
+  ```
 
 ##### #1 Clone the project
 

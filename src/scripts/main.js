@@ -1,10 +1,7 @@
-var target = function () { 
-	const message = "We can begin here: ";
-	let value = 5 + 10;
+import $ from 'jquery';
 
-	console.info("starter page: " + message + value);
+$(document).ready(function(){
+  console.info("ready to use jquery");
 
-	return (message + value); 
-};
-
-target();
+  $(".main").hide();
+});
