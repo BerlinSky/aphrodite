@@ -1,0 +1,15 @@
+{
+  "version": 3,
+  "sources": [
+    "node_modules/browser-pack/_prelude.js",
+    "src/scripts/main.js"
+  ],
+  "names": [],
+  "mappings": "AAAA;;;ACAA,IAAI,SAAS,SAAT,MAAS,GAAY;AACxB,KAAM,UAAU,qBAAhB;AACA,KAAI,QAAQ,IAAI,EAAhB;;AAEA,SAAQ,IAAR,CAAa,mBAAmB,OAAnB,GAA6B,KAA1C;;AAEA,QAAQ,UAAU,KAAlB;AACA,CAPD;;AASA",
+  "file": "generated.js",
+  "sourceRoot": "",
+  "sourcesContent": [
+    "(function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require==\"function\"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error(\"Cannot find module '\"+o+\"'\");throw f.code=\"MODULE_NOT_FOUND\",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require==\"function\"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})",
+    "var target = function () { \n\tconst message = \"We can begin here: \";\n\tlet value = 5 + 10;\n\n\tconsole.info(\"starter page: \" + message + value);\n\n\treturn (message + value); \n};\n\ntarget();\n"
+  ]
+}
