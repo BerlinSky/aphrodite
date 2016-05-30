@@ -4,13 +4,15 @@
   margin: 0 auto;
 
   @media all and (max-width:500px) {
-    display:flex;
-    flex-direction:column;
+    display: flex;
+    flex-direction: column;
+  }
+}
 
-    /* Reorder items */
-    & > * {
-      order:999;
-    }
+@media all and (max-width:500px) {
+  /* Reorder items */
+  .siteContainer > * {
+    order:999;
   }
 }
 
