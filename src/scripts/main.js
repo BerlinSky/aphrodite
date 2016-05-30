@@ -1,7 +1,9 @@
 import $ from 'jquery';
 
 $(function () {
-	console.info("ready to use jquery");
 
-	$(".main").hide();
+	$('.toggleNav').on('click', function() {
+    $('.siteNav ul').toggleClass('open');
+  });
+
 });

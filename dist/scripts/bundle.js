@@ -9815,18 +9815,19 @@ return jQuery;
 }));
 
 },{}],2:[function(require,module,exports){
-"use strict";
+'use strict';
 
-var _jquery = require("jquery");
+var _jquery = require('jquery');
 
 var _jquery2 = _interopRequireDefault(_jquery);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 (0, _jquery2.default)(function () {
-	console.info("ready to use jquery");
 
-	(0, _jquery2.default)(".main").hide();
+  (0, _jquery2.default)('.toggleNav').on('click', function () {
+    (0, _jquery2.default)('.siteNav ul').toggleClass('open');
+  });
 });
 
 },{"jquery":1}]},{},[2])
