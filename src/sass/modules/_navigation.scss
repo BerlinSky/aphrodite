@@ -5,6 +5,7 @@
   padding: 0;
 }
 
+
 /* Flex Container */
 .siteNav ul {
   // border: 1px solid black;
@@ -28,21 +29,37 @@
 
 @media all and (max-width:1000px) {
   .siteNav ul {
-    flex-wrap:wrap;
+    flex-wrap: wrap;
   }
 
   .siteNav li {
-    flex:1 1 50%;
+    flex: 1 1 50%;
   }
 
   .siteNav .social {
-    flex:1 1 25%;
+    flex: 1 1 25%;
   }
 }
 
 @media all and (max-width:500px) {
+  .siteNav {
+    order:1;
+  }
+
   .siteNav li {
-    flex-basis:100%;
+    flex-basis: 100%;
+  }
+
+  .siteNav ul {
+    display: none;
+  }
+    
+  .siteNav ul.open {
+    display:flex;
   }
 }
 
+
+ 
+
+ 

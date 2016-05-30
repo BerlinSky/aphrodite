@@ -1,4 +1,5 @@
 @import "base/all-base";
+@import "layout/all-layouts";
 @import "modules/all-modules";
 
 .icon::before {
@@ -12,5 +13,35 @@
   transform: translate(0, 0);
 }
 
+img {
+  width:100%;
+}
 
+// states:
+.toggleNav {
+  display: none;
+}
+
+@media all and (max-width:500px) { 
+	.toggleNav {
+		display: block;
+	}
+}
+
+@media all and (max-width:500px) { 
+	/* Header */
+  .top {
+    order:2;
+  }
+
+  /* Details */
+  .details {
+    order:3;
+  }
+
+  /* Sign Up */
+  .signup {
+    order:4;
+  }
+}
 
