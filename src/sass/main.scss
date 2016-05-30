@@ -1,6 +1,6 @@
 @import "base/all-base";
 @import "layout/all-layouts";
-@import "modules/all-modules";
+@import "modules/all-modules";  
 
 .icon::before {
   display: inline-block;
@@ -29,11 +29,6 @@ img {
 }
 
 @media all and (max-width:500px) { 
-	/* Header */
-  .top {
-    order:2;
-  }
-
   /* Details */
   .details {
     order:3;

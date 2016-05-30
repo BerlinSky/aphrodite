@@ -9826,7 +9826,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 (0, _jquery2.default)(function () {
 
   (0, _jquery2.default)('.toggleNav').on('click', function () {
-    (0, _jquery2.default)('.siteNav ul').toggleClass('open');
+    (0, _jquery2.default)('.layout__siteNav').toggleClass('open');
   });
 });
 

@@ -3,7 +3,7 @@ import $ from 'jquery';
 $(function () {
 
 	$('.toggleNav').on('click', function() {
-    $('.siteNav ul').toggleClass('open');
+    $('.layout__siteNav').toggleClass('open');
   });
 
 });

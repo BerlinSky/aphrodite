@@ -5,59 +5,15 @@
   padding: 0;
 }
 
-
-/* Flex Container */
-.siteNav ul {
+.siteNav {
   // border: 1px solid black;
 	background: #003380;
 
   list-style: none;
   margin: 0;
   padding: 0;
-
-  display: flex;
 }
 
-/* Flex Item */
-.siteNav li {
-  flex: 3;
-}
-
-.siteNav .social {
-  flex: 1;
-}
-
-@media all and (max-width:1000px) {
-  .siteNav ul {
-    flex-wrap: wrap;
-  }
-
-  .siteNav li {
-    flex: 1 1 50%;
-  }
-
-  .siteNav .social {
-    flex: 1 1 25%;
-  }
-}
-
-@media all and (max-width:500px) {
-  .siteNav {
-    order:1;
-  }
-
-  .siteNav li {
-    flex-basis: 100%;
-  }
-
-  .siteNav ul {
-    display: none;
-  }
-    
-  .siteNav ul.open {
-    display:flex;
-  }
-}
 
 
  
