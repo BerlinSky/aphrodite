@@ -17,6 +17,7 @@
 
 ### Web Application Basic Structure
 1. Flexbox navigation 
+1. Display the hamburger menu on the top on mobile devices
 
 ### Import JQuery in ES6 Syntax
 
