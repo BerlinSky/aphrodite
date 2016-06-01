@@ -1,0 +1,92 @@
+
+$brushed-metal-width: 774px;
+$brushed-metal-height: 584px;
+$cylinder-width: 580px;
+$cylinder-height: $cylinder-width;
+
+/* Container with the brushed metail background */
+.wrapper {
+	position: relative;
+
+	margin-left: auto;
+  margin-right: auto;
+
+	width: $brushed-metal-width;
+	height: $brushed-metal-height;
+
+	background: url("../images/black-brushed-metal.jpg") no-repeat center;
+	background-size: cover;
+}
+
+.cylinderContainer {
+	position: absolute;
+
+  list-style: none;
+  padding: 0;
+  margin: 0;
+	width: $cylinder-width;
+	height: $cylinder-height;
+
+	top: calc((#{$brushed-metal-height} - #{$cylinder-height})/2);
+	right: calc((#{$brushed-metal-width} - #{$cylinder-width})/2);
+
+	background: url("../images/light-gun-barrel.png") no-repeat center;
+	background-size: cover;
+}
+
+.chamber {
+	display: block;
+	position: absolute;
+	width: 150px;
+	height: 150px;
+
+	.chamber__image {
+		border-radius: 50%;
+		margin: 3px;
+		max-widht: 100%;
+		max-height: 100%;
+	}
+}
+
+.cylinderContainer > li:nth-of-type(1) {
+	left: calc(580px - 368px);
+	top: calc(580px - 538px);
+
+  transform: rotate(0deg);
+}
+
+.cylinderContainer > li:nth-of-type(2) {
+	left: calc((580px - 214px));
+	top: calc(580px - 456px);
+
+  transform: rotate(60deg);
+}
+
+.cylinderContainer > li:nth-of-type(3) {
+	left: calc((580px - 210px));
+	top: calc(580px - 278px);
+
+  transform: rotate(120deg);
+}
+
+.cylinderContainer > li:nth-of-type(4) {
+	left: calc(580px - 362px);
+	top: calc(580px - 188px);
+
+  transform: rotate(180deg);
+}
+
+.cylinderContainer > li:nth-of-type(5) {
+	left: calc((580px - 518px));
+	top: calc(580px - 274px);
+
+  transform: rotate(240deg);
+}
+
+.cylinderContainer > li:nth-of-type(6) {
+	left: calc((580px - 518px));
+	top: calc(580px - 454px);
+
+  transform: rotate(300deg);
+}
+
