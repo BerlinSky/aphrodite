@@ -1,0 +1,21 @@
+.l-mobileFooter {
+	display: none;
+}
+
+@media all and (max-width: 500px) {
+
+	.l-mobileFooter {
+		display: none;
+		display:flex;
+
+		&__menu {
+			flex: 1;
+		}
+	}
+
+	.l-mobileFooter--fixed {
+		position: fixed;
+	  left: 0px;
+	  bottom: 0px;
+	}
+}

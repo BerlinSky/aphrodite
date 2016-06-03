@@ -7,53 +7,35 @@ footer {
   font-weight: 100;
 }
 
-.icon-bar {
-	display: none;
-}
-
 @media all and (max-width: 500px) {
 
-	.footer--fixed {
-		position:fixed;
-	  left:0px;
-	  bottom:0px;
-	  width:100%;
+	.mobileFooter {
+	  width: 100%;
+	  
+	  &__menu {
+	  	border-top: 1px solid #E6E6E6;
+	  	text-align: center;
+	  	padding: 1.5rem;
+	  	border-left: 1px solid rgba(0,0,0,0.1);
+	  	background: #fac43d;
+	  	color: rgba(0,0,0,0.5);
+	  }
+
+	  & i {
+	    display: block;
+	    font-size: 2.5rem;
+	    color: #000;
+	    text-shadow: 3px 3px 0 rgba(0,0,0,0.1);
+	    padding-bottom: 1rem;
+	  }
 	}
 
-	.icon-bar {
-		display: block;
-	  display:flex;
-	}
-
-	.icon-bar a {
-	  flex:1;
-	}
-
-	.icon-bar {
-	  border-top:1px solid #E6E6E6;
-	}
-
-	.icon-bar i {
-	  display: block;
-	  font-size: 2.5rem;
-	  color:white;
-	  text-shadow: 3px 3px 0 rgba(0,0,0,0.1);
-	  padding-bottom: 1rem;
-	}
-
-	.icon-bar a {
-	  text-align: center;
-	  padding: 1.5rem;
-	  border-left: 1px solid rgba(0,0,0,0.1);
-	  background: #fac43d;
-	  color: rgba(0,0,0,0.5);
-	}
-
-	.icon-bar a:first-child {
+	.mobileFooter a:first-child {
 	  border-left: 0;
 	}
 
-	.icon-bar a:first-child, .icon-bar a:hover {
+	.mobileFooter a:first-child, 
+	.mobileFooter-bar a:hover {
 	  border-bottom: 5px solid rgba(0,0,0,0.1);
 	}
 }
