@@ -3,11 +3,19 @@
   min-width: 100%;
   margin: 0;
   padding: 0;
+  // background: #000;
+
+  &__section {
+	  // background: #000;
+	  color: white;
+  }
 }
 
 .siteNav {
   // border: 1px solid black;
-	background: #003380;
+	// background: #003380;
+
+  // background: #000;
 
   list-style: none;
   margin: 0;
