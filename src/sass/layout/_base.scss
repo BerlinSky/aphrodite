@@ -1,14 +1,19 @@
-// body {
-//   display: flex;
-//   flex-direction: column;
-// }
-
-.StickyHeader, .StickyFooter {
-  flex: 0 0 auto;
-  background: red;
+body {
+  display: flex;
+  flex-direction: column;
 }
 
-.StickyContent {
+.l-stickyHeader {
+	flex: 0 0 auto;
+	background: red;
+}
+
+.l-stickyFooter {
+	flex: 0 0 auto;
+	background: red;
+}
+
+.stickyContent {
   flex: 1 1 auto;
   overflow-y: scroll;
   background: green;
