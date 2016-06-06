@@ -5,6 +5,34 @@ $cylinder-width: 580px;
 $cylinder-height: $cylinder-width;
 
 /* Container with the brushed metail background */
+.chamberContainerWraper {
+	// position: relative;
+
+	margin: 0;
+	padding: 0;
+
+	width: 100%;
+	height: 1170px;
+
+	background: url("../images/black-brushed-metal-round.png") no-repeat center;
+	background-size: cover;
+}
+
+.chamberContainer {
+	// position: absolute;
+
+  list-style: none;
+  padding: 0;
+  margin: 0;
+	width: 100%;
+	height: 1170px;
+
+
+	background: url("../images/gun-chamber.png") no-repeat center;
+	background-size: cover;
+}
+
+/* Container with the brushed metail background */
 .wrapper {
 	position: relative;
 
