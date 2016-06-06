@@ -1,0 +1,15 @@
+// body {
+//   display: flex;
+//   flex-direction: column;
+// }
+
+.StickyHeader, .StickyFooter {
+  flex: 0 0 auto;
+  background: red;
+}
+
+.StickyContent {
+  flex: 1 1 auto;
+  overflow-y: scroll;
+  background: green;
+}
