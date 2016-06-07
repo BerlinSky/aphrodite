@@ -36,65 +36,48 @@ $cylinder-width2: 1170px;
 	right: calc((#{$brushed-metal-width2} - #{$cylinder-width2})/2);
 
 	background: url("../images/center-point.png") no-repeat center,
-			url("../images/gun-chamber.png") no-repeat center,
-			url("../images/black-brushed-metal.jpg") no-repeat center;
+			url("../images/gun-chamber.png") no-repeat center;
 	background-size: cover;
 }
 
-.chamberCircle {
-	display: block;
-	position: absolute;
-	width: 320px;
-	height: 320px;
-
-	&__image {
-		border-radius: 50%;
-		margin: 3px;
-		max-widht: 100%;
-		max-height: 100%;
-	}
-}
-
 .chamberContainer > li:nth-of-type(1) {
-	width: 340px;
-	height: 340px;
-	left: calc(1170px - 668px - 90px);
-	top: calc(1170px - 1000px - 90px);
+	left: calc(580px - 368px);
+	top: calc(580px - 538px);
 
   transform: rotate(0deg);
 }
 
 .chamberContainer > li:nth-of-type(2) {
-	left: calc(1170px - 350px - 90px);
-	top: calc(1170px - 840px - 90px);
+	left: calc((580px - 214px));
+	top: calc(580px - 456px);
 
   transform: rotate(60deg);
 }
 
 .chamberContainer > li:nth-of-type(3) {
-	left: calc(1170px - 350px - 90px);
-	top: calc(1170px - 480px - 90px);
+	left: calc((580px - 210px));
+	top: calc(580px - 278px);
 
   transform: rotate(120deg);
 }
 
 .chamberContainer > li:nth-of-type(4) {
-	left: calc(1170px - 668px - 70px);
-	top: calc(1170px - 300px - 90px);
+	left: calc(580px - 362px);
+	top: calc(580px - 188px);
 
   transform: rotate(180deg);
 }
 
 .chamberContainer > li:nth-of-type(5) {
-	left: calc(1170px - 960px - 90px);
-	top: calc(1170px - 480px - 90px);
+	left: calc((580px - 518px));
+	top: calc(580px - 274px);
 
   transform: rotate(240deg);
 }
 
 .chamberContainer > li:nth-of-type(6) {
-	left: calc(1170px - 960px - 90px);
-	top: calc(1170px - 830px - 90px);
+	left: calc((580px - 518px));
+	top: calc(580px - 454px);
 
   transform: rotate(300deg);
 }
