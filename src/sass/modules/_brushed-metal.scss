@@ -41,12 +41,6 @@ $chamber-container-width: 1170px;
 	margin-left: auto;
   margin-right: auto;
 
-	// $chamge-size-factor: 1;
-
-	// width: 100%;
-	// width: calc(#{$chamber-container-wraper-width} * #{$chamge-size-factor});
-	// height: calc(#{$chamber-container-wraper-height} * #{$chamge-size-factor});
-
 	@include chamberBoxDemension(1.0);
 
 	background: url("../images/black-brushed-metal.jpg") no-repeat center;
@@ -60,16 +54,13 @@ $chamber-container-width: 1170px;
 	top: 0;
 	left: 0;
 
-	width: $chamber-container-height;
-	height: $chamber-container-width;
+	// width: $chamber-container-height;
+	// height: $chamber-container-width;
 
-	// width: 970px;
-	// height: 970px;
+	@include chamberBoxDemension(1.0, 1170px, 1170px);
 
 	margin-left: auto;
   margin-right: auto;
-
-	// left: calc((#{$brushed-metal-width2} - #{$cylinder-width2})/2);
 
 	background: url("../images/center-point.png") no-repeat center,
 			url("../images/gun-chamber.png") no-repeat center;
@@ -184,5 +175,44 @@ $chamber-container-width: 1170px;
 
 	.chamberContainer > li:nth-of-type(6) {
 		@include chamberCircleLocation(0.8, 900px, 1050px);
+	}
+}
+
+@media all and (max-width:950px) {
+	.chamberContainerWraper {
+		@include chamberBoxDemension(0.6);
+	}
+
+	.chamberContainer {
+		@include chamberBoxDemension(0.6);
+	}
+
+	.chamberCircle {
+		@include chamberCircleDemension(0.6);
+	}
+
+	.chamberContainer > li:nth-of-type(1) {
+		@include chamberCircleDemension(0.6, 340px, 340px);
+		@include chamberCircleLocation(0.6, 1082px, 758px);
+	}
+
+	.chamberContainer > li:nth-of-type(2) {
+		@include chamberCircleLocation(0.6, 900px, 420px);
+	}
+
+	.chamberContainer > li:nth-of-type(3) {
+		@include chamberCircleLocation(0.6, 535px, 415px);
+	}
+
+	.chamberContainer > li:nth-of-type(4) {
+		@include chamberCircleLocation(0.6, 350px, 730px);
+	}
+
+	.chamberContainer > li:nth-of-type(5) {
+		@include chamberCircleLocation(0.6, 528px, 1048px);
+	}
+
+	.chamberContainer > li:nth-of-type(6) {
+		@include chamberCircleLocation(0.6, 900px, 1050px);
 	}
 }
