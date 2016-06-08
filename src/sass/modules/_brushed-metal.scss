@@ -3,6 +3,21 @@ $brushed-metal-width2: 1170px;
 $cylinder-height2: 1170px;
 $cylinder-width2: 1170px;
 
+
+$chamber-container-wraper-height: 1210px;
+$chamber-container-wraper-width: 1170px;
+
+$chamber-container-height: 1170px;
+$chamber-container-width: 1170px;
+
+@mixin setBoxSize($width: 1170px, $height: 1210px, $factor) {
+	$width: $width * $factor;
+	$height: $height * $factor;
+
+  width: $width ;
+  height: $height;
+}
+
 /* Container with the brushed metail background */
 .chamberContainerWraper {
 	position: relative;
@@ -10,8 +25,13 @@ $cylinder-width2: 1170px;
 	margin-left: auto;
   margin-right: auto;
 
-	width: 100%;
-	height: 1170px;
+	$chamge-size-factor: 1;
+
+	// width: 100%;
+	// width: calc(#{$chamber-container-wraper-width} * #{$chamge-size-factor});
+	// height: calc(#{$chamber-container-wraper-height} * #{$chamge-size-factor});
+
+	@include setBoxSize(1170px, 1210px, 1.0);
 
 	background: url("../images/black-brushed-metal.jpg") no-repeat center;
 	background-size: cover;
@@ -19,20 +39,47 @@ $cylinder-width2: 1170px;
 
 .chamberContainer {
 	position: absolute;
-
   list-style: none;
   padding: 0;
-  margin: 0;
-	width: 1170px;
-	height: 1170px;
+	top: 0;
+	left: 0;
 
-	top: calc((#{$brushed-metal-height2} - #{$cylinder-height2})/2);
-	right: calc((#{$brushed-metal-width2} - #{$cylinder-width2})/2);
+	width: $chamber-container-height;
+	height: $chamber-container-width;
+
+	// width: 970px;
+	// height: 970px;
+
+	margin-left: auto;
+  margin-right: auto;
+
+	// left: calc((#{$brushed-metal-width2} - #{$cylinder-width2})/2);
 
 	background: url("../images/center-point.png") no-repeat center,
 			url("../images/gun-chamber.png") no-repeat center;
 	background-size: cover;
 }
+
+	@media all and (max-width:1170px) {
+		$chamber-size-factor: 0.9;
+
+		.chamberContainerWraper {
+			// width: calc(#{$chamber-container-wraper-width} * #{$chamge-size-factor});
+			// width: calc(#{$chamber-container-wraper-width} * #{$chamber-size-factor});
+			// height: calc(#{$chamber-container-wraper-height} * #{$chamber-size-factor});
+
+			@include setBoxSize(1170px, 1210px, 0.9);
+
+		}
+
+		.chamberContainer {
+			// width: calc(#{$chamber-container-height} * #{$chamber-size-factor});
+			// height: calc(#{$chamber-container-width} * #{$chamber-size-factor});
+
+			@include setBoxSize(1170px, 1210px, 0.9);
+			
+		}
+	}
 
 .chamberCircle {
 	display: block;
