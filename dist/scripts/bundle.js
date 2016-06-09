@@ -9815,9 +9815,9 @@ return jQuery;
 }));
 
 },{}],2:[function(require,module,exports){
-"use strict";
+'use strict';
 
-var _jquery = require("jquery");
+var _jquery = require('jquery');
 
 var _jquery2 = _interopRequireDefault(_jquery);
 
@@ -9825,103 +9825,108 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 (0, _jquery2.default)(function () {
 
-  (0, _jquery2.default)(".chamberCircle").click(function (event) {
-    var thisCircle = (0, _jquery2.default)(event.target).parent();
+		(0, _jquery2.default)('[data-arrow="left"]').click(function () {
+				console.log("here is left");
+				rotateChamberPlate("left");
+		});
 
-    // console.log("thisCircle", thisCircle);
+		(0, _jquery2.default)('[data-arrow="right"]').click(function () {
+				console.log("here is right");
+				rotateChamberPlate("right");
+		});
 
-    // const circle = $(".chamberCircle");
+		(0, _jquery2.default)(".chamberCircle").click(function (event) {
+				console.log("here is chamberCircle");
 
-    var circleDeg = thisCircle.attr("data-deg");
+				var thisCircle = (0, _jquery2.default)(event.target).parent();
+				var circleDeg = thisCircle.attr("data-deg");
 
-    // const deg = circle.attr("data-deg");
+				rotateChambers(circleDeg);
+		});
 
-    // console.log("circle-deg: ", deg);
+		function rotateChamberPlate(direction) {
+				var increment = 60;
+				var plate = (0, _jquery2.default)(".chamberContainer");
+				var plateDeg = plate.attr("data-deg");
 
-    rotateChambers(circleDeg);
-  });
+				plateDeg = parseInt(plateDeg);
 
-  function rotateChambers(circleDeg) {
-    var plate = (0, _jquery2.default)(".chamberContainer");
-    var plateDeg = plate.attr("data-deg");
+				var rotateDeg = plateDeg + increment;
+				var circleDeg = rotateDeg;
 
-    console.log("circle-deg: ", circleDeg);
-    console.log("container-deg: ", plateDeg);
+				var rotateDirection = direction === 'right' ? 1 : -1;
 
-    circleDeg = parseInt(circleDeg);
-    plateDeg = parseInt(plateDeg);
+				rotateDeg *= rotateDirection;
 
-    if (circleDeg === plateDeg) {
-      return;
-    }
+				console.log("circle-deg", circleDeg);
+				console.log("plateDeg", plateDeg);
 
-    var rotateDeg = circleDeg;
-    var rotateDirection = 1;
+				// if (circleDeg < 180) {
+				//  	rotateDirection = -1;
+				//  	rotateDeg *= rotateDirection;
+				//  }
+				//  else {
+				//  	rotateDeg = (360 - rotateDeg) * rotateDirection;
+				//  }
 
-    if (circleDeg < 180) {
-      rotateDirection = -1;
-      rotateDeg *= rotateDirection;
-    } else {
-      rotateDeg = (360 - rotateDeg) * rotateDirection;
-    }
+				console.log("rotateDeg: ", rotateDeg);
 
-    // let rotateDeg = Math.abs(circleDeg - plateDeg);
-    // let rotateDeg = circleDeg - plateDeg;
-    console.log("rotateDeg: ", rotateDeg);
+				var transformStyle = "rotate(" + rotateDeg + "deg)";
 
-    // if (rotateDeg  === 0) {
-    // 	return;
-    // }
+				console.log("transformStyle", transformStyle);
 
-    // let rotateDirection = 1;
+				// const p = 2;
+				var p = 0;
 
-    // if (rotateDeg > 0) {
-    // 	if (rotateDeg < 180) {
-    //  	rotateDirection = -1;
-    //  	rotateDeg *= rotateDirection;
-    //  }
-    //  else {
-    //  	rotateDeg = (360 - rotateDeg) * rotateDirection;
-    //  }
-    // }
-    // else {
-    // 	if (Math.abs(rotateDeg) < 180) {
-    //  	rotateDeg *= rotateDirection;
-    //  }
-    //  else {
-    //  	rotateDirection = -1;
-    // 		rotateDeg = (360 - rotateDeg) * rotateDirection;
-    // 	}
-    // }
+				plate.css('-webkit-transform', transformStyle);
+				plate.css('-moz-transform', transformStyle);
+				plate.css('transform', transformStyle);
+				plate.css('-webkit-transition', '-webkit-transform ' + p + 's');
+				plate.css('transition', 'transform ' + p + 's');
 
-    console.log("modified rotateDeg: ", rotateDeg);
+				plate.attr("data-deg", circleDeg);
+		}
 
-    // else if (deg <= 180) {
-    //  // If cicle is at 180' or less
-    //  deg = circleDeg * (-1);
-    // }
-    // else {
-    // 	// if cicle is at more than 180'
-    //  deg = 360 - circleDeg;
-    // }
+		function rotateChambers(circleDeg) {
+				var plate = (0, _jquery2.default)(".chamberContainer");
+				var plateDeg = plate.attr("data-deg");
 
-    // deg = parseInt(deg);
-    // deg += 60;
+				// console.log("circle-deg: ", circleDeg);
+				// console.log("container-deg: ", plateDeg);
 
-    var transformStyle = "rotate(" + rotateDeg + "deg)";
-    console.log("transformStyle", transformStyle);
+				circleDeg = parseInt(circleDeg);
+				plateDeg = parseInt(plateDeg);
 
-    var p = 2;
+				if (circleDeg === plateDeg) {
+						return;
+				}
 
-    plate.css('-webkit-transform', transformStyle);
-    plate.css('-moz-transform', transformStyle);
-    plate.css('transform', transformStyle);
-    plate.css('-webkit-transition', '-webkit-transform ' + p + 's');
-    plate.css('transition', 'transform ' + p + 's');
+				var rotateDeg = circleDeg;
+				var rotateDirection = 1;
 
-    plate.attr("data-deg", circleDeg);
-    // plate.attr("data-deg", plateDeg);
-  }
+				if (circleDeg < 180) {
+						rotateDirection = -1;
+						rotateDeg *= rotateDirection;
+				} else {
+						rotateDeg = (360 - rotateDeg) * rotateDirection;
+				}
+
+				console.log("rotateDeg: ", rotateDeg);
+
+				var transformStyle = "rotate(" + rotateDeg + "deg)";
+
+				console.log("transformStyle", transformStyle);
+
+				var p = 2;
+
+				plate.css('-webkit-transform', transformStyle);
+				plate.css('-moz-transform', transformStyle);
+				plate.css('transform', transformStyle);
+				plate.css('-webkit-transition', '-webkit-transform ' + p + 's');
+				plate.css('transition', 'transform ' + p + 's');
+
+				plate.attr("data-deg", circleDeg);
+		}
 });
 
 },{"jquery":1}]},{},[2])
