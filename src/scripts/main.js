@@ -2,13 +2,15 @@ import $ from 'jquery';
 
 $(function () {
 
-	 $('[data-arrow="left"]').click(function(){
-			rotateChamberPlate("left");
-	 }) 
+	$('[data-arrow="left"]').click(function(){
+		const plate = $('[data-chamber="container"]');
+		rotateChamberPlate(plate, "left");
+	}) 
 
-	 $('[data-arrow="right"]').click(function(){
-			rotateChamberPlate("right");
-	 })
+	$('[data-arrow="right"]').click(function(){
+		const plate = $('[data-chamber="container"]');
+		rotateChamberPlate(plate, "right");
+	})
 
   $(".chamberCircle").click(function(event) {
   	const thisCircle = $( event.target ).parent();
@@ -17,9 +19,9 @@ $(function () {
 		rotateChambers(circleDeg);
 	})
 
-	function rotateChamberPlate(direction) {
+	function rotateChamberPlate(plate, direction) {
 		const increment = 60;
-		const plate = $(".chamberContainer");
+		// const plate = $(".chamberContainer");
     let plateDeg = plate.attr("data-deg");
     
 		plateDeg = parseInt(plateDeg);
@@ -80,15 +82,14 @@ $(function () {
 
 		rotate(rotateDeg, speed) {
 			const transformStyle = "rotate(" + rotateDeg + "deg)";
-			const p = speed;
 
 		  // console.log("transformStyle", transformStyle);
 
 			this.plate.css('-webkit-transform', transformStyle); 
 			this.plate.css('-moz-transform', transformStyle);
 			this.plate.css('transform', transformStyle);
-			this.plate.css('-webkit-transition', '-webkit-transform ' + p + 's');
-			this.plate.css('transition', 'transform ' + p + 's');
+			this.plate.css('-webkit-transition', '-webkit-transform ' + speed + 's');
+			this.plate.css('transition', 'transform ' + speed + 's');
 		}
 	}
 
