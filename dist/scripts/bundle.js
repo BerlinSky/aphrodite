@@ -9826,17 +9826,17 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 (0, _jquery2.default)(function () {
 
 		(0, _jquery2.default)('[data-arrow="left"]').click(function () {
-				console.log("here is left");
+				// console.log("here is left");
 				rotateChamberPlate("left");
 		});
 
 		(0, _jquery2.default)('[data-arrow="right"]').click(function () {
-				console.log("here is right");
+				// console.log("here is right");
 				rotateChamberPlate("right");
 		});
 
 		(0, _jquery2.default)(".chamberCircle").click(function (event) {
-				console.log("here is chamberCircle");
+				// console.log("here is chamberCircle");
 
 				var thisCircle = (0, _jquery2.default)(event.target).parent();
 				var circleDeg = thisCircle.attr("data-deg");

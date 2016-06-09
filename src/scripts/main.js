@@ -3,17 +3,17 @@ import $ from 'jquery';
 $(function () {
 
 	 $('[data-arrow="left"]').click(function(){
-	 		console.log("here is left");
+	 		// console.log("here is left");
 			rotateChamberPlate("left");
 	 }) 
 
 	 $('[data-arrow="right"]').click(function(){
-	 		console.log("here is right");
+	 		// console.log("here is right");
 			rotateChamberPlate("right");
 	 })
 
   $(".chamberCircle").click(function(event) {
- 		console.log("here is chamberCircle");
+ 		// console.log("here is chamberCircle");
 
   	const thisCircle = $( event.target ).parent();
     const circleDeg = thisCircle.attr("data-deg");
