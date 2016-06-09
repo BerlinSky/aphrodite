@@ -45,6 +45,24 @@ $chamber-container-width: 1170px;
 
 	background: url("../images/black-brushed-metal.jpg") no-repeat center;
 	background-size: cover;
+
+	.chamberSliderNav {
+		z-index: 120;
+
+		&__arrow {
+			display: block;
+			background-color: darkgreen;
+			width: 30%
+		}
+
+		&__arrow--left {
+			float: left;
+		}
+
+		&__arrow--right {
+			float: right;
+		}
+	}
 }
 
 .chamberContainer {
