@@ -2,24 +2,47 @@ import $ from 'jquery';
 
 $(function () {
 
-	$('.toggleNav').on('click', function() {
-    $('.layout__siteNav').toggleClass('open');
-  });
+  $(".chamberCircle").click(function(event) {
+  	const thisCircle = $( event.target ).parent();
 
-  $(".cylinderContainer").click(function() {
-			rotateChambers();
+    console.log("thisCircle", thisCircle);
+
+  	// const circle = $(".chamberCircle");
+
+    const circleDeg = thisCircle.attr("data-deg");
+
+    // const deg = circle.attr("data-deg");
+
+    // console.log("circle-deg: ", deg);
+
+		rotateChambers(circleDeg);
 	})
 
-	function rotateChambers() {
-		var plate = $(".cylinderContainer");
-
-		var p = 2;
-    var deg = plate.attr("data-deg");
+	function rotateChambers(circleDeg) {
+		const plate = $(".chamberContainer");
+    let deg = plate.attr("data-deg");
     
-    deg = parseInt(deg);
-    deg += 60;
+    console.log("circle-deg: ", circleDeg);
+    console.log("container-deg: ", deg);
+
+		circleDeg = parseInt(circleDeg);
+		deg = parseInt(deg);
+
+    // if cicle and container on 12 o'clock 
+    // do nothing
+    if (circleDeg === deg) {
+    	return;
+    }
+
+    // Else, rotate to 12 o'clock
+    deg = circleDeg * (-1);
+
+    // deg = parseInt(deg);
+    // deg += 60;
 
 		var transformStyle = "rotate(" + deg + "deg)";
+
+		const p = 2;
 
 	  // console.log(transformStyle);
 
@@ -32,29 +55,4 @@ $(function () {
     plate.attr("data-deg", deg);
 	}
 
-	function revolve() {
-		var p = 2;
-
-		$(".chamber").map(function() {
-	    // p++;
-	    var item = $(this);
-	    var deg = item.attr("data-deg");
-	    deg = parseInt(deg);
-	    deg += 60;
-
-	    // console.log(deg);
-	    
-	    var transformStyle = "rotate(" + deg + "deg) translate(10em) rotate(" + (-1) * deg + "deg)";
-
-		   // console.log(transformStyle);
-
-		   item.css('-webkit-transform', transformStyle); 
-		   item.css('-moz-transform', transformStyle);
-		   item.css('transform', transformStyle);
-		   item.css('-webkit-transition', '-webkit-transform ' + p + 's');
-		   item.css('transition', 'transform ' + p + 's');
-
-		   $(this).attr("data-deg", deg);
-		 })
-	}
 });

@@ -1,0 +1,218 @@
+$brushed-metal-height2: 1170px;
+$brushed-metal-width2: 1170px;
+$cylinder-height2: 1170px;
+$cylinder-width2: 1170px;
+
+
+$chamber-container-wraper-height: 1210px;
+$chamber-container-wraper-width: 1170px;
+
+$chamber-container-height: 1170px;
+$chamber-container-width: 1170px;
+
+@mixin chamberBoxDemension($factor, $width: 1170px, $height: 1210px) {
+	$width: $width * $factor;
+	$height: $height * $factor;
+
+  width: $width ;
+  height: $height;
+}
+
+@mixin chamberCircleDemension($factor, $width: 300px, $height: 300px) {
+	$width: $width * $factor;
+	$height: $height * $factor;
+
+  width: $width ;
+  height: $height;
+}
+
+@mixin chamberCircleLocation($factor, $top, $left) {
+	$top: (1170px - $top) * $factor;
+	$left: (1170px - $left) * $factor;
+
+	top: $top;
+	left: $left;
+}
+
+/* Container with the brushed metail background */
+.chamberContainerWraper {
+	position: relative;
+
+	margin-left: auto;
+  margin-right: auto;
+
+	@include chamberBoxDemension(1.0);
+
+	background: url("../images/black-brushed-metal.jpg") no-repeat center;
+	background-size: cover;
+}
+
+.chamberContainer {
+	position: absolute;
+  list-style: none;
+  padding: 0;
+	top: 0;
+	left: 0;
+
+	// width: $chamber-container-height;
+	// height: $chamber-container-width;
+
+	@include chamberBoxDemension(1.0, 1170px, 1170px);
+
+	margin-left: auto;
+  margin-right: auto;
+
+	background: url("../images/center-point.png") no-repeat center,
+			url("../images/gun-chamber.png") no-repeat center;
+	background-size: cover;
+}
+
+.chamberCircle {
+	display: block;
+	position: absolute;
+	// width: 320px;
+	// height: 320px;
+
+	@include chamberCircleDemension(1.0);
+
+	&__image {
+		border-radius: 50%;
+		margin: 3px;
+		max-widht: 100%;
+		max-height: 100%;
+	}
+}
+
+.chamberContainer > li:nth-of-type(1) {
+	@include chamberCircleDemension(1.0, 340px, 340px);
+
+	@include chamberCircleLocation(1.0, 1088px, 758px);
+
+	// left: calc(1170px - 758px);
+	// top: calc(1170px - 1090px);
+
+  transform: rotate(0deg);
+}
+
+.chamberContainer > li:nth-of-type(2) {
+	@include chamberCircleLocation(1.0, 915px, 431px);
+
+	// left: calc(1170px - 440px);
+	// top: calc(1170px - 930px);
+
+  transform: rotate(60deg);
+}
+
+.chamberContainer > li:nth-of-type(3) {
+	@include chamberCircleLocation(1.0, 563px, 428px);
+
+	// left: calc(1170px - 440px);
+	// top: calc(1170px - 570px);
+
+  transform: rotate(120deg);
+}
+
+.chamberContainer > li:nth-of-type(4) {
+	@include chamberCircleLocation(1.0, 380px, 730px);
+
+	// left: calc(1170px - 730px);
+	// top: calc(1170px - 390px);
+
+  transform: rotate(180deg);
+}
+
+.chamberContainer > li:nth-of-type(5) {
+	@include chamberCircleLocation(1.0, 558px, 1038px);
+
+	// left: calc(1170px - 1050px);
+	// top: calc(1170px - 570px);
+
+  transform: rotate(240deg);
+}
+
+.chamberContainer > li:nth-of-type(6) {
+	@include chamberCircleLocation(1.0, 910px, 1040px);
+
+	// left: calc(1170px - 1050px);
+	// top: calc(1170px - 920px);
+
+  transform: rotate(300deg);
+}
+
+@media all and (max-width:1170px) {
+	.chamberContainerWraper {
+		@include chamberBoxDemension(0.8);
+	}
+
+	.chamberContainer {
+		@include chamberBoxDemension(0.8);
+	}
+
+	.chamberCircle {
+		@include chamberCircleDemension(0.8);
+	}
+
+	.chamberContainer > li:nth-of-type(1) {
+		@include chamberCircleDemension(0.8, 340px, 340px);
+		@include chamberCircleLocation(0.8, 1082px, 758px);
+	}
+
+	.chamberContainer > li:nth-of-type(2) {
+		@include chamberCircleLocation(0.8, 900px, 420px);
+	}
+
+	.chamberContainer > li:nth-of-type(3) {
+		@include chamberCircleLocation(0.8, 535px, 415px);
+	}
+
+	.chamberContainer > li:nth-of-type(4) {
+		@include chamberCircleLocation(0.8, 350px, 730px);
+	}
+
+	.chamberContainer > li:nth-of-type(5) {
+		@include chamberCircleLocation(0.8, 528px, 1048px);
+	}
+
+	.chamberContainer > li:nth-of-type(6) {
+		@include chamberCircleLocation(0.8, 900px, 1050px);
+	}
+}
+
+@media all and (max-width:950px) {
+	.chamberContainerWraper {
+		@include chamberBoxDemension(0.6);
+	}
+
+	.chamberContainer {
+		@include chamberBoxDemension(0.6);
+	}
+
+	.chamberCircle {
+		@include chamberCircleDemension(0.6);
+	}
+
+	.chamberContainer > li:nth-of-type(1) {
+		@include chamberCircleDemension(0.6, 340px, 340px);
+		@include chamberCircleLocation(0.6, 1082px, 758px);
+	}
+
+	.chamberContainer > li:nth-of-type(2) {
+		@include chamberCircleLocation(0.6, 900px, 420px);
+	}
+
+	.chamberContainer > li:nth-of-type(3) {
+		@include chamberCircleLocation(0.6, 535px, 415px);
+	}
+
+	.chamberContainer > li:nth-of-type(4) {
+		@include chamberCircleLocation(0.6, 350px, 730px);
+	}
+
+	.chamberContainer > li:nth-of-type(5) {
+		@include chamberCircleLocation(0.6, 528px, 1048px);
+	}
+
+	.chamberContainer > li:nth-of-type(6) {
+		@include chamberCircleLocation(0.6, 900px, 1050px);
+	}
+}

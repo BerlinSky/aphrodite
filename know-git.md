@@ -81,4 +81,60 @@ $> git commit --amend -m "Update the samthing"
 $> git status
 ````
 
-## New Session: P42
+#### You can view the history on GitHub: on History Tab
+
+Now, other teammates else checked in some changes and pushed to the remote repository.  You want to pull down the updates.
+
+```` 
+$> git pull
+````
+
+Manage remotes
+````
+$> git remote add <name> <address>
+$> git remote rm <name> 
+$> git push -u <name> <branch>
+````
+
+#### How to start collaborating?
+
+````
+$> git clone <remote repo> <local-folder>
+$> git remote -v
+$> git push -u <name> <branch>
+````
+
+#### How to branch out?
+
+````
+$> git branch <my-branch>
+$> git branch
+$> git checkout <my-branch>
+$> git branch -d <my-branch>
+$> git checkout -b <my-new-branch>
+````
+
+#### How to merge?
+
+````
+$> git checkout master
+$> git merge <my-branch>
+$> git log
+$> git status
+````
+
+#### How to do bug fixing on master?
+
+````
+$> git checkout master
+$> git branch
+$> git pull
+$> git status
+$> git commit -m "Fixed the bug"
+$> git status
+$> git push
+````
+
+
+
+## New Session: P71

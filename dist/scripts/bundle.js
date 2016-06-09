@@ -9815,9 +9815,9 @@ return jQuery;
 }));
 
 },{}],2:[function(require,module,exports){
-'use strict';
+"use strict";
 
-var _jquery = require('jquery');
+var _jquery = require("jquery");
 
 var _jquery2 = _interopRequireDefault(_jquery);
 
@@ -9825,61 +9825,58 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 (0, _jquery2.default)(function () {
 
-	(0, _jquery2.default)('.toggleNav').on('click', function () {
-		(0, _jquery2.default)('.layout__siteNav').toggleClass('open');
-	});
+  (0, _jquery2.default)(".chamberCircle").click(function (event) {
+    var thisCircle = (0, _jquery2.default)(event.target).parent();
 
-	(0, _jquery2.default)(".cylinderContainer").click(function () {
-		rotateChambers();
-	});
+    console.log("thisCircle", thisCircle);
 
-	function rotateChambers() {
-		var plate = (0, _jquery2.default)(".cylinderContainer");
+    // const circle = $(".chamberCircle");
 
-		var p = 2;
-		var deg = plate.attr("data-deg");
+    var circleDeg = thisCircle.attr("data-deg");
 
-		deg = parseInt(deg);
-		deg += 60;
+    // const deg = circle.attr("data-deg");
 
-		var transformStyle = "rotate(" + deg + "deg)";
+    // console.log("circle-deg: ", deg);
 
-		// console.log(transformStyle);
+    rotateChambers(circleDeg);
+  });
 
-		plate.css('-webkit-transform', transformStyle);
-		plate.css('-moz-transform', transformStyle);
-		plate.css('transform', transformStyle);
-		plate.css('-webkit-transition', '-webkit-transform ' + p + 's');
-		plate.css('transition', 'transform ' + p + 's');
+  function rotateChambers(circleDeg) {
+    var plate = (0, _jquery2.default)(".chamberContainer");
+    var deg = plate.attr("data-deg");
 
-		plate.attr("data-deg", deg);
-	}
+    console.log("circle-deg: ", circleDeg);
+    console.log("container-deg: ", deg);
 
-	function revolve() {
-		var p = 2;
+    circleDeg = parseInt(circleDeg);
+    deg = parseInt(deg);
 
-		(0, _jquery2.default)(".chamber").map(function () {
-			// p++;
-			var item = (0, _jquery2.default)(this);
-			var deg = item.attr("data-deg");
-			deg = parseInt(deg);
-			deg += 60;
+    // if cicle and container on 12 o'clock
+    // do nothing
+    if (circleDeg === deg) {
+      return;
+    }
 
-			// console.log(deg);
+    // Else, rotate to 12 o'clock
+    deg = circleDeg * -1;
 
-			var transformStyle = "rotate(" + deg + "deg) translate(10em) rotate(" + -1 * deg + "deg)";
+    // deg = parseInt(deg);
+    // deg += 60;
 
-			// console.log(transformStyle);
+    var transformStyle = "rotate(" + deg + "deg)";
 
-			item.css('-webkit-transform', transformStyle);
-			item.css('-moz-transform', transformStyle);
-			item.css('transform', transformStyle);
-			item.css('-webkit-transition', '-webkit-transform ' + p + 's');
-			item.css('transition', 'transform ' + p + 's');
+    var p = 2;
 
-			(0, _jquery2.default)(this).attr("data-deg", deg);
-		});
-	}
+    // console.log(transformStyle);
+
+    plate.css('-webkit-transform', transformStyle);
+    plate.css('-moz-transform', transformStyle);
+    plate.css('transform', transformStyle);
+    plate.css('-webkit-transition', '-webkit-transform ' + p + 's');
+    plate.css('transition', 'transform ' + p + 's');
+
+    plate.attr("data-deg", deg);
+  }
 });
 
 },{"jquery":1}]},{},[2])
