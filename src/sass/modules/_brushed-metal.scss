@@ -47,15 +47,15 @@ $chamber-container-width: 1170px;
 	background-size: cover;
 
 	.chamberSliderNav {
-		// position: absolute;
+		position: absolute;
 		// top: 0;
 		// left: 0;
-		// z-index: 1120;
+		z-index: 20;
 
 		&__arrow {
 			display: block;
 			background-color: darkgreen;
-			width: 30%
+			width: 100px;
 		}
 
 		&__arrow--left {
