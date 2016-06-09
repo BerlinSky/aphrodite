@@ -9817,27 +9817,27 @@ return jQuery;
 },{}],2:[function(require,module,exports){
 'use strict';
 
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
 var _jquery = require('jquery');
 
 var _jquery2 = _interopRequireDefault(_jquery);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
 (0, _jquery2.default)(function () {
 
 		(0, _jquery2.default)('[data-arrow="left"]').click(function () {
-				// console.log("here is left");
 				rotateChamberPlate("left");
 		});
 
 		(0, _jquery2.default)('[data-arrow="right"]').click(function () {
-				// console.log("here is right");
 				rotateChamberPlate("right");
 		});
 
 		(0, _jquery2.default)(".chamberCircle").click(function (event) {
-				// console.log("here is chamberCircle");
-
 				var thisCircle = (0, _jquery2.default)(event.target).parent();
 				var circleDeg = thisCircle.attr("data-deg");
 
@@ -9858,31 +9858,12 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 				rotateDeg *= rotateDirection;
 
-				console.log("circle-deg", circleDeg);
-				console.log("plateDeg", plateDeg);
+				// console.log("circle-deg", circleDeg);
+				// console.log("plateDeg", plateDeg);
+				// console.log("rotateDeg: ", rotateDeg);
 
-				// if (circleDeg < 180) {
-				//  	rotateDirection = -1;
-				//  	rotateDeg *= rotateDirection;
-				//  }
-				//  else {
-				//  	rotateDeg = (360 - rotateDeg) * rotateDirection;
-				//  }
-
-				console.log("rotateDeg: ", rotateDeg);
-
-				var transformStyle = "rotate(" + rotateDeg + "deg)";
-
-				console.log("transformStyle", transformStyle);
-
-				// const p = 2;
-				var p = 0;
-
-				plate.css('-webkit-transform', transformStyle);
-				plate.css('-moz-transform', transformStyle);
-				plate.css('transform', transformStyle);
-				plate.css('-webkit-transition', '-webkit-transform ' + p + 's');
-				plate.css('transition', 'transform ' + p + 's');
+				var thisPlate = new Plate(plate);
+				thisPlate.rotate(rotateDeg, 2);
 
 				plate.attr("data-deg", circleDeg);
 		}
@@ -9910,23 +9891,39 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 				} else {
 						rotateDeg = (360 - rotateDeg) * rotateDirection;
 				}
+				// console.log("rotateDeg: ", rotateDeg);
 
-				console.log("rotateDeg: ", rotateDeg);
-
-				var transformStyle = "rotate(" + rotateDeg + "deg)";
-
-				console.log("transformStyle", transformStyle);
-
-				var p = 2;
-
-				plate.css('-webkit-transform', transformStyle);
-				plate.css('-moz-transform', transformStyle);
-				plate.css('transform', transformStyle);
-				plate.css('-webkit-transition', '-webkit-transform ' + p + 's');
-				plate.css('transition', 'transform ' + p + 's');
+				var thisPlate = new Plate(plate);
+				thisPlate.rotate(rotateDeg, 2);
 
 				plate.attr("data-deg", circleDeg);
 		}
+
+		var Plate = function () {
+				function Plate(plateElem) {
+						_classCallCheck(this, Plate);
+
+						this.plate = plateElem;
+				}
+
+				_createClass(Plate, [{
+						key: 'rotate',
+						value: function rotate(rotateDeg, speed) {
+								var transformStyle = "rotate(" + rotateDeg + "deg)";
+								var p = speed;
+
+								// console.log("transformStyle", transformStyle);
+
+								this.plate.css('-webkit-transform', transformStyle);
+								this.plate.css('-moz-transform', transformStyle);
+								this.plate.css('transform', transformStyle);
+								this.plate.css('-webkit-transition', '-webkit-transform ' + p + 's');
+								this.plate.css('transition', 'transform ' + p + 's');
+						}
+				}]);
+
+				return Plate;
+		}();
 });
 
 },{"jquery":1}]},{},[2])

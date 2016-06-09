@@ -3,18 +3,14 @@ import $ from 'jquery';
 $(function () {
 
 	 $('[data-arrow="left"]').click(function(){
-	 		// console.log("here is left");
 			rotateChamberPlate("left");
 	 }) 
 
 	 $('[data-arrow="right"]').click(function(){
-	 		// console.log("here is right");
 			rotateChamberPlate("right");
 	 })
 
   $(".chamberCircle").click(function(event) {
- 		// console.log("here is chamberCircle");
-
   	const thisCircle = $( event.target ).parent();
     const circleDeg = thisCircle.attr("data-deg");
 
@@ -28,7 +24,6 @@ $(function () {
     
 		plateDeg = parseInt(plateDeg);
 
-
 		let rotateDeg = plateDeg + increment;
 		let circleDeg = rotateDeg;
 
@@ -36,31 +31,12 @@ $(function () {
 
 		rotateDeg *= rotateDirection;
 
-    console.log("circle-deg", circleDeg);
-    console.log("plateDeg", plateDeg);
-
-  	// if (circleDeg < 180) {
-   //  	rotateDirection = -1;
-   //  	rotateDeg *= rotateDirection;
-   //  }
-   //  else {
-   //  	rotateDeg = (360 - rotateDeg) * rotateDirection;
-   //  }
-
-    console.log("rotateDeg: ", rotateDeg);
-
-		let transformStyle = "rotate(" + rotateDeg + "deg)";
-
-	  console.log("transformStyle", transformStyle);
-
-		// const p = 2;
-		const p = 0;
-
-		plate.css('-webkit-transform', transformStyle); 
-		plate.css('-moz-transform', transformStyle);
-		plate.css('transform', transformStyle);
-		plate.css('-webkit-transition', '-webkit-transform ' + p + 's');
-		plate.css('transition', 'transform ' + p + 's');
+    // console.log("circle-deg", circleDeg);
+    // console.log("plateDeg", plateDeg);
+    // console.log("rotateDeg: ", rotateDeg);
+	
+		let thisPlate = new Plate(plate);
+		thisPlate.rotate(rotateDeg, 2);
 
     plate.attr("data-deg", circleDeg);
 	}
@@ -89,22 +65,31 @@ $(function () {
     else {
     	rotateDeg = (360 - rotateDeg) * rotateDirection;
     }
+    // console.log("rotateDeg: ", rotateDeg);
 
-    console.log("rotateDeg: ", rotateDeg);
-
-		let transformStyle = "rotate(" + rotateDeg + "deg)";
-
-	  console.log("transformStyle", transformStyle);
-
-		const p = 2;
-
-		plate.css('-webkit-transform', transformStyle); 
-		plate.css('-moz-transform', transformStyle);
-		plate.css('transform', transformStyle);
-		plate.css('-webkit-transition', '-webkit-transform ' + p + 's');
-		plate.css('transition', 'transform ' + p + 's');
+		let thisPlate = new Plate(plate);
+		thisPlate.rotate(rotateDeg, 2);
 
     plate.attr("data-deg", circleDeg);
+	}
+
+	class Plate {
+		constructor(plateElem) {
+			this.plate = plateElem;
+		}
+
+		rotate(rotateDeg, speed) {
+			const transformStyle = "rotate(" + rotateDeg + "deg)";
+			const p = speed;
+
+		  // console.log("transformStyle", transformStyle);
+
+			this.plate.css('-webkit-transform', transformStyle); 
+			this.plate.css('-moz-transform', transformStyle);
+			this.plate.css('transform', transformStyle);
+			this.plate.css('-webkit-transition', '-webkit-transform ' + p + 's');
+			this.plate.css('transition', 'transform ' + p + 's');
+		}
 	}
 
 });
