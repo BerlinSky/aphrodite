@@ -15,8 +15,10 @@ $(function () {
   $(".chamberCircle").click(function(event) {
   	const thisCircle = $( event.target ).parent();
     const circleDeg = thisCircle.attr("data-deg");
+    
+		const plate = $('[data-chamber="container"]');
 
-		rotateChambers(circleDeg);
+		rotateChambers(plate, circleDeg);
 	})
 
 	function rotateChamberPlate(plate, direction) {
@@ -43,8 +45,8 @@ $(function () {
     plate.attr("data-deg", circleDeg);
 	}
 
-	function rotateChambers(circleDeg) {
-		const plate = $(".chamberContainer");
+	function rotateChambers(plate, circleDeg) {
+		// const plate = $(".chamberContainer");
     let plateDeg = plate.attr("data-deg");
     
     // console.log("circle-deg: ", circleDeg);

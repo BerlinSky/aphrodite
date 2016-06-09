@@ -9843,7 +9843,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 		var thisCircle = (0, _jquery2.default)(event.target).parent();
 		var circleDeg = thisCircle.attr("data-deg");
 
-		rotateChambers(circleDeg);
+		var plate = (0, _jquery2.default)('[data-chamber="container"]');
+
+		rotateChambers(plate, circleDeg);
 	});
 
 	function rotateChamberPlate(plate, direction) {
@@ -9870,8 +9872,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 		plate.attr("data-deg", circleDeg);
 	}
 
-	function rotateChambers(circleDeg) {
-		var plate = (0, _jquery2.default)(".chamberContainer");
+	function rotateChambers(plate, circleDeg) {
+		// const plate = $(".chamberContainer");
 		var plateDeg = plate.attr("data-deg");
 
 		// console.log("circle-deg: ", circleDeg);
