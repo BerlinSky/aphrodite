@@ -13,5 +13,6 @@ body {
 
 .l-stickyContent {
   flex: 1 1 auto;
-  overflow-y: scroll;
+  // overflow-y: scroll;
+  overflow: hidden;
 }

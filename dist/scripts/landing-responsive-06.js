@@ -9829,18 +9829,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
 (0, _jquery2.default)(function () {
 
-	// <div id="animals" data-animals='["cat", "dog", "bird"]'></div>
-	// <div id="vehicles" data-vehicles='{"motorcycle":"Harley", "car":"Herbie", "steamshovel":"Mike"}'></div>
-
-	// $(function(){
-	//   var a = JSON.parse($('#animals').attr('data-animals'))[0];
-	//   $('#animals').html(a);
-	//   var v = JSON.parse($('#vehicles').attr('data-vehicles')).car;
-	//   $('#vehicles').html(v);
-	// });
-
-	(0, _jquery2.default)('[data-arrow="left"]').click(function () {
+	(0, _jquery2.default)('[data-arrow="left"]').click(function (event) {
 		var plate = (0, _jquery2.default)('[data-chamber="container"]');
+
 		rotateChamberPlate(plate, "left");
 	});
 
@@ -9854,6 +9845,20 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 		var thisCircle = (0, _jquery2.default)(event.target).parent();
 		var circleDeg = thisCircle.attr("data-deg");
 		var plate = (0, _jquery2.default)('[data-chamber="container"]');
+
+		var newsJsonData = thisCircle.attr("data-message");
+		var title = JSON.parse(newsJsonData).title;
+		var teaser = JSON.parse(newsJsonData).teaser;
+		var link = JSON.parse(newsJsonData).link;
+
+		var newsTitle = (0, _jquery2.default)('[data-news="title"]');
+		newsTitle.html(title);
+
+		var newsTeaser = (0, _jquery2.default)('[data-news="teaser"]');
+		newsTeaser.html(teaser);
+
+		var newsLink = (0, _jquery2.default)('[data-news="link"]');
+		newsLink.html(link);
 
 		rotateChambers(plate, circleDeg);
 	});
@@ -9896,20 +9901,38 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 			_classCallCheck(this, Plate);
 
 			this.plate = plateElem;
+			this.arrowLeft = (0, _jquery2.default)('[data-arrow="left"]');
+			this.arrowRight = (0, _jquery2.default)('[data-arrow="right"]');
 		}
 
 		_createClass(Plate, [{
+			key: '_hideArrow',
+			value: function _hideArrow() {
+				// this.arrowLeft.fadeOut();
+				this.arrowLeft.css("display", "none");
+				// this.arrowRight.fadeOut();
+				this.arrowRight.css("display", "none");
+			}
+		}, {
+			key: '_showArrow',
+			value: function _showArrow() {
+				this.arrowLeft.fadeIn(3000);
+				this.arrowRight.fadeIn(3000);
+			}
+		}, {
 			key: 'rotate',
 			value: function rotate(rotateDeg, speed) {
 				var transformStyle = "rotate(" + rotateDeg + "deg)";
 
-				// console.log("transformStyle", transformStyle);
+				this._hideArrow();
 
 				this.plate.css('-webkit-transform', transformStyle);
 				this.plate.css('-moz-transform', transformStyle);
 				this.plate.css('transform', transformStyle);
 				this.plate.css('-webkit-transition', '-webkit-transform ' + speed + 's');
 				this.plate.css('transition', 'transform ' + speed + 's');
+
+				this._showArrow();
 			}
 		}]);
 
