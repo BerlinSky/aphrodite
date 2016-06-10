@@ -43,8 +43,8 @@ $chamber-container-width: 1170px;
 
 	@include chamberBoxDemension(1.0);
 
-	background: url("../images/black-brushed-metal.jpg") no-repeat center;
-	background-size: cover;
+	// background: url("../images/black-brushed-metal.jpg") no-repeat center;
+	// background-size: cover;
 
 	.chamberSliderNav {
 		position: absolute;
