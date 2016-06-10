@@ -9829,8 +9829,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
 (0, _jquery2.default)(function () {
 
-	(0, _jquery2.default)('[data-arrow="left"]').click(function () {
+	(0, _jquery2.default)('[data-arrow="left"]').click(function (event) {
 		var plate = (0, _jquery2.default)('[data-chamber="container"]');
+
 		rotateChamberPlate(plate, "left");
 	});
 
@@ -9900,20 +9901,38 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 			_classCallCheck(this, Plate);
 
 			this.plate = plateElem;
+			this.arrowLeft = (0, _jquery2.default)('[data-arrow="left"]');
+			this.arrowRight = (0, _jquery2.default)('[data-arrow="right"]');
 		}
 
 		_createClass(Plate, [{
+			key: '_hideArrow',
+			value: function _hideArrow() {
+				// this.arrowLeft.fadeOut();
+				this.arrowLeft.css("display", "none");
+				// this.arrowRight.fadeOut();
+				this.arrowRight.css("display", "none");
+			}
+		}, {
+			key: '_showArrow',
+			value: function _showArrow() {
+				this.arrowLeft.fadeIn(3000);
+				this.arrowRight.fadeIn(3000);
+			}
+		}, {
 			key: 'rotate',
 			value: function rotate(rotateDeg, speed) {
 				var transformStyle = "rotate(" + rotateDeg + "deg)";
 
-				// console.log("transformStyle", transformStyle);
+				this._hideArrow();
 
 				this.plate.css('-webkit-transform', transformStyle);
 				this.plate.css('-moz-transform', transformStyle);
 				this.plate.css('transform', transformStyle);
 				this.plate.css('-webkit-transition', '-webkit-transform ' + speed + 's');
 				this.plate.css('transition', 'transform ' + speed + 's');
+
+				this._showArrow();
 			}
 		}]);
 

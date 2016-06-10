@@ -9845,6 +9845,20 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 		var circleDeg = thisCircle.attr("data-deg");
 		var plate = (0, _jquery2.default)('[data-chamber="container"]');
 
+		var newsJsonData = thisCircle.attr("data-message");
+		var title = JSON.parse(newsJsonData).title;
+		var teaser = JSON.parse(newsJsonData).teaser;
+		var link = JSON.parse(newsJsonData).link;
+
+		var newsTitle = (0, _jquery2.default)('[data-news="title"]');
+		newsTitle.html(title);
+
+		var newsTeaser = (0, _jquery2.default)('[data-news="teaser"]');
+		newsTeaser.html(teaser);
+
+		var newsLink = (0, _jquery2.default)('[data-news="link"]');
+		newsLink.html(link);
+
 		rotateChambers(plate, circleDeg);
 	});
 
@@ -9852,65 +9866,33 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 		var plateDeg = plate.attr("data-deg");
 		plateDeg = parseInt(plateDeg);
 
-		var thisPlate = new Plate(plate);
-
 		// console.log("plateDeg", plateDeg);
 
-		var rotateDirection = direction === 'right' ? 1 : -1;
-
-		plateDeg = plateDeg + 60;
-
+		plateDeg = direction === 'right' ? plateDeg += 60 : plateDeg -= 60;
 		plate.attr("data-deg", plateDeg);
 
-		var rotateDeg = plateDeg * rotateDirection;
-
 		// console.log("plateDeg", plateDeg);
-		// console.log("rotateDeg: ", rotateDeg);
 
-		// thisPlate.rotate(rotateDeg, 0);
-		thisPlate.rotate(rotateDeg, 2);
-
-		if (plateDeg === 360) {
-			plateDeg = 0;
-			rotateDeg = 0;
-			thisPlate.rotate(rotateDeg, 0);
-
-			// console.log("plateDeg 360", plateDeg);
-			//  console.log("rotateDeg 360: ", rotateDeg);
-
-			plate.attr("data-deg", plateDeg);
-		}
+		var thisPlate = new Plate(plate);
+		thisPlate.rotate(plateDeg, 2);
 	}
 
 	function rotateChambers(plate, circleDeg) {
-		// const plate = $(".chamberContainer");
 		var plateDeg = plate.attr("data-deg");
-
-		// console.log("circle-deg: ", circleDeg);
-		// console.log("container-deg: ", plateDeg);
 
 		circleDeg = parseInt(circleDeg);
 		plateDeg = parseInt(plateDeg);
+
+		plate.attr("data-deg", circleDeg);
 
 		if (circleDeg === plateDeg) {
 			return;
 		}
 
-		var rotateDeg = circleDeg;
-		var rotateDirection = 1;
-
-		if (circleDeg < 180) {
-			rotateDirection = -1;
-			rotateDeg *= rotateDirection;
-		} else {
-			rotateDeg = (360 - rotateDeg) * rotateDirection;
-		}
-		// console.log("rotateDeg: ", rotateDeg);
+		var rotateDeg = circleDeg * -1;
 
 		var thisPlate = new Plate(plate);
 		thisPlate.rotate(rotateDeg, 2);
-
-		plate.attr("data-deg", circleDeg);
 	}
 
 	var Plate = function () {
