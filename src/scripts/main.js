@@ -9,40 +9,57 @@ $(function () {
 
 	$('[data-arrow="right"]').click(function(){
 		const plate = $('[data-chamber="container"]');
+
 		rotateChamberPlate(plate, "right");
 	})
 
-  $(".chamberCircle").click(function(event) {
+  $('[data-chamber="circle"]').click(function(event) {
   	const thisCircle = $( event.target ).parent();
     const circleDeg = thisCircle.attr("data-deg");
-    
 		const plate = $('[data-chamber="container"]');
 
 		rotateChambers(plate, circleDeg);
 	})
 
 	function rotateChamberPlate(plate, direction) {
-		const increment = 60;
-		// const plate = $(".chamberContainer");
     let plateDeg = plate.attr("data-deg");
-    
 		plateDeg = parseInt(plateDeg);
 
-		let rotateDeg = plateDeg + increment;
-		let circleDeg = rotateDeg;
+		const thisPlate = new Plate(plate);
 
-    let rotateDirection = (direction === 'right' ? 1 : -1); 
+		// if (plateDeg === 360) {
+		// 	thisPlate.rotate(0, 0);
+		// 	plateDeg = 0;
+		// }
 
-		rotateDeg *= rotateDirection;
+    console.log("plateDeg", plateDeg);
 
-    // console.log("circle-deg", circleDeg);
-    // console.log("plateDeg", plateDeg);
-    // console.log("rotateDeg: ", rotateDeg);
+    const rotateDirection = (direction === 'right' ? 1 : -1); 
+
+		plateDeg = plateDeg + 60;
+
+    plate.attr("data-deg", plateDeg);
+
+		let rotateDeg = plateDeg * rotateDirection;
+
+    console.log("plateDeg", plateDeg);
+    console.log("rotateDeg: ", rotateDeg);
 	
-		let thisPlate = new Plate(plate);
+		// thisPlate.rotate(rotateDeg, 0);
 		thisPlate.rotate(rotateDeg, 2);
 
-    plate.attr("data-deg", circleDeg);
+		if (plateDeg === 360) {
+			plateDeg = 0;
+			rotateDeg = 0;
+			thisPlate.rotate(rotateDeg, 0);
+
+			console.log("plateDeg 360", plateDeg);
+		  console.log("rotateDeg 360: ", rotateDeg);
+
+			plate.attr("data-deg", plateDeg);
+		}
+
+		
 	}
 
 	function rotateChambers(plate, circleDeg) {
@@ -71,7 +88,7 @@ $(function () {
     }
     // console.log("rotateDeg: ", rotateDeg);
 
-		let thisPlate = new Plate(plate);
+		const thisPlate = new Plate(plate);
 		thisPlate.rotate(rotateDeg, 2);
 
     plate.attr("data-deg", circleDeg);

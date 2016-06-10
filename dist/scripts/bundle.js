@@ -9836,40 +9836,55 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
 	(0, _jquery2.default)('[data-arrow="right"]').click(function () {
 		var plate = (0, _jquery2.default)('[data-chamber="container"]');
+
 		rotateChamberPlate(plate, "right");
 	});
 
-	(0, _jquery2.default)(".chamberCircle").click(function (event) {
+	(0, _jquery2.default)('[data-chamber="circle"]').click(function (event) {
 		var thisCircle = (0, _jquery2.default)(event.target).parent();
 		var circleDeg = thisCircle.attr("data-deg");
-
 		var plate = (0, _jquery2.default)('[data-chamber="container"]');
 
 		rotateChambers(plate, circleDeg);
 	});
 
 	function rotateChamberPlate(plate, direction) {
-		var increment = 60;
-		// const plate = $(".chamberContainer");
 		var plateDeg = plate.attr("data-deg");
-
 		plateDeg = parseInt(plateDeg);
 
-		var rotateDeg = plateDeg + increment;
-		var circleDeg = rotateDeg;
+		var thisPlate = new Plate(plate);
+
+		// if (plateDeg === 360) {
+		// 	thisPlate.rotate(0, 0);
+		// 	plateDeg = 0;
+		// }
+
+		console.log("plateDeg", plateDeg);
 
 		var rotateDirection = direction === 'right' ? 1 : -1;
 
-		rotateDeg *= rotateDirection;
+		plateDeg = plateDeg + 60;
 
-		// console.log("circle-deg", circleDeg);
-		// console.log("plateDeg", plateDeg);
-		// console.log("rotateDeg: ", rotateDeg);
+		plate.attr("data-deg", plateDeg);
 
-		var thisPlate = new Plate(plate);
+		var rotateDeg = plateDeg * rotateDirection;
+
+		console.log("plateDeg", plateDeg);
+		console.log("rotateDeg: ", rotateDeg);
+
+		// thisPlate.rotate(rotateDeg, 0);
 		thisPlate.rotate(rotateDeg, 2);
 
-		plate.attr("data-deg", circleDeg);
+		if (plateDeg === 360) {
+			plateDeg = 0;
+			rotateDeg = 0;
+			thisPlate.rotate(rotateDeg, 0);
+
+			console.log("plateDeg 360", plateDeg);
+			console.log("rotateDeg 360: ", rotateDeg);
+
+			plate.attr("data-deg", plateDeg);
+		}
 	}
 
 	function rotateChambers(plate, circleDeg) {
