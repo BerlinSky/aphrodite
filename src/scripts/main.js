@@ -2,6 +2,19 @@ import $ from 'jquery';
 
 $(function () {
 
+
+
+  // <div id="animals" data-animals='["cat", "dog", "bird"]'></div>
+  // <div id="vehicles" data-vehicles='{"motorcycle":"Harley", "car":"Herbie", "steamshovel":"Mike"}'></div>
+
+
+  // $(function(){
+  //   var a = JSON.parse($('#animals').attr('data-animals'))[0];
+  //   $('#animals').html(a);
+  //   var v = JSON.parse($('#vehicles').attr('data-vehicles')).car;
+  //   $('#vehicles').html(v);
+  // });
+
 	$('[data-arrow="left"]').click(function(){
 		const plate = $('[data-chamber="container"]');
 		rotateChamberPlate(plate, "left");
@@ -25,68 +38,33 @@ $(function () {
     let plateDeg = plate.attr("data-deg");
 		plateDeg = parseInt(plateDeg);
 
-		const thisPlate = new Plate(plate);
-
     // console.log("plateDeg", plateDeg);
 
-    const rotateDirection = (direction === 'right' ? 1 : -1); 
-
-		plateDeg = plateDeg + 60;
-
+    plateDeg = (direction === 'right' ? plateDeg += 60 : plateDeg -= 60);
     plate.attr("data-deg", plateDeg);
 
-		let rotateDeg = plateDeg * rotateDirection;
-
     // console.log("plateDeg", plateDeg);
-    // console.log("rotateDeg: ", rotateDeg);
 	
-		// thisPlate.rotate(rotateDeg, 0);
-		thisPlate.rotate(rotateDeg, 2);
-
-		if (plateDeg === 360) {
-			plateDeg = 0;
-			rotateDeg = 0;
-			thisPlate.rotate(rotateDeg, 0);
-
-			// console.log("plateDeg 360", plateDeg);
-		 //  console.log("rotateDeg 360: ", rotateDeg);
-
-			plate.attr("data-deg", plateDeg);
-		}
-
-		
+		const thisPlate = new Plate(plate);
+		thisPlate.rotate(plateDeg, 2);
 	}
 
 	function rotateChambers(plate, circleDeg) {
-		// const plate = $(".chamberContainer");
     let plateDeg = plate.attr("data-deg");
     
-    // console.log("circle-deg: ", circleDeg);
-    // console.log("container-deg: ", plateDeg);
-
 		circleDeg = parseInt(circleDeg);
 		plateDeg = parseInt(plateDeg);
+
+    plate.attr("data-deg", circleDeg);
 
 		if (circleDeg  === plateDeg) {
 			return;
 		}
 
-		let rotateDeg = circleDeg;
-    let rotateDirection = 1; 
-
-  	if (circleDeg < 180) {
-    	rotateDirection = -1;
-    	rotateDeg *= rotateDirection;
-    }
-    else {
-    	rotateDeg = (360 - rotateDeg) * rotateDirection;
-    }
-    // console.log("rotateDeg: ", rotateDeg);
+		const rotateDeg = circleDeg * (-1);
 
 		const thisPlate = new Plate(plate);
 		thisPlate.rotate(rotateDeg, 2);
-
-    plate.attr("data-deg", circleDeg);
 	}
 
 	class Plate {
