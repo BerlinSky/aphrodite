@@ -27,12 +27,7 @@ $(function () {
 
 		const thisPlate = new Plate(plate);
 
-		// if (plateDeg === 360) {
-		// 	thisPlate.rotate(0, 0);
-		// 	plateDeg = 0;
-		// }
-
-    console.log("plateDeg", plateDeg);
+    // console.log("plateDeg", plateDeg);
 
     const rotateDirection = (direction === 'right' ? 1 : -1); 
 
@@ -42,8 +37,8 @@ $(function () {
 
 		let rotateDeg = plateDeg * rotateDirection;
 
-    console.log("plateDeg", plateDeg);
-    console.log("rotateDeg: ", rotateDeg);
+    // console.log("plateDeg", plateDeg);
+    // console.log("rotateDeg: ", rotateDeg);
 	
 		// thisPlate.rotate(rotateDeg, 0);
 		thisPlate.rotate(rotateDeg, 2);
@@ -53,8 +48,8 @@ $(function () {
 			rotateDeg = 0;
 			thisPlate.rotate(rotateDeg, 0);
 
-			console.log("plateDeg 360", plateDeg);
-		  console.log("rotateDeg 360: ", rotateDeg);
+			// console.log("plateDeg 360", plateDeg);
+		 //  console.log("rotateDeg 360: ", rotateDeg);
 
 			plate.attr("data-deg", plateDeg);
 		}
