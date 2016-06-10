@@ -2,19 +2,6 @@ import $ from 'jquery';
 
 $(function () {
 
-
-
-  // <div id="animals" data-animals='["cat", "dog", "bird"]'></div>
-  // <div id="vehicles" data-vehicles='{"motorcycle":"Harley", "car":"Herbie", "steamshovel":"Mike"}'></div>
-
-
-  // $(function(){
-  //   var a = JSON.parse($('#animals').attr('data-animals'))[0];
-  //   $('#animals').html(a);
-  //   var v = JSON.parse($('#vehicles').attr('data-vehicles')).car;
-  //   $('#vehicles').html(v);
-  // });
-
 	$('[data-arrow="left"]').click(function(){
 		const plate = $('[data-chamber="container"]');
 		rotateChamberPlate(plate, "left");
@@ -30,6 +17,20 @@ $(function () {
   	const thisCircle = $( event.target ).parent();
     const circleDeg = thisCircle.attr("data-deg");
 		const plate = $('[data-chamber="container"]');
+
+    const newsJsonData = thisCircle.attr("data-message");
+    const title = JSON.parse(newsJsonData).title;
+    const teaser = JSON.parse(newsJsonData).teaser;
+    const link = JSON.parse(newsJsonData).link;
+
+		const newsTitle = $('[data-news="title"]');
+		newsTitle.html(title);
+		
+		const newsTeaser = $('[data-news="teaser"]');
+		newsTeaser.html(teaser);
+		
+		const newsLink = $('[data-news="link"]');
+		newsLink.html(link);
 
 		rotateChambers(plate, circleDeg);
 	})

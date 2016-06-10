@@ -9815,113 +9815,106 @@ return jQuery;
 }));
 
 },{}],2:[function(require,module,exports){
-"use strict";
+'use strict';
 
-var _jquery = require("jquery");
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _jquery = require('jquery');
 
 var _jquery2 = _interopRequireDefault(_jquery);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
 (0, _jquery2.default)(function () {
 
-  (0, _jquery2.default)(".chamberCircle").click(function (event) {
-    var thisCircle = (0, _jquery2.default)(event.target).parent();
+	// <div id="animals" data-animals='["cat", "dog", "bird"]'></div>
+	// <div id="vehicles" data-vehicles='{"motorcycle":"Harley", "car":"Herbie", "steamshovel":"Mike"}'></div>
 
-    // console.log("thisCircle", thisCircle);
+	// $(function(){
+	//   var a = JSON.parse($('#animals').attr('data-animals'))[0];
+	//   $('#animals').html(a);
+	//   var v = JSON.parse($('#vehicles').attr('data-vehicles')).car;
+	//   $('#vehicles').html(v);
+	// });
 
-    // const circle = $(".chamberCircle");
+	(0, _jquery2.default)('[data-arrow="left"]').click(function () {
+		var plate = (0, _jquery2.default)('[data-chamber="container"]');
+		rotateChamberPlate(plate, "left");
+	});
 
-    var circleDeg = thisCircle.attr("data-deg");
+	(0, _jquery2.default)('[data-arrow="right"]').click(function () {
+		var plate = (0, _jquery2.default)('[data-chamber="container"]');
 
-    // const deg = circle.attr("data-deg");
+		rotateChamberPlate(plate, "right");
+	});
 
-    // console.log("circle-deg: ", deg);
+	(0, _jquery2.default)('[data-chamber="circle"]').click(function (event) {
+		var thisCircle = (0, _jquery2.default)(event.target).parent();
+		var circleDeg = thisCircle.attr("data-deg");
+		var plate = (0, _jquery2.default)('[data-chamber="container"]');
 
-    rotateChambers(circleDeg);
-  });
+		rotateChambers(plate, circleDeg);
+	});
 
-  function rotateChambers(circleDeg) {
-    var plate = (0, _jquery2.default)(".chamberContainer");
-    var plateDeg = plate.attr("data-deg");
+	function rotateChamberPlate(plate, direction) {
+		var plateDeg = plate.attr("data-deg");
+		plateDeg = parseInt(plateDeg);
 
-    console.log("circle-deg: ", circleDeg);
-    console.log("container-deg: ", plateDeg);
+		// console.log("plateDeg", plateDeg);
 
-    circleDeg = parseInt(circleDeg);
-    plateDeg = parseInt(plateDeg);
+		plateDeg = direction === 'right' ? plateDeg += 60 : plateDeg -= 60;
+		plate.attr("data-deg", plateDeg);
 
-    if (circleDeg === plateDeg) {
-      return;
-    }
+		// console.log("plateDeg", plateDeg);
 
-    var rotateDeg = circleDeg;
-    var rotateDirection = 1;
+		var thisPlate = new Plate(plate);
+		thisPlate.rotate(plateDeg, 2);
+	}
 
-    if (circleDeg < 180) {
-      rotateDirection = -1;
-      rotateDeg *= rotateDirection;
-    } else {
-      rotateDeg = (360 - rotateDeg) * rotateDirection;
-    }
+	function rotateChambers(plate, circleDeg) {
+		var plateDeg = plate.attr("data-deg");
 
-    // let rotateDeg = Math.abs(circleDeg - plateDeg);
-    // let rotateDeg = circleDeg - plateDeg;
-    console.log("rotateDeg: ", rotateDeg);
+		circleDeg = parseInt(circleDeg);
+		plateDeg = parseInt(plateDeg);
 
-    // if (rotateDeg  === 0) {
-    // 	return;
-    // }
+		plate.attr("data-deg", circleDeg);
 
-    // let rotateDirection = 1;
+		if (circleDeg === plateDeg) {
+			return;
+		}
 
-    // if (rotateDeg > 0) {
-    // 	if (rotateDeg < 180) {
-    //  	rotateDirection = -1;
-    //  	rotateDeg *= rotateDirection;
-    //  }
-    //  else {
-    //  	rotateDeg = (360 - rotateDeg) * rotateDirection;
-    //  }
-    // }
-    // else {
-    // 	if (Math.abs(rotateDeg) < 180) {
-    //  	rotateDeg *= rotateDirection;
-    //  }
-    //  else {
-    //  	rotateDirection = -1;
-    // 		rotateDeg = (360 - rotateDeg) * rotateDirection;
-    // 	}
-    // }
+		var rotateDeg = circleDeg * -1;
 
-    console.log("modified rotateDeg: ", rotateDeg);
+		var thisPlate = new Plate(plate);
+		thisPlate.rotate(rotateDeg, 2);
+	}
 
-    // else if (deg <= 180) {
-    //  // If cicle is at 180' or less
-    //  deg = circleDeg * (-1);
-    // }
-    // else {
-    // 	// if cicle is at more than 180'
-    //  deg = 360 - circleDeg;
-    // }
+	var Plate = function () {
+		function Plate(plateElem) {
+			_classCallCheck(this, Plate);
 
-    // deg = parseInt(deg);
-    // deg += 60;
+			this.plate = plateElem;
+		}
 
-    var transformStyle = "rotate(" + rotateDeg + "deg)";
-    console.log("transformStyle", transformStyle);
+		_createClass(Plate, [{
+			key: 'rotate',
+			value: function rotate(rotateDeg, speed) {
+				var transformStyle = "rotate(" + rotateDeg + "deg)";
 
-    var p = 2;
+				// console.log("transformStyle", transformStyle);
 
-    plate.css('-webkit-transform', transformStyle);
-    plate.css('-moz-transform', transformStyle);
-    plate.css('transform', transformStyle);
-    plate.css('-webkit-transition', '-webkit-transform ' + p + 's');
-    plate.css('transition', 'transform ' + p + 's');
+				this.plate.css('-webkit-transform', transformStyle);
+				this.plate.css('-moz-transform', transformStyle);
+				this.plate.css('transform', transformStyle);
+				this.plate.css('-webkit-transition', '-webkit-transform ' + speed + 's');
+				this.plate.css('transition', 'transform ' + speed + 's');
+			}
+		}]);
 
-    plate.attr("data-deg", circleDeg);
-    // plate.attr("data-deg", plateDeg);
-  }
+		return Plate;
+	}();
 });
 
 },{"jquery":1}]},{},[2])
