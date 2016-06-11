@@ -4,16 +4,16 @@
   margin: 0 auto;
 
   @media all and (max-width:500px) {
-    display: flex;
-    flex-direction: column;
+    // display: flex;
+    // flex-direction: column;
   }
 }
 
 @media all and (max-width:500px) {
   /* Reorder items */
-  .siteContainer > * {
-    order:999;
-  }
+  // .siteContainer > * {
+  //   order:999;
+  // }
 }
 
 /* Flex Container */
@@ -22,9 +22,9 @@
 }
 
 @media all and (max-width:500px) {
-  .appBanner {
-    order:2;
-  }
+  // .appBanner {
+  //   order:2;
+  // }
 }
 
 /* Flex Item */
@@ -51,19 +51,19 @@
 }
 
 @media all and (max-width:500px) {
-  .navigation {
-    order: 1;
-  }
+  // .navigation {
+  //   order: 1;
+  // }
 
-  .layout__navMenu {
-    flex-basis: 100%;
-  }
+  // .layout__navMenu {
+  //   flex-basis: 100%;
+  // }
 
-  .layout__siteNav {
-    display: none;
-  }
+  // .layout__siteNav {
+  //   display: none;
+  // }
     
-  .layout__siteNav.open {
-    display:flex;
-  }
+  // .layout__siteNav.open {
+  //   display:flex;
+  // }
 }

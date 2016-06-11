@@ -9,6 +9,19 @@
 	  background: #000;
 	  color: white;
   }
+
+  .navigation__mobileNav {
+		// border: 1px solid Crimson;
+	  background: #000;
+	  text-align: right;
+
+  	a {
+  		display: inline-block;
+  		color: gold;
+  		margin: 0 15px;
+  		width: 30px;
+  	}
+  }
 }
 
 .nav__logo {
