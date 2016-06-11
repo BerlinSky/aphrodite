@@ -2,7 +2,17 @@ import $ from 'jquery';
 
 $(function () {
 
-	$('[data-arrow="left"]').click(function(event){
+	$('[data-mobileMenu="open"]').click(function() {
+  	const mobileMenu = $('[data-mobileMenu="panel"]');
+  	mobileMenu.fadeIn(1000);
+	})
+
+	$('[data-mobileMenu="close"]').click(function() {
+  	const mobileMenu = $('[data-mobileMenu="panel"]');
+  	mobileMenu.fadeOut(1000);
+	})
+
+	$('[data-arrow="left"]').click(function() {
 		const plate = $('[data-chamber="container"]');
 		
 		rotateChamberPlate(plate, "left");
@@ -14,7 +24,7 @@ $(function () {
 		rotateChamberPlate(plate, "right");
 	})
 
-  $('[data-chamber="circle"]').click(function(event) {
+  $('[data-chamber="circle"]').click(function(event){
   	const thisCircle = $( event.target ).parent();
     const circleDeg = thisCircle.attr("data-deg");
 		const plate = $('[data-chamber="container"]');

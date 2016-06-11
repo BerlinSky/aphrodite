@@ -9829,7 +9829,17 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
 (0, _jquery2.default)(function () {
 
-	(0, _jquery2.default)('[data-arrow="left"]').click(function (event) {
+	(0, _jquery2.default)('[data-mobileMenu="open"]').click(function () {
+		var mobileMenu = (0, _jquery2.default)('[data-mobileMenu="panel"]');
+		mobileMenu.fadeIn(1000);
+	});
+
+	(0, _jquery2.default)('[data-mobileMenu="close"]').click(function () {
+		var mobileMenu = (0, _jquery2.default)('[data-mobileMenu="panel"]');
+		mobileMenu.fadeOut(1000);
+	});
+
+	(0, _jquery2.default)('[data-arrow="left"]').click(function () {
 		var plate = (0, _jquery2.default)('[data-chamber="container"]');
 
 		rotateChamberPlate(plate, "left");
