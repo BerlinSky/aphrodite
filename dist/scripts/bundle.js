@@ -9829,6 +9829,28 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
 (0, _jquery2.default)(function () {
 
+	var windowWidth = (0, _jquery2.default)(window).width();
+	var wraper = (0, _jquery2.default)('[data-chamber="wraper"]');
+	var wraperWidth = wraper.width();
+
+	if (wraperWidth >= windowWidth) {
+		wraper.css("margin-left", -(wraperWidth - windowWidth) / 2);
+	} else {
+		wraper.css("margin-left", "auto");
+	}
+
+	(0, _jquery2.default)(window).resize(function () {
+		var windowWidth = (0, _jquery2.default)(window).width();
+		var wraper = (0, _jquery2.default)('[data-chamber="wraper"]');
+		var wraperWidth = wraper.width();
+
+		if (wraperWidth >= windowWidth) {
+			wraper.css("margin-left", -(wraperWidth - windowWidth) / 2);
+		} else {
+			wraper.css("margin-left", "auto");
+		}
+	});
+
 	(0, _jquery2.default)('[data-mobileMenu="open"]').click(function () {
 		var mobileMenu = (0, _jquery2.default)('[data-mobileMenu="panel"]');
 		mobileMenu.fadeIn(1000);

@@ -2,6 +2,30 @@ import $ from 'jquery';
 
 $(function () {
 
+const windowWidth = $( window ).width();
+  	const wraper = $('[data-chamber="wraper"]');
+  	const wraperWidth = wraper.width();
+
+	  if (wraperWidth >= windowWidth) {
+	  	wraper.css("margin-left", -(wraperWidth - windowWidth)/2);
+	  }
+	  else {
+	  	wraper.css("margin-left", "auto");
+	  }
+	  
+	$( window ).resize(function() {
+	  const windowWidth = $( window ).width();
+  	const wraper = $('[data-chamber="wraper"]');
+  	const wraperWidth = wraper.width();
+
+	  if (wraperWidth >= windowWidth) {
+	  	wraper.css("margin-left", -(wraperWidth - windowWidth)/2);
+	  }
+	  else {
+	  	wraper.css("margin-left", "auto");
+	  }
+	});
+
 	$('[data-mobileMenu="open"]').click(function() {
   	const mobileMenu = $('[data-mobileMenu="panel"]');
   	mobileMenu.fadeIn(1000);

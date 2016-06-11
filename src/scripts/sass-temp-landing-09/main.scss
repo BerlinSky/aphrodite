@@ -1,0 +1,42 @@
+@import "base/all-base";
+@import "layout/all-layouts";
+@import "modules/all-modules";  
+
+.icon::before {
+  display: inline-block;
+  margin-right: .5em;
+  font: normal normal normal 16px/1 FontAwesome;
+  font-size: inherit;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  transform: translate(0, 0);
+}
+
+img {
+  width:100%;
+}
+
+// states:
+.toggleNav {
+  display: none;
+}
+
+@media all and (max-width:500px) { 
+	.toggleNav {
+		display: block;
+	}
+}
+
+@media all and (max-width:500px) { 
+  /* Details */
+  .details {
+    order:3;
+  }
+
+  /* Sign Up */
+  .signup {
+    order:4;
+  }
+}
+
