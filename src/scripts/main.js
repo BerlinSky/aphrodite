@@ -1,4 +1,5 @@
 import $ from 'jquery';
+import RotationCalculator from './RotationCalculator';
 
 $(function () {
 
@@ -87,38 +88,39 @@ $(function () {
 
 	function rotateChambers(plate, circleDeg) {
     let plateDeg = plate.attr("data-deg");
-    
-		circleDeg = parseInt(circleDeg);
 
 		plateDeg = parseInt(plateDeg);
-    console.log("plateDeg", plateDeg);
+    // console.log("plateDeg", plateDeg);
 
-		let distanceLeft = 0;
-		let degreeLeft = circleDeg;
-		if (circleDeg < plateDeg) {
-			for (let i=0; i<plateDeg; i+=360) {
-				degreeLeft += 360;
-		    console.log("degreeLeft: inside the loop", degreeLeft);
-			}
-		}
-		distanceLeft = degreeLeft - plateDeg;
-		
+		circleDeg = parseInt(circleDeg);
+
+    const calculator = new RotationCalculator();
+    let distanceLeft = calculator.distantLeft(plateDeg, circleDeg);
+
     console.log("distanceLeft", distanceLeft);
 
 		let distanceRight = 0;
 		let degreeRight = circleDeg;
 
 		if (circleDeg > plateDeg) {
-			degreeRight = degreeRight -360;
+			// degreeRight = degreeRight -360;
+
+			// for (let i=0; i<plateDeg; i-=360) {
+
+			// 	degreeRight -= 360;
+
+		 //    console.log("degreeRight: inside the loop", degreeRight);
+			// }
+
 	    console.log("degreeRight: On the right", degreeRight);
 
 			distanceRight = degreeRight - plateDeg;
 		}
-		else {
-	    console.log("degreeRight: On the right #1", degreeRight);
-			degreeRight = plateDeg + degreeRight;
-	    console.log("degreeRight: On the right #2", degreeRight);
-		}
+		// else {
+	 //    console.log("degreeRight: On the right #1", degreeRight);
+		// 	degreeRight = plateDeg + degreeRight;
+	 //    console.log("degreeRight: On the right #2", degreeRight);
+		// }
 
 
     console.log("distanceRight", distanceRight);
@@ -145,6 +147,8 @@ $(function () {
 
 		thisPlate.rotate(rotateDeg, 2);
 	}
+
+
 
 	function XXXrotateChambers (plate, circleDeg) {
     let plateDeg = plate.attr("data-deg");
