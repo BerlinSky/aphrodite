@@ -9919,22 +9919,31 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 		console.log("plateDeg", plateDeg);
 
 		var distanceLeft = 0;
+		var degreeLeft = circleDeg;
 		if (circleDeg < plateDeg) {
 			for (var i = 0; i < plateDeg; i += 360) {
-				circleDeg += 360;
-				console.log("circleDeg: inside the loop", circleDeg);
+				degreeLeft += 360;
+				console.log("degreeLeft: inside the loop", degreeLeft);
 			}
 		}
-		distanceLeft = circleDeg - plateDeg;
+		distanceLeft = degreeLeft - plateDeg;
 
 		console.log("distanceLeft", distanceLeft);
 
 		var distanceRight = 0;
+		var degreeRight = circleDeg;
+
 		if (circleDeg > plateDeg) {
-			distanceRight = circleDeg - (plateDeg + 360);
+			degreeRight = degreeRight - 360;
+			console.log("degreeRight: On the right", degreeRight);
+
+			distanceRight = degreeRight - plateDeg;
 		} else {
-			distanceRight = plateDeg - circleDeg;
+			console.log("degreeRight: On the right #1", degreeRight);
+			degreeRight = plateDeg + degreeRight;
+			console.log("degreeRight: On the right #2", degreeRight);
 		}
+
 		console.log("distanceRight", distanceRight);
 
 		var routeLeft = plateDeg + distanceLeft;

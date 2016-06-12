@@ -94,27 +94,38 @@ $(function () {
     console.log("plateDeg", plateDeg);
 
 		let distanceLeft = 0;
+		let degreeLeft = circleDeg;
 		if (circleDeg < plateDeg) {
 			for (let i=0; i<plateDeg; i+=360) {
-				circleDeg += 360;
-		    console.log("circleDeg: inside the loop", circleDeg);
+				degreeLeft += 360;
+		    console.log("degreeLeft: inside the loop", degreeLeft);
 			}
 		}
-		distanceLeft = circleDeg - plateDeg;
+		distanceLeft = degreeLeft - plateDeg;
 		
     console.log("distanceLeft", distanceLeft);
 
 		let distanceRight = 0;
+		let degreeRight = circleDeg;
+
 		if (circleDeg > plateDeg) {
-			distanceRight = circleDeg - (plateDeg + 360);
+			degreeRight = degreeRight -360;
+	    console.log("degreeRight: On the right", degreeRight);
+
+			distanceRight = degreeRight - plateDeg;
 		}
 		else {
-			distanceRight = plateDeg - circleDeg;
+	    console.log("degreeRight: On the right #1", degreeRight);
+			degreeRight = plateDeg + degreeRight;
+	    console.log("degreeRight: On the right #2", degreeRight);
 		}
+
+
     console.log("distanceRight", distanceRight);
 
     let routeLeft = plateDeg + distanceLeft;
     console.log("routeLeft", routeLeft);
+
 
 		let routeRight = plateDeg + distanceRight;
     console.log("routeRight", routeRight);
