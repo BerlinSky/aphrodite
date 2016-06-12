@@ -2,7 +2,7 @@ import $ from 'jquery';
 
 $(function () {
 
-const windowWidth = $( window ).width();
+		const windowWidth = $( window ).width();
   	const wraper = $('[data-chamber="wraper"]');
   	const wraperWidth = wraper.width();
 
@@ -89,6 +89,56 @@ const windowWidth = $( window ).width();
     let plateDeg = plate.attr("data-deg");
     
 		circleDeg = parseInt(circleDeg);
+
+		plateDeg = parseInt(plateDeg);
+    console.log("plateDeg", plateDeg);
+
+		let distanceLeft = 0;
+		if (circleDeg < plateDeg) {
+			for (let i=0; i<plateDeg; i+=360) {
+				circleDeg += 360;
+		    console.log("circleDeg: inside the loop", circleDeg);
+			}
+		}
+		distanceLeft = circleDeg - plateDeg;
+		
+    console.log("distanceLeft", distanceLeft);
+
+		let distanceRight = 0;
+		if (circleDeg > plateDeg) {
+			distanceRight = circleDeg - (plateDeg + 360);
+		}
+		else {
+			distanceRight = plateDeg - circleDeg;
+		}
+    console.log("distanceRight", distanceRight);
+
+    let routeLeft = plateDeg + distanceLeft;
+    console.log("routeLeft", routeLeft);
+
+		let routeRight = plateDeg + distanceRight;
+    console.log("routeRight", routeRight);
+
+		let rotateDeg = routeRight;
+		if (Math.abs(distanceLeft) < Math.abs(distanceRight)) {
+			rotateDeg = routeLeft;
+		}
+
+    plate.attr("data-deg", rotateDeg);
+
+		const thisPlate = new Plate(plate);
+
+    console.log("circleDeg", circleDeg);
+
+    console.log("rotateDeg", rotateDeg);
+
+		thisPlate.rotate(rotateDeg, 2);
+	}
+
+	function XXXrotateChambers (plate, circleDeg) {
+    let plateDeg = plate.attr("data-deg");
+    
+		circleDeg = parseInt(circleDeg);
 		plateDeg = parseInt(plateDeg);
 
     plate.attr("data-deg", circleDeg);
@@ -124,6 +174,8 @@ const windowWidth = $( window ).width();
 
 		rotate(rotateDeg, speed) {
 			const transformStyle = "rotate(" + rotateDeg + "deg)";
+
+	    console.log("transformStyle", transformStyle);
 
 			this._hideArrow();
 

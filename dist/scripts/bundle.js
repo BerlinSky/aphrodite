@@ -9914,6 +9914,55 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 		var plateDeg = plate.attr("data-deg");
 
 		circleDeg = parseInt(circleDeg);
+
+		plateDeg = parseInt(plateDeg);
+		console.log("plateDeg", plateDeg);
+
+		var distanceLeft = 0;
+		if (circleDeg < plateDeg) {
+			for (var i = 0; i < plateDeg; i += 360) {
+				circleDeg += 360;
+				console.log("circleDeg: inside the loop", circleDeg);
+			}
+		}
+		distanceLeft = circleDeg - plateDeg;
+
+		console.log("distanceLeft", distanceLeft);
+
+		var distanceRight = 0;
+		if (circleDeg > plateDeg) {
+			distanceRight = circleDeg - (plateDeg + 360);
+		} else {
+			distanceRight = plateDeg - circleDeg;
+		}
+		console.log("distanceRight", distanceRight);
+
+		var routeLeft = plateDeg + distanceLeft;
+		console.log("routeLeft", routeLeft);
+
+		var routeRight = plateDeg + distanceRight;
+		console.log("routeRight", routeRight);
+
+		var rotateDeg = routeRight;
+		if (Math.abs(distanceLeft) < Math.abs(distanceRight)) {
+			rotateDeg = routeLeft;
+		}
+
+		plate.attr("data-deg", rotateDeg);
+
+		var thisPlate = new Plate(plate);
+
+		console.log("circleDeg", circleDeg);
+
+		console.log("rotateDeg", rotateDeg);
+
+		thisPlate.rotate(rotateDeg, 2);
+	}
+
+	function XXXrotateChambers(plate, circleDeg) {
+		var plateDeg = plate.attr("data-deg");
+
+		circleDeg = parseInt(circleDeg);
 		plateDeg = parseInt(plateDeg);
 
 		plate.attr("data-deg", circleDeg);
@@ -9955,6 +10004,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 			key: 'rotate',
 			value: function rotate(rotateDeg, speed) {
 				var transformStyle = "rotate(" + rotateDeg + "deg)";
+
+				console.log("transformStyle", transformStyle);
 
 				this._hideArrow();
 
