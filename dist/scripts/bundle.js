@@ -9818,7 +9818,7 @@ return jQuery;
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
-	value: true
+  value: true
 });
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
@@ -9826,62 +9826,57 @@ var _createClass = function () { function defineProperties(target, props) { for 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 var RotationCalculator = function () {
-	function RotationCalculator() {
-		_classCallCheck(this, RotationCalculator);
-	}
+  function RotationCalculator() {
+    _classCallCheck(this, RotationCalculator);
+  }
 
-	_createClass(RotationCalculator, [{
-		key: "distantLeft",
-		value: function distantLeft(platePos, circlePos) {
-			console.log("RotationCalculator", "distantLeft");
+  _createClass(RotationCalculator, [{
+    key: "distantLeft",
+    value: function distantLeft(platePos, circlePos) {
+      // console.log("platePos", platePos);
+      // console.log("circlePos", circlePos);
 
-			console.log("platePos", platePos);
-			console.log("circlePos", circlePos);
+      var factor = 0;
+      for (var i = 0; i <= Math.abs(platePos); i += 360) {
+        factor++;
+      }
+      // console.log("factor on the left", factor);
 
-			var degreeLeft = circlePos;
+      var distanceLeft = 0;
 
-			if (circlePos < platePos) {
-				for (var i = 0; i < platePos; i += 360) {
-					degreeLeft += 360;
-					console.log("degreeLeft: inside the loop", degreeLeft);
-				}
-			}
-			var distanceLeft = degreeLeft - platePos;
-			console.log("distanceLeft", distanceLeft);
+      if (platePos <= circlePos) {
+        distanceLeft = circlePos - platePos;
+      } else {
+        distanceLeft = circlePos + 360 * factor - platePos;
+      }
+      // console.log("distanceLeft", distanceLeft);
 
-			return distanceLeft;
-		}
-	}, {
-		key: "distantRight",
-		value: function distantRight(platePos, circlePos) {
-			console.log("RotationCalculator", "distantRight");
+      return distanceLeft;
+    }
+  }, {
+    key: "distantRight",
+    value: function distantRight(platePos, circlePos) {
+      var factor = 0;
+      for (var i = 0; i <= Math.abs(platePos); i += 360) {
+        factor++;
+      }
+      // console.log("factor", factor);
 
-			console.log("platePos", platePos);
-			console.log("circlePos", circlePos);
+      var distanceRight = 0;
+      if (platePos === 0) {
+        distanceRight = 360 - circlePos;
+      } else if (platePos < circlePos) {
+        distanceRight = platePos + 360 * factor - circlePos;
+      } else {
+        distanceRight = platePos - 360 * (factor - 1) - circlePos;
+      }
+      // console.log("distanceRight", distanceRight);
 
-			var distanceRight = platePos + 360 - circlePos;
-			console.log("distanceRight", distanceRight);
+      return distanceRight;
+    }
+  }]);
 
-			return distanceRight;
-
-			// if (circleDeg > plateDeg) {
-			// degreeRight = degreeRight -360;
-
-			// for (let i=0; i<plateDeg; i-=360) {
-
-			// 	degreeRight -= 360;
-
-			//    console.log("degreeRight: inside the loop", degreeRight);
-			// }
-
-			//    console.log("degreeRight: On the right", degreeRight);
-
-			// 	distanceRight = degreeRight - plateDeg;
-			// }
-		}
-	}]);
-
-	return RotationCalculator;
+  return RotationCalculator;
 }();
 
 exports.default = RotationCalculator;
@@ -10002,7 +9997,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 		console.log("routeRight", routeRight);
 
 		var rotateDeg = routeRight;
-		if (Math.abs(distanceLeft) < Math.abs(distanceRight)) {
+		if (Math.abs(distanceLeft) <= Math.abs(distanceRight)) {
 			rotateDeg = routeLeft;
 		}
 

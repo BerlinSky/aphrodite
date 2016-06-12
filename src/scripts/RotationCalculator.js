@@ -1,48 +1,46 @@
 	export default class RotationCalculator {
 	 	distantLeft(platePos, circlePos) {
-			console.log("RotationCalculator", "distantLeft");
+	    // console.log("platePos", platePos);
+	    // console.log("circlePos", circlePos);
 
-	    console.log("platePos", platePos);
-	    console.log("circlePos", circlePos);
+			let factor = 0;
+      for (let i=0; i<=Math.abs(platePos); i+=360) {
+      	factor ++;
+      }
+      // console.log("factor on the left", factor);
 
-  		let degreeLeft = circlePos;
+  		let distanceLeft = 0;
 
-  		if (circlePos < platePos) {
-  			for (let i=0; i<platePos; i+=360) {
-  				degreeLeft += 360;
-  		    console.log("degreeLeft: inside the loop", degreeLeft);
-  			}
+			if (platePos <= circlePos) {
+  			distanceLeft = circlePos - platePos;
   		}
-  		const distanceLeft = degreeLeft - platePos;
-      console.log("distanceLeft", distanceLeft);
+  		else {
+  			distanceLeft = circlePos + 360 * factor - platePos;
+  		}
+      // console.log("distanceLeft", distanceLeft);
 
       return distanceLeft;
 		}
 
 		distantRight(platePos, circlePos) {
-			console.log("RotationCalculator", "distantRight");
+      let factor = 0;
+      for (let i=0; i<=Math.abs(platePos); i+=360) {
+      	factor ++;
+      }
+      // console.log("factor", factor);
 
-      console.log("platePos", platePos);
-      console.log("circlePos", circlePos);
-
-			const distanceRight = platePos + 360 - circlePos;
-      console.log("distanceRight", distanceRight);
+			let distanceRight = 0;
+      if (platePos === 0) {
+				distanceRight = 360 - circlePos;
+      }
+      else if (platePos < circlePos) {
+				distanceRight = platePos + 360 * factor - circlePos;
+      }
+      else {
+				distanceRight = platePos - 360 * (factor -1) - circlePos;
+      }
+      // console.log("distanceRight", distanceRight);
 
       return distanceRight;
-      
-			// if (circleDeg > plateDeg) {
-				// degreeRight = degreeRight -360;
-
-				// for (let i=0; i<plateDeg; i-=360) {
-
-				// 	degreeRight -= 360;
-
-			 //    console.log("degreeRight: inside the loop", degreeRight);
-				// }
-
-		 //    console.log("degreeRight: On the right", degreeRight);
-
-			// 	distanceRight = degreeRight - plateDeg;
-			// }
 		}
 	}

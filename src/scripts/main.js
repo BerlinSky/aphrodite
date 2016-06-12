@@ -102,7 +102,7 @@ $(function () {
     console.log("routeRight", routeRight);
 
 		let rotateDeg = routeRight;
-		if (Math.abs(distanceLeft) < Math.abs(distanceRight)) {
+		if (Math.abs(distanceLeft) <= Math.abs(distanceRight)) {
 			rotateDeg = routeLeft;
 		}
 
@@ -115,8 +115,6 @@ $(function () {
 
 		thisPlate.rotate(rotateDeg, 2);
 	}
-
-
 
 	function XXXrotateChambers (plate, circleDeg) {
     let plateDeg = plate.attr("data-deg");
