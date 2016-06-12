@@ -88,48 +88,17 @@ $(function () {
 
 	function rotateChambers(plate, circleDeg) {
     let plateDeg = plate.attr("data-deg");
-
 		plateDeg = parseInt(plateDeg);
-    // console.log("plateDeg", plateDeg);
-
 		circleDeg = parseInt(circleDeg);
 
     const calculator = new RotationCalculator();
     let distanceLeft = calculator.distantLeft(plateDeg, circleDeg);
-
-    console.log("distanceLeft", distanceLeft);
-
-		let distanceRight = 0;
-		let degreeRight = circleDeg;
-
-		if (circleDeg > plateDeg) {
-			// degreeRight = degreeRight -360;
-
-			// for (let i=0; i<plateDeg; i-=360) {
-
-			// 	degreeRight -= 360;
-
-		 //    console.log("degreeRight: inside the loop", degreeRight);
-			// }
-
-	    console.log("degreeRight: On the right", degreeRight);
-
-			distanceRight = degreeRight - plateDeg;
-		}
-		// else {
-	 //    console.log("degreeRight: On the right #1", degreeRight);
-		// 	degreeRight = plateDeg + degreeRight;
-	 //    console.log("degreeRight: On the right #2", degreeRight);
-		// }
-
-
-    console.log("distanceRight", distanceRight);
+    let distanceRight = calculator.distantRight(plateDeg, circleDeg);
 
     let routeLeft = plateDeg + distanceLeft;
     console.log("routeLeft", routeLeft);
 
-
-		let routeRight = plateDeg + distanceRight;
+		let routeRight = plateDeg - distanceRight;
     console.log("routeRight", routeRight);
 
 		let rotateDeg = routeRight;
@@ -142,7 +111,6 @@ $(function () {
 		const thisPlate = new Plate(plate);
 
     console.log("circleDeg", circleDeg);
-
     console.log("rotateDeg", rotateDeg);
 
 		thisPlate.rotate(rotateDeg, 2);

@@ -9818,7 +9818,7 @@ return jQuery;
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
-  value: true
+	value: true
 });
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
@@ -9826,39 +9826,62 @@ var _createClass = function () { function defineProperties(target, props) { for 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 var RotationCalculator = function () {
-  function RotationCalculator() {
-    _classCallCheck(this, RotationCalculator);
-  }
+	function RotationCalculator() {
+		_classCallCheck(this, RotationCalculator);
+	}
 
-  _createClass(RotationCalculator, [{
-    key: "distantLeft",
-    value: function distantLeft(platePos, circlePos) {
-      console.log("RotationCalculator", "distantLeft");
+	_createClass(RotationCalculator, [{
+		key: "distantLeft",
+		value: function distantLeft(platePos, circlePos) {
+			console.log("RotationCalculator", "distantLeft");
 
-      console.log("platePos", platePos);
-      console.log("circlePos", circlePos);
+			console.log("platePos", platePos);
+			console.log("circlePos", circlePos);
 
-      var degreeLeft = circlePos;
+			var degreeLeft = circlePos;
 
-      if (circlePos < platePos) {
-        for (var i = 0; i < plateDeg; i += 360) {
-          degreeLeft += 360;
-          console.log("degreeLeft: inside the loop", degreeLeft);
-        }
-      }
-      var distanceLeft = degreeLeft - platePos;
-      console.log("distanceLeft", distanceLeft);
+			if (circlePos < platePos) {
+				for (var i = 0; i < platePos; i += 360) {
+					degreeLeft += 360;
+					console.log("degreeLeft: inside the loop", degreeLeft);
+				}
+			}
+			var distanceLeft = degreeLeft - platePos;
+			console.log("distanceLeft", distanceLeft);
 
-      return distanceLeft;
-    }
-  }, {
-    key: "distantRight",
-    value: function distantRight(platePos, circlePos) {
-      console.log("RotationCalculator", "distantRight");
-    }
-  }]);
+			return distanceLeft;
+		}
+	}, {
+		key: "distantRight",
+		value: function distantRight(platePos, circlePos) {
+			console.log("RotationCalculator", "distantRight");
 
-  return RotationCalculator;
+			console.log("platePos", platePos);
+			console.log("circlePos", circlePos);
+
+			var distanceRight = platePos + 360 - circlePos;
+			console.log("distanceRight", distanceRight);
+
+			return distanceRight;
+
+			// if (circleDeg > plateDeg) {
+			// degreeRight = degreeRight -360;
+
+			// for (let i=0; i<plateDeg; i-=360) {
+
+			// 	degreeRight -= 360;
+
+			//    console.log("degreeRight: inside the loop", degreeRight);
+			// }
+
+			//    console.log("degreeRight: On the right", degreeRight);
+
+			// 	distanceRight = degreeRight - plateDeg;
+			// }
+		}
+	}]);
+
+	return RotationCalculator;
 }();
 
 exports.default = RotationCalculator;
@@ -9965,46 +9988,17 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
 	function rotateChambers(plate, circleDeg) {
 		var plateDeg = plate.attr("data-deg");
-
 		plateDeg = parseInt(plateDeg);
-		// console.log("plateDeg", plateDeg);
-
 		circleDeg = parseInt(circleDeg);
 
 		var calculator = new _RotationCalculator2.default();
 		var distanceLeft = calculator.distantLeft(plateDeg, circleDeg);
-
-		console.log("distanceLeft", distanceLeft);
-
-		var distanceRight = 0;
-		var degreeRight = circleDeg;
-
-		if (circleDeg > plateDeg) {
-			// degreeRight = degreeRight -360;
-
-			// for (let i=0; i<plateDeg; i-=360) {
-
-			// 	degreeRight -= 360;
-
-			//    console.log("degreeRight: inside the loop", degreeRight);
-			// }
-
-			console.log("degreeRight: On the right", degreeRight);
-
-			distanceRight = degreeRight - plateDeg;
-		}
-		// else {
-		//    console.log("degreeRight: On the right #1", degreeRight);
-		// 	degreeRight = plateDeg + degreeRight;
-		//    console.log("degreeRight: On the right #2", degreeRight);
-		// }
-
-		console.log("distanceRight", distanceRight);
+		var distanceRight = calculator.distantRight(plateDeg, circleDeg);
 
 		var routeLeft = plateDeg + distanceLeft;
 		console.log("routeLeft", routeLeft);
 
-		var routeRight = plateDeg + distanceRight;
+		var routeRight = plateDeg - distanceRight;
 		console.log("routeRight", routeRight);
 
 		var rotateDeg = routeRight;
@@ -10017,7 +10011,6 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 		var thisPlate = new Plate(plate);
 
 		console.log("circleDeg", circleDeg);
-
 		console.log("rotateDeg", rotateDeg);
 
 		thisPlate.rotate(rotateDeg, 2);
