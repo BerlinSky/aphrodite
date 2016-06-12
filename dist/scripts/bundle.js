@@ -9899,7 +9899,6 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 (0, _jquery2.default)(function () {
-
 	var windowWidth = (0, _jquery2.default)(window).width();
 	var wraper = (0, _jquery2.default)('[data-chamber="wraper"]');
 	var wraperWidth = wraper.width();
@@ -10008,24 +10007,6 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 		console.log("circleDeg", circleDeg);
 		console.log("rotateDeg", rotateDeg);
 
-		thisPlate.rotate(rotateDeg, 2);
-	}
-
-	function XXXrotateChambers(plate, circleDeg) {
-		var plateDeg = plate.attr("data-deg");
-
-		circleDeg = parseInt(circleDeg);
-		plateDeg = parseInt(plateDeg);
-
-		plate.attr("data-deg", circleDeg);
-
-		if (circleDeg === plateDeg) {
-			return;
-		}
-
-		var rotateDeg = circleDeg * -1;
-
-		var thisPlate = new Plate(plate);
 		thisPlate.rotate(rotateDeg, 2);
 	}
 

@@ -2,17 +2,16 @@ import $ from 'jquery';
 import RotationCalculator from './RotationCalculator';
 
 $(function () {
+	const windowWidth = $( window ).width();
+	const wraper = $('[data-chamber="wraper"]');
+	const wraperWidth = wraper.width();
 
-		const windowWidth = $( window ).width();
-  	const wraper = $('[data-chamber="wraper"]');
-  	const wraperWidth = wraper.width();
-
-	  if (wraperWidth >= windowWidth) {
-	  	wraper.css("margin-left", -(wraperWidth - windowWidth)/2);
-	  }
-	  else {
-	  	wraper.css("margin-left", "auto");
-	  }
+  if (wraperWidth >= windowWidth) {
+  	wraper.css("margin-left", -(wraperWidth - windowWidth)/2);
+  }
+  else {
+  	wraper.css("margin-left", "auto");
+  }
 	  
 	$( window ).resize(function() {
 	  const windowWidth = $( window ).width();
@@ -113,24 +112,6 @@ $(function () {
     console.log("circleDeg", circleDeg);
     console.log("rotateDeg", rotateDeg);
 
-		thisPlate.rotate(rotateDeg, 2);
-	}
-
-	function XXXrotateChambers (plate, circleDeg) {
-    let plateDeg = plate.attr("data-deg");
-    
-		circleDeg = parseInt(circleDeg);
-		plateDeg = parseInt(plateDeg);
-
-    plate.attr("data-deg", circleDeg);
-
-		if (circleDeg  === plateDeg) {
-			return;
-		}
-
-		const rotateDeg = circleDeg * (-1);
-
-		const thisPlate = new Plate(plate);
 		thisPlate.rotate(rotateDeg, 2);
 	}
 

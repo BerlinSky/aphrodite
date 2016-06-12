@@ -49,8 +49,8 @@ $chamber-container-width: 1170px;
 	.chamberSliderNav {
 		position: absolute;
 		top: 0;
-		// left: 0;
-		left: -300px;
+		left: 0;
+		// left: -300px;
 		z-index: 20;
 
 		&__arrow {
