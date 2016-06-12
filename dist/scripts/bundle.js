@@ -9815,6 +9815,70 @@ return jQuery;
 }));
 
 },{}],2:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _jquery = require('jquery');
+
+var _jquery2 = _interopRequireDefault(_jquery);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+var Plate = function () {
+	function Plate(plateElem) {
+		_classCallCheck(this, Plate);
+
+		this.plate = plateElem;
+		this.arrowLeft = (0, _jquery2.default)('[data-arrow="left"]');
+		this.arrowRight = (0, _jquery2.default)('[data-arrow="right"]');
+	}
+
+	_createClass(Plate, [{
+		key: '_hideArrow',
+		value: function _hideArrow() {
+			// this.arrowLeft.fadeOut();
+			this.arrowLeft.css("display", "none");
+			// this.arrowRight.fadeOut();
+			this.arrowRight.css("display", "none");
+		}
+	}, {
+		key: '_showArrow',
+		value: function _showArrow() {
+			this.arrowLeft.fadeIn(3000);
+			this.arrowRight.fadeIn(3000);
+		}
+	}, {
+		key: 'rotate',
+		value: function rotate(rotateDeg, speed) {
+			var transformStyle = "rotate(" + rotateDeg + "deg)";
+
+			console.log("transformStyle", transformStyle);
+
+			this._hideArrow();
+
+			this.plate.css('-webkit-transform', transformStyle);
+			this.plate.css('-moz-transform', transformStyle);
+			this.plate.css('transform', transformStyle);
+			this.plate.css('-webkit-transition', '-webkit-transform ' + speed + 's');
+			this.plate.css('transition', 'transform ' + speed + 's');
+
+			this._showArrow();
+		}
+	}]);
+
+	return Plate;
+}();
+
+exports.default = Plate;
+
+},{"jquery":1}],3:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -9881,10 +9945,8 @@ var RotationCalculator = function () {
 
 exports.default = RotationCalculator;
 
-},{}],3:[function(require,module,exports){
+},{}],4:[function(require,module,exports){
 'use strict';
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 var _jquery = require('jquery');
 
@@ -9894,9 +9956,11 @@ var _RotationCalculator = require('./RotationCalculator');
 
 var _RotationCalculator2 = _interopRequireDefault(_RotationCalculator);
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+var _Plate = require('./Plate');
 
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+var _Plate2 = _interopRequireDefault(_Plate);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 (0, _jquery2.default)(function () {
 	var windowWidth = (0, _jquery2.default)(window).width();
@@ -9976,7 +10040,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
 		// console.log("plateDeg", plateDeg);
 
-		var thisPlate = new Plate(plate);
+		var thisPlate = new _Plate2.default(plate);
 		thisPlate.rotate(plateDeg, 2);
 	}
 
@@ -10002,7 +10066,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
 		plate.attr("data-deg", rotateDeg);
 
-		var thisPlate = new Plate(plate);
+		var thisPlate = new _Plate2.default(plate);
 
 		console.log("circleDeg", circleDeg);
 		console.log("rotateDeg", rotateDeg);
@@ -10010,51 +10074,42 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 		thisPlate.rotate(rotateDeg, 2);
 	}
 
-	var Plate = function () {
-		function Plate(plateElem) {
-			_classCallCheck(this, Plate);
+	// class Plate {
+	// 	constructor(plateElem) {
+	// 		this.plate = plateElem;
+	// 		this.arrowLeft = $('[data-arrow="left"]');
+	// 		this.arrowRight = $('[data-arrow="right"]');
+	// 	}
 
-			this.plate = plateElem;
-			this.arrowLeft = (0, _jquery2.default)('[data-arrow="left"]');
-			this.arrowRight = (0, _jquery2.default)('[data-arrow="right"]');
-		}
+	// 	_hideArrow() {
+	// 		// this.arrowLeft.fadeOut();
+	// 		this.arrowLeft.css("display", "none");
+	// 		// this.arrowRight.fadeOut();
+	// 		this.arrowRight.css("display", "none");
+	// 	}
 
-		_createClass(Plate, [{
-			key: '_hideArrow',
-			value: function _hideArrow() {
-				// this.arrowLeft.fadeOut();
-				this.arrowLeft.css("display", "none");
-				// this.arrowRight.fadeOut();
-				this.arrowRight.css("display", "none");
-			}
-		}, {
-			key: '_showArrow',
-			value: function _showArrow() {
-				this.arrowLeft.fadeIn(3000);
-				this.arrowRight.fadeIn(3000);
-			}
-		}, {
-			key: 'rotate',
-			value: function rotate(rotateDeg, speed) {
-				var transformStyle = "rotate(" + rotateDeg + "deg)";
+	// 	_showArrow() {
+	// 		this.arrowLeft.fadeIn(3000);
+	// 		this.arrowRight.fadeIn(3000);
+	// 	}
 
-				console.log("transformStyle", transformStyle);
+	// 	rotate(rotateDeg, speed) {
+	// 		const transformStyle = "rotate(" + rotateDeg + "deg)";
 
-				this._hideArrow();
+	//     console.log("transformStyle", transformStyle);
 
-				this.plate.css('-webkit-transform', transformStyle);
-				this.plate.css('-moz-transform', transformStyle);
-				this.plate.css('transform', transformStyle);
-				this.plate.css('-webkit-transition', '-webkit-transform ' + speed + 's');
-				this.plate.css('transition', 'transform ' + speed + 's');
+	// 		this._hideArrow();
 
-				this._showArrow();
-			}
-		}]);
+	// 		this.plate.css('-webkit-transform', transformStyle);
+	// 		this.plate.css('-moz-transform', transformStyle);
+	// 		this.plate.css('transform', transformStyle);
+	// 		this.plate.css('-webkit-transition', '-webkit-transform ' + speed + 's');
+	// 		this.plate.css('transition', 'transform ' + speed + 's');
 
-		return Plate;
-	}();
+	// 		this._showArrow();
+	// 	}
+	// }
 });
 
-},{"./RotationCalculator":2,"jquery":1}]},{},[3])
+},{"./Plate":2,"./RotationCalculator":3,"jquery":1}]},{},[4])
 //# sourceMappingURL=bundle.js.map
