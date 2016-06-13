@@ -29,12 +29,23 @@ $(function () {
 
 	$('[data-mobileMenu="open"]').click(function() {
   	const mobileMenu = $('[data-mobileMenu="panel"]');
-  	mobileMenu.fadeIn(1000);
+	  const windowWidth = $( window ).width();
+
+  	mobileMenu.css({left: windowWidth});
+  	mobileMenu.removeClass('magictime slideRight');
+  	mobileMenu.addClass('magictime slideLeft');
+
+  	// mobileMenu.fadeIn(1000);
 	})
 
 	$('[data-mobileMenu="close"]').click(function() {
   	const mobileMenu = $('[data-mobileMenu="panel"]');
-  	mobileMenu.fadeOut(1000);
+
+  	mobileMenu.removeClass('magictime slideLef');
+  	mobileMenu.addClass('magictime slideRight');
+  	mobileMenu.css({left: -1000});
+  	
+  	// mobileMenu.fadeOut(1000);
 	})
 
 	$('[data-arrow="left"]').click(function() {
