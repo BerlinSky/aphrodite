@@ -9989,9 +9989,12 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 		var mobileMenu = (0, _jquery2.default)('[data-mobileMenu="panel"]');
 		var windowWidth = (0, _jquery2.default)(window).width();
 
-		mobileMenu.css({ left: windowWidth });
-		mobileMenu.removeClass('magictime slideRight');
-		mobileMenu.addClass('magictime slideLeft');
+		// mobileMenu.css({right: 0});
+		mobileMenu.show();
+		// mobileMenu.css({right: 0});
+
+		// mobileMenu.removeClass('magictime slideRight');
+		// mobileMenu.addClass('magictime slideLeft');
 
 		// mobileMenu.fadeIn(1000);
 	});
@@ -9999,9 +10002,10 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 	(0, _jquery2.default)('[data-mobileMenu="close"]').click(function () {
 		var mobileMenu = (0, _jquery2.default)('[data-mobileMenu="panel"]');
 
-		mobileMenu.removeClass('magictime slideLef');
-		mobileMenu.addClass('magictime slideRight');
-		mobileMenu.css({ left: -1000 });
+		// mobileMenu.removeClass('magictime slideLeft');
+		// mobileMenu.addClass('magictime slideRight');
+		// mobileMenu.css({left: -1000});
+		mobileMenu.hide();
 
 		// mobileMenu.fadeOut(1000);
 	});
