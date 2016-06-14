@@ -10023,6 +10023,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 	});
 
 	(0, _jquery2.default)('[data-chamber="circle"]').click(function (event) {
+		var thisImage = (0, _jquery2.default)(event.target);
 		var thisCircle = (0, _jquery2.default)(event.target).parent();
 		var circleDeg = thisCircle.attr("data-deg");
 		var plate = (0, _jquery2.default)('[data-chamber="container"]');
@@ -10031,6 +10032,17 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 		var title = JSON.parse(newsJsonData).title;
 		var teaser = JSON.parse(newsJsonData).teaser;
 		var link = JSON.parse(newsJsonData).link;
+
+		// TODO: Move this section to a separate function
+		var imageList = (0, _jquery2.default)('[data-chamber="image"]');
+		console.log('imageList', imageList);
+		_jquery2.default.each(imageList, function (index, image) {
+			console.log(image);
+			(0, _jquery2.default)(image).css({ 'opacity': 0.5 });
+		});
+		// Move this section to a separate function
+
+		thisImage.css({ 'opacity': 1 });
 
 		var newsTitle = (0, _jquery2.default)('[data-news="title"]');
 		newsTitle.html(title);

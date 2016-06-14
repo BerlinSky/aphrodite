@@ -65,6 +65,7 @@ $(function () {
 	})
 
   $('[data-chamber="circle"]').click(function(event){
+  	const thisImage = $( event.target );
   	const thisCircle = $( event.target ).parent();
     const circleDeg = thisCircle.attr("data-deg");
 		const plate = $('[data-chamber="container"]');
@@ -73,6 +74,17 @@ $(function () {
     const title = JSON.parse(newsJsonData).title;
     const teaser = JSON.parse(newsJsonData).teaser;
     const link = JSON.parse(newsJsonData).link;
+
+    // TODO: Move this section to a separate function
+  	const imageList = $( '[data-chamber="image"]');
+  	console.log('imageList',imageList);
+  	$.each(imageList, function (index, image) {
+		  console.log(image);
+		  $(image).css({'opacity': 0.5});
+		});
+    // Move this section to a separate function
+
+    thisImage.css({'opacity': 1});
 
 		const newsTitle = $('[data-news="title"]');
 		newsTitle.html(title);

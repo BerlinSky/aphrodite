@@ -22,8 +22,9 @@
 
   // copyright etc. section:
   &__section__02 {
-    // background: crimson;
+    background: crimson;
     flex: 2 3 100%;
+    justify-content: center;
     align-items: center; 
   }  
 
@@ -36,21 +37,21 @@
   }
 
   &__item:nth-of-type(1) {
-    flex: 3 3 auto;
+    // flex: 0 1 25%;
   }
 
   &__item:nth-of-type(2) {
-  	// background: cyan;
-  	flex: 1 1 auto;
+  	background: cyan;
+  	// flex: 0 1 25%;
   }
 
   &__item:nth-of-type(3) {
-  	flex: 1 2 auto;
+  	// flex: 1 1 25%;
   }
 
   &__item:nth-of-type(4) {
     // background: green;
-  	flex: 1 2 auto;
+  	// flex: 1 1 25%;
   }
 
   &__social {
@@ -72,6 +73,7 @@
     &__section__02 {
       // background: green;
       flex: 1 1 100%;
+      justify-content: space-around;
       align-items: center; 
     }  
 
