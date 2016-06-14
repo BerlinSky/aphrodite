@@ -9817,6 +9817,10 @@ return jQuery;
 },{}],2:[function(require,module,exports){
 'use strict';
 
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
+
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 var _jquery = require('jquery');
@@ -9827,16 +9831,179 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
+var Plate = function () {
+	function Plate(plateElem) {
+		_classCallCheck(this, Plate);
+
+		this.plate = plateElem;
+		this.arrowLeft = (0, _jquery2.default)('[data-arrow="left"]');
+		this.arrowRight = (0, _jquery2.default)('[data-arrow="right"]');
+	}
+
+	_createClass(Plate, [{
+		key: '_hideArrow',
+		value: function _hideArrow() {
+			// this.arrowLeft.fadeOut();
+			this.arrowLeft.css("display", "none");
+			// this.arrowRight.fadeOut();
+			this.arrowRight.css("display", "none");
+		}
+	}, {
+		key: '_showArrow',
+		value: function _showArrow() {
+			this.arrowLeft.fadeIn(3000);
+			this.arrowRight.fadeIn(3000);
+		}
+	}, {
+		key: 'rotate',
+		value: function rotate(rotateDeg, speed) {
+			var transformStyle = "rotate(" + rotateDeg + "deg)";
+
+			console.log("transformStyle", transformStyle);
+
+			this._hideArrow();
+
+			this.plate.css('-webkit-transform', transformStyle);
+			this.plate.css('-moz-transform', transformStyle);
+			this.plate.css('transform', transformStyle);
+			this.plate.css('-webkit-transition', '-webkit-transform ' + speed + 's');
+			this.plate.css('transition', 'transform ' + speed + 's');
+
+			this._showArrow();
+		}
+	}]);
+
+	return Plate;
+}();
+
+exports.default = Plate;
+
+},{"jquery":1}],3:[function(require,module,exports){
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+var RotationCalculator = function () {
+  function RotationCalculator() {
+    _classCallCheck(this, RotationCalculator);
+  }
+
+  _createClass(RotationCalculator, [{
+    key: "distantLeft",
+    value: function distantLeft(platePos, circlePos) {
+      // console.log("platePos", platePos);
+      // console.log("circlePos", circlePos);
+
+      var factor = 0;
+      for (var i = 0; i <= Math.abs(platePos); i += 360) {
+        factor++;
+      }
+      // console.log("factor on the left", factor);
+
+      var distanceLeft = 0;
+
+      if (platePos <= circlePos) {
+        distanceLeft = circlePos - platePos;
+      } else {
+        distanceLeft = circlePos + 360 * factor - platePos;
+      }
+      // console.log("distanceLeft", distanceLeft);
+
+      return distanceLeft;
+    }
+  }, {
+    key: "distantRight",
+    value: function distantRight(platePos, circlePos) {
+      var factor = 0;
+      for (var i = 0; i <= Math.abs(platePos); i += 360) {
+        factor++;
+      }
+      // console.log("factor", factor);
+
+      var distanceRight = 0;
+      if (platePos === 0) {
+        distanceRight = 360 - circlePos;
+      } else if (platePos < circlePos) {
+        distanceRight = platePos + 360 * factor - circlePos;
+      } else {
+        distanceRight = platePos - 360 * (factor - 1) - circlePos;
+      }
+      // console.log("distanceRight", distanceRight);
+
+      return distanceRight;
+    }
+  }]);
+
+  return RotationCalculator;
+}();
+
+exports.default = RotationCalculator;
+
+},{}],4:[function(require,module,exports){
+'use strict';
+
+var _jquery = require('jquery');
+
+var _jquery2 = _interopRequireDefault(_jquery);
+
+var _RotationCalculator = require('./RotationCalculator');
+
+var _RotationCalculator2 = _interopRequireDefault(_RotationCalculator);
+
+var _Plate = require('./Plate');
+
+var _Plate2 = _interopRequireDefault(_Plate);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
 (0, _jquery2.default)(function () {
+	var windowWidth = (0, _jquery2.default)(window).width();
+	var wraper = (0, _jquery2.default)('[data-chamber="wraper"]');
+	var wraperWidth = wraper.width();
+
+	if (wraperWidth >= windowWidth) {
+		wraper.css("margin-left", -(wraperWidth - windowWidth) / 2);
+	} else {
+		wraper.css("margin-left", "auto");
+	}
+
+	(0, _jquery2.default)(window).resize(function () {
+		var windowWidth = (0, _jquery2.default)(window).width();
+		var wraper = (0, _jquery2.default)('[data-chamber="wraper"]');
+		var wraperWidth = wraper.width();
+
+		if (wraperWidth >= windowWidth) {
+			wraper.css("margin-left", -(wraperWidth - windowWidth) / 2);
+		} else {
+			wraper.css("margin-left", "auto");
+		}
+	});
 
 	(0, _jquery2.default)('[data-mobileMenu="open"]').click(function () {
 		var mobileMenu = (0, _jquery2.default)('[data-mobileMenu="panel"]');
-		mobileMenu.fadeIn(1000);
+		var windowWidth = (0, _jquery2.default)(window).width();
+
+		mobileMenu.css({ left: windowWidth });
+		mobileMenu.removeClass('magictime slideRight');
+		mobileMenu.addClass('magictime slideLeft');
+
+		// mobileMenu.fadeIn(1000);
 	});
 
 	(0, _jquery2.default)('[data-mobileMenu="close"]').click(function () {
 		var mobileMenu = (0, _jquery2.default)('[data-mobileMenu="panel"]');
-		mobileMenu.fadeOut(1000);
+
+		mobileMenu.removeClass('magictime slideLef');
+		mobileMenu.addClass('magictime slideRight');
+		mobileMenu.css({ left: -1000 });
+
+		// mobileMenu.fadeOut(1000);
 	});
 
 	(0, _jquery2.default)('[data-arrow="left"]').click(function () {
@@ -9884,71 +10051,40 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
 		// console.log("plateDeg", plateDeg);
 
-		var thisPlate = new Plate(plate);
+		var thisPlate = new _Plate2.default(plate);
 		thisPlate.rotate(plateDeg, 2);
 	}
 
 	function rotateChambers(plate, circleDeg) {
 		var plateDeg = plate.attr("data-deg");
-
-		circleDeg = parseInt(circleDeg);
 		plateDeg = parseInt(plateDeg);
+		circleDeg = parseInt(circleDeg);
 
-		plate.attr("data-deg", circleDeg);
+		var calculator = new _RotationCalculator2.default();
+		var distanceLeft = calculator.distantLeft(plateDeg, circleDeg);
+		var distanceRight = calculator.distantRight(plateDeg, circleDeg);
 
-		if (circleDeg === plateDeg) {
-			return;
+		var routeLeft = plateDeg + distanceLeft;
+		console.log("routeLeft", routeLeft);
+
+		var routeRight = plateDeg - distanceRight;
+		console.log("routeRight", routeRight);
+
+		var rotateDeg = routeRight;
+		if (Math.abs(distanceLeft) <= Math.abs(distanceRight)) {
+			rotateDeg = routeLeft;
 		}
 
-		var rotateDeg = circleDeg * -1;
+		plate.attr("data-deg", rotateDeg);
 
-		var thisPlate = new Plate(plate);
+		var thisPlate = new _Plate2.default(plate);
+
+		console.log("circleDeg", circleDeg);
+		console.log("rotateDeg", rotateDeg);
+
 		thisPlate.rotate(rotateDeg, 2);
 	}
-
-	var Plate = function () {
-		function Plate(plateElem) {
-			_classCallCheck(this, Plate);
-
-			this.plate = plateElem;
-			this.arrowLeft = (0, _jquery2.default)('[data-arrow="left"]');
-			this.arrowRight = (0, _jquery2.default)('[data-arrow="right"]');
-		}
-
-		_createClass(Plate, [{
-			key: '_hideArrow',
-			value: function _hideArrow() {
-				// this.arrowLeft.fadeOut();
-				this.arrowLeft.css("display", "none");
-				// this.arrowRight.fadeOut();
-				this.arrowRight.css("display", "none");
-			}
-		}, {
-			key: '_showArrow',
-			value: function _showArrow() {
-				this.arrowLeft.fadeIn(3000);
-				this.arrowRight.fadeIn(3000);
-			}
-		}, {
-			key: 'rotate',
-			value: function rotate(rotateDeg, speed) {
-				var transformStyle = "rotate(" + rotateDeg + "deg)";
-
-				this._hideArrow();
-
-				this.plate.css('-webkit-transform', transformStyle);
-				this.plate.css('-moz-transform', transformStyle);
-				this.plate.css('transform', transformStyle);
-				this.plate.css('-webkit-transition', '-webkit-transform ' + speed + 's');
-				this.plate.css('transition', 'transform ' + speed + 's');
-
-				this._showArrow();
-			}
-		}]);
-
-		return Plate;
-	}();
 });
 
-},{"jquery":1}]},{},[2])
+},{"./Plate":2,"./RotationCalculator":3,"jquery":1}]},{},[4])
 //# sourceMappingURL=bundle.js.map

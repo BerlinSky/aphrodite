@@ -9987,27 +9987,12 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 	(0, _jquery2.default)('[data-mobileMenu="open"]').click(function () {
 		var mobileMenu = (0, _jquery2.default)('[data-mobileMenu="panel"]');
-		var windowWidth = (0, _jquery2.default)(window).width();
-
-		// mobileMenu.css({right: 0});
-		mobileMenu.show();
-		// mobileMenu.css({right: 0});
-
-		// mobileMenu.removeClass('magictime slideRight');
-		// mobileMenu.addClass('magictime slideLeft');
-
-		// mobileMenu.fadeIn(1000);
+		mobileMenu.fadeIn(1000);
 	});
 
 	(0, _jquery2.default)('[data-mobileMenu="close"]').click(function () {
 		var mobileMenu = (0, _jquery2.default)('[data-mobileMenu="panel"]');
-
-		// mobileMenu.removeClass('magictime slideLeft');
-		// mobileMenu.addClass('magictime slideRight');
-		// mobileMenu.css({left: -1000});
-		mobileMenu.hide();
-
-		// mobileMenu.fadeOut(1000);
+		mobileMenu.fadeOut(1000);
 	});
 
 	(0, _jquery2.default)('[data-arrow="left"]').click(function () {

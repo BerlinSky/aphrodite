@@ -1,9 +1,8 @@
 .mobileMenu {
 	position: absolute;
-	display: none;
+	display: block;
 	top: 0;
-	// left: -1000px;
-	right: 0;
+	left: -1000px;
 	// right: 0;
 	background-color: crimson;
 	width: 300px;

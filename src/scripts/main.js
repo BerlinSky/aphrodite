@@ -31,9 +31,12 @@ $(function () {
   	const mobileMenu = $('[data-mobileMenu="panel"]');
 	  const windowWidth = $( window ).width();
 
-  	mobileMenu.css({left: windowWidth});
-  	mobileMenu.removeClass('magictime slideRight');
-  	mobileMenu.addClass('magictime slideLeft');
+  	// mobileMenu.css({right: 0});
+  	mobileMenu.show();
+  	// mobileMenu.css({right: 0});
+
+  	// mobileMenu.removeClass('magictime slideRight');
+  	// mobileMenu.addClass('magictime slideLeft');
 
   	// mobileMenu.fadeIn(1000);
 	})
@@ -41,10 +44,11 @@ $(function () {
 	$('[data-mobileMenu="close"]').click(function() {
   	const mobileMenu = $('[data-mobileMenu="panel"]');
 
-  	mobileMenu.removeClass('magictime slideLef');
-  	mobileMenu.addClass('magictime slideRight');
-  	mobileMenu.css({left: -1000});
-  	
+  	// mobileMenu.removeClass('magictime slideLeft');
+  	// mobileMenu.addClass('magictime slideRight');
+  	// mobileMenu.css({left: -1000});
+  	mobileMenu.hide();
+
   	// mobileMenu.fadeOut(1000);
 	})
 

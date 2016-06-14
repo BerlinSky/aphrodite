@@ -14,42 +14,40 @@
   }
 
 	// Placehoder section:
-  &__section__01 {
-  	flex: 1 4 100%;
-    // background: white;
+  &__section:nth-of-type(1) {
+  	// background: cornsilk;
+  	flex: 3 4 100%;
   }  
 
   // copyright etc. section:
-  &__section__02 {
-    // background: crimson;
-    flex: 2 3 100%;
-    align-items: center; 
+  &__section:nth-of-type(2) {
+  	// background: cyan;
+  	flex: 4 3 100%;
+  	align-items: center; 
   }  
 
   // Social section:
-   &__section__03 {
-    // background: cyan;
-    flex: 1 4 100%;
-    display: flex;
-    justify-content: flex-end;
+  &__section:nth-of-type(3) {
+  	// background: crimson;
+  	flex: 3 4 100%;
+  	display: flex;
+  	justify-content: flex-end;
   }
 
-  &__item:nth-of-type(1) {
-    flex: 3 3 auto;
+	&__item:nth-of-type(1) {
+  	flex: 3 3 auto;
   }
 
-  &__item:nth-of-type(2) {
-  	// background: cyan;
+	&__item:nth-of-type(2) {
   	flex: 1 1 auto;
   }
 
   &__item:nth-of-type(3) {
-  	flex: 1 2 auto;
+  	flex: 2 2 auto;
   }
 
   &__item:nth-of-type(4) {
-    // background: green;
-  	flex: 1 2 auto;
+  	flex: 2 2 auto;
   }
 
   &__social {
