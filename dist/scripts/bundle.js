@@ -10039,7 +10039,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 		newsTeaser.html(teaser);
 
 		var newsLink = (0, _jquery2.default)('[data-news="link"]');
-		newsLink.html(link);
+		newsLink.attr('href', link);
 
 		rotateChambers(plate, circleDeg);
 	});

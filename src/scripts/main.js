@@ -81,7 +81,7 @@ $(function () {
 		newsTeaser.html(teaser);
 
 		const newsLink = $('[data-news="link"]');
-		newsLink.html(link);
+		newsLink.attr('href', link);
 
 		rotateChambers(plate, circleDeg);
 	})
