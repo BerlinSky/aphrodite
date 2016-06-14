@@ -77,11 +77,15 @@ $(function () {
 
     // TODO: Move this section to a separate function
   	const imageList = $( '[data-chamber="image"]');
-  	console.log('imageList',imageList);
+  	// console.log('imageList',imageList);
   	$.each(imageList, function (index, image) {
 		  console.log(image);
 		  $(image).css({'opacity': 0.5});
 		});
+
+  	const defaultImage = $( '.chamberCircle__image');
+		defaultImage.css({'opacity': 0.5});
+		
     // Move this section to a separate function
 
     thisImage.css({'opacity': 1});

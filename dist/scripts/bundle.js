@@ -10035,11 +10035,15 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 		// TODO: Move this section to a separate function
 		var imageList = (0, _jquery2.default)('[data-chamber="image"]');
-		console.log('imageList', imageList);
+		// console.log('imageList',imageList);
 		_jquery2.default.each(imageList, function (index, image) {
 			console.log(image);
 			(0, _jquery2.default)(image).css({ 'opacity': 0.5 });
 		});
+
+		var defaultImage = (0, _jquery2.default)('.chamberCircle__image');
+		defaultImage.css({ 'opacity': 0.5 });
+
 		// Move this section to a separate function
 
 		thisImage.css({ 'opacity': 1 });
