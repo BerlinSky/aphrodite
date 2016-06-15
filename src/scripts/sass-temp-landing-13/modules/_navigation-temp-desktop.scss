@@ -1,0 +1,43 @@
+.navigation {
+	// border: 1px solid Crimson;
+  min-width: 100%;
+  margin: 0;
+  padding: 0;
+  // background: #000;
+
+  &__section {
+	  background: #000;
+	  color: white;
+  }
+}
+
+.nav__logo {
+	font-weight: 700;
+	text-transform: uppercase;
+}
+
+.nav__menu {
+	text-transform: uppercase;
+}
+
+.serviceMenuBar {
+	font-size: 14px;
+
+	> * {
+		// border: 1px solid red;
+		margin: 0;
+	  padding: 0;
+
+	  a {
+	  	padding: 20px 5px 20px 5px;
+	  	color: gold;
+	  }
+	}
+}
+
+
+
+
+ 
+
+ 

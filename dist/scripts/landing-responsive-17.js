@@ -9855,60 +9855,6 @@ var Plate = function () {
 			this.arrowRight.fadeIn(3000);
 		}
 	}, {
-		key: 'selectImageByDirection',
-		value: function selectImageByDirection(direction) {
-			var currentImage = (0, _jquery2.default)('[data-image="selected"]');
-			var thisAngle = currentImage.parent().attr('data-deg');
-			thisAngle = parseInt(thisAngle);
-
-			console.log('thisAngle', thisAngle);
-
-			var nextAngle = void 0;
-
-			if (direction === 'left') {
-				nextAngle = thisAngle === 0 ? 300 : thisAngle - 60;
-			} else {
-				nextAngle = thisAngle === 300 ? 0 : thisAngle + 60;
-			}
-			console.log('nextAngle', nextAngle);
-
-			// const nextImage = $( 'li [data-deg=\"' + nextAngle + '\"]').find( '[data-chamber="image"]' );
-			// const nextImage = $( 'li [data-deg=' + nextAngle + ']').find( 'img');
-			var nextImage = (0, _jquery2.default)('li[data-deg=' + nextAngle + '] > img');
-			// const nextImage = $( 'li[data-deg="0"] > img' );
-			console.log('nextImage', nextImage.attr('src'));
-
-			this.hightlightImage(nextImage);
-		}
-	}, {
-		key: 'hightlightImage',
-		value: function hightlightImage(selectImage) {
-			var imageList = (0, _jquery2.default)('[data-chamber="image"]');
-			// console.log('imageList',imageList);
-			_jquery2.default.each(imageList, function (index, image) {
-				(0, _jquery2.default)(image).attr('data-image', 'unselected');
-				(0, _jquery2.default)(image).css({ 'opacity': 0.5 });
-				(0, _jquery2.default)(image).hover(function () {
-					(0, _jquery2.default)(this).css({ 'opacity': 1 });
-				}, function () {
-					(0, _jquery2.default)(this).css({ 'opacity': 0.5 });
-				});
-			});
-
-			(0, _jquery2.default)(selectImage).attr('data-image', 'selected');
-			console.log('selectImage', selectImage);
-
-			selectImage.css({ 'opacity': 1 });
-			(0, _jquery2.default)(selectImage).hover(function () {
-				(0, _jquery2.default)(this).css({ 'opacity': 1 });
-			}, function () {
-				(0, _jquery2.default)(this).css({ 'opacity': 1 });
-			});
-		}
-	}, {
-		key: 'showNewsTeaser',
-		value: function showNewsTeaser() {}
-	}, {
 		key: 'rotate',
 		value: function rotate(rotateDeg, speed) {
 			var transformStyle = "rotate(" + rotateDeg + "deg)";
@@ -10043,6 +9989,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 		var mobileMenu = (0, _jquery2.default)('[data-mobileMenu="panel"]');
 		var windowWidth = (0, _jquery2.default)(window).width();
 
+		// mobileMenu.css({right: 0});
 		mobileMenu.show();
 		// mobileMenu.css({right: 0});
 
@@ -10086,28 +10033,28 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 		var teaser = JSON.parse(newsJsonData).teaser;
 		var link = JSON.parse(newsJsonData).link;
 
-		var thisPlate = new _Plate2.default(plate);
-		thisPlate.hightlightImage(thisImage);
-
 		// TODO: Move this section to a separate function
-		// const imageList = $( '[data-chamber="image"]');
+		var imageList = (0, _jquery2.default)('[data-chamber="image"]');
 		// console.log('imageList',imageList);
-		// 	$.each(imageList, function (index, image) {
-		//   $(image).css({'opacity': 0.5});
-		//   $(image).hover(function() {
-		// 	  $(this).css({'opacity': 1});
-		// 	}, function() {
-		// 	  $(this).css({'opacity': 0.5});
-		// 	});
-		// });
+		_jquery2.default.each(imageList, function (index, image) {
+			(0, _jquery2.default)(image).css({ 'opacity': 0.5 });
+			(0, _jquery2.default)(image).hover(function () {
+				(0, _jquery2.default)(this).css({ 'opacity': 1 });
+			}, function () {
+				(0, _jquery2.default)(this).css({ 'opacity': 0.5 });
+			});
+		});
 
-		//  thisImage.css({'opacity': 1});
+		// 	const defaultImage = $( '.chamberCircle__image');
+		// defaultImage.css({'opacity': 0.5});
+		thisImage.css({ 'opacity': 1 });
 
-		//  $(thisImage).hover(function() {
-		//   $(this).css({'opacity': 1});
-		// }, function() {
-		//   $(this).css({'opacity': 1});
-		// });
+		(0, _jquery2.default)(thisImage).hover(function () {
+			(0, _jquery2.default)(this).css({ 'opacity': 1 });
+		}, function () {
+			(0, _jquery2.default)(this).css({ 'opacity': 1 });
+		});
+
 		// Move this section to a separate function
 
 		var newsTitle = (0, _jquery2.default)('[data-news="title"]');
@@ -10135,8 +10082,6 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 		var thisPlate = new _Plate2.default(plate);
 		thisPlate.rotate(plateDeg, 2);
-
-		thisPlate.selectImageByDirection(direction);
 	}
 
 	function rotateChambers(plate, circleDeg) {

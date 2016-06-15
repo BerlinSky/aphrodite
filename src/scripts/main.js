@@ -31,7 +31,6 @@ $(function () {
   	const mobileMenu = $('[data-mobileMenu="panel"]');
 	  const windowWidth = $( window ).width();
 
-  	// mobileMenu.css({right: 0});
   	mobileMenu.show();
   	// mobileMenu.css({right: 0});
 
@@ -75,30 +74,29 @@ $(function () {
     const teaser = JSON.parse(newsJsonData).teaser;
     const link = JSON.parse(newsJsonData).link;
 
+    const thisPlate = new Plate(plate);
+		thisPlate.hightlightImage(thisImage);
+
     // TODO: Move this section to a separate function
-  	const imageList = $( '[data-chamber="image"]');
+  	// const imageList = $( '[data-chamber="image"]');
   	// console.log('imageList',imageList);
-  	$.each(imageList, function (index, image) {
-		  $(image).css({'opacity': 0.5});
-		  $(image).hover(function() {
-			  $(this).css({'opacity': 1});
-			}, function() {
-			  $(this).css({'opacity': 0.5});
-			});
-		});
+  // 	$.each(imageList, function (index, image) {
+		//   $(image).css({'opacity': 0.5});
+		//   $(image).hover(function() {
+		// 	  $(this).css({'opacity': 1});
+		// 	}, function() {
+		// 	  $(this).css({'opacity': 0.5});
+		// 	});
+		// });
 
-  // 	const defaultImage = $( '.chamberCircle__image');
-		// defaultImage.css({'opacity': 0.5});
-    thisImage.css({'opacity': 1});
+   //  thisImage.css({'opacity': 1});
 
-    $(thisImage).hover(function() {
-  	  $(this).css({'opacity': 1});
-  	}, function() {
-  	  $(this).css({'opacity': 1});
-  	});
-		
+   //  $(thisImage).hover(function() {
+  	//   $(this).css({'opacity': 1});
+  	// }, function() {
+  	//   $(this).css({'opacity': 1});
+  	// });
     // Move this section to a separate function
-
 
 		const newsTitle = $('[data-news="title"]');
 		newsTitle.html(title);
@@ -125,6 +123,8 @@ $(function () {
 	
 		const thisPlate = new Plate(plate);
 		thisPlate.rotate(plateDeg, 2);
+
+		thisPlate.selectImageByDirection(direction)
 	}
 
 	function rotateChambers(plate, circleDeg) {

@@ -1,0 +1,18 @@
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+.l-stickyHeader {
+	flex: 0 0 auto;
+}
+
+.l-stickyFooter {
+	flex: 0 0 auto;
+}
+
+.l-stickyContent {
+  flex: 1 1 auto;
+  // overflow-y: scroll;
+  overflow: hidden;
+}
