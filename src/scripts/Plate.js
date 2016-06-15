@@ -43,6 +43,7 @@ export default class Plate {
   	console.log('nextImage', nextImage.attr('src'));
 
   	this.hightlightImage(nextImage);
+  	this._showNewsTeaser(nextImage);
 
 	}
 
@@ -75,7 +76,7 @@ export default class Plate {
 		audio.play();
 	}
 
-	showNewsTeaser(selectImage) {
+	_showNewsTeaser(selectImage) {
   	const thisCircle = $( selectImage ).parent();
     const newsJsonData = thisCircle.attr("data-message");
     const title = JSON.parse(newsJsonData).title;

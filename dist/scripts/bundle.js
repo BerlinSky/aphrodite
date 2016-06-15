@@ -9879,6 +9879,7 @@ var Plate = function () {
 			console.log('nextImage', nextImage.attr('src'));
 
 			this.hightlightImage(nextImage);
+			this._showNewsTeaser(nextImage);
 		}
 	}, {
 		key: 'hightlightImage',
@@ -9906,14 +9907,40 @@ var Plate = function () {
 			});
 		}
 	}, {
-		key: 'showNewsTeaser',
-		value: function showNewsTeaser() {}
+		key: '_playGunFiringAudio',
+		value: function _playGunFiringAudio() {
+			var audio = new Audio('http://cdn.gunsnroses.com/site/Revolver_SmithWesson_RollChamber_Fienup_001.mp3');
+			audio.play();
+		}
+	}, {
+		key: '_showNewsTeaser',
+		value: function _showNewsTeaser(selectImage) {
+			var thisCircle = (0, _jquery2.default)(selectImage).parent();
+			var newsJsonData = thisCircle.attr("data-message");
+			var title = JSON.parse(newsJsonData).title;
+			var teaser = JSON.parse(newsJsonData).teaser;
+			var link = JSON.parse(newsJsonData).link;
+
+			//   const thisPlate = new Plate(plate);
+			// thisPlate.hightlightImage(thisImage);
+
+			var newsTitle = (0, _jquery2.default)('[data-news="title"]');
+			newsTitle.html(title);
+
+			var newsTeaser = (0, _jquery2.default)('[data-news="teaser"]');
+			newsTeaser.html(teaser);
+
+			var newsLink = (0, _jquery2.default)('[data-news="link"]');
+			newsLink.attr('href', link);
+		}
 	}, {
 		key: 'rotate',
 		value: function rotate(rotateDeg, speed) {
 			var transformStyle = "rotate(" + rotateDeg + "deg)";
 
 			console.log("transformStyle", transformStyle);
+
+			this._playGunFiringAudio();
 
 			this._hideArrow();
 
