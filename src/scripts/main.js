@@ -79,8 +79,12 @@ $(function () {
   	const imageList = $( '[data-chamber="image"]');
   	// console.log('imageList',imageList);
   	$.each(imageList, function (index, image) {
-		  console.log(image);
 		  $(image).css({'opacity': 0.5});
+		  $(image).hover(function() {
+			  $(this).css({'opacity': 1});
+			}, function() {
+			  $(this).css({'opacity': 0.5});
+			});
 		});
 
   	const defaultImage = $( '.chamberCircle__image');
@@ -127,10 +131,10 @@ $(function () {
     let distanceRight = calculator.distantRight(plateDeg, circleDeg);
 
     let routeLeft = plateDeg + distanceLeft;
-    console.log("routeLeft", routeLeft);
+    // console.log("routeLeft", routeLeft);
 
 		let routeRight = plateDeg - distanceRight;
-    console.log("routeRight", routeRight);
+    // console.log("routeRight", routeRight);
 
 		let rotateDeg = routeRight;
 		if (Math.abs(distanceLeft) <= Math.abs(distanceRight)) {

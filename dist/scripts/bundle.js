@@ -10037,8 +10037,12 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 		var imageList = (0, _jquery2.default)('[data-chamber="image"]');
 		// console.log('imageList',imageList);
 		_jquery2.default.each(imageList, function (index, image) {
-			console.log(image);
 			(0, _jquery2.default)(image).css({ 'opacity': 0.5 });
+			(0, _jquery2.default)(image).hover(function () {
+				(0, _jquery2.default)(this).css({ 'opacity': 1 });
+			}, function () {
+				(0, _jquery2.default)(this).css({ 'opacity': 0.5 });
+			});
 		});
 
 		var defaultImage = (0, _jquery2.default)('.chamberCircle__image');
@@ -10085,10 +10089,10 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 		var distanceRight = calculator.distantRight(plateDeg, circleDeg);
 
 		var routeLeft = plateDeg + distanceLeft;
-		console.log("routeLeft", routeLeft);
+		// console.log("routeLeft", routeLeft);
 
 		var routeRight = plateDeg - distanceRight;
-		console.log("routeRight", routeRight);
+		// console.log("routeRight", routeRight);
 
 		var rotateDeg = routeRight;
 		if (Math.abs(distanceLeft) <= Math.abs(distanceRight)) {
