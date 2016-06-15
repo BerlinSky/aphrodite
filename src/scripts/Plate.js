@@ -70,14 +70,37 @@ export default class Plate {
   	});
 	}
 
-	showNewsTeaser() {
+	_playGunFiringAudio() {
+		const audio = new Audio('http://cdn.gunsnroses.com/site/Revolver_SmithWesson_RollChamber_Fienup_001.mp3');
+		audio.play();
+	}
 
+	showNewsTeaser(selectImage) {
+  	const thisCircle = $( selectImage ).parent();
+    const newsJsonData = thisCircle.attr("data-message");
+    const title = JSON.parse(newsJsonData).title;
+    const teaser = JSON.parse(newsJsonData).teaser;
+    const link = JSON.parse(newsJsonData).link;
+
+  //   const thisPlate = new Plate(plate);
+		// thisPlate.hightlightImage(thisImage);
+
+		const newsTitle = $('[data-news="title"]');
+		newsTitle.html(title);
+		
+		const newsTeaser = $('[data-news="teaser"]');
+		newsTeaser.html(teaser);
+
+		const newsLink = $('[data-news="link"]');
+		newsLink.attr('href', link);
 	}
 
 	rotate(rotateDeg, speed) {
 		const transformStyle = "rotate(" + rotateDeg + "deg)";
 
     console.log("transformStyle", transformStyle);
+
+    this._playGunFiringAudio();
 
 		this._hideArrow();
 
