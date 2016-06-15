@@ -87,12 +87,18 @@ $(function () {
 			});
 		});
 
-  	const defaultImage = $( '.chamberCircle__image');
-		defaultImage.css({'opacity': 0.5});
+  // 	const defaultImage = $( '.chamberCircle__image');
+		// defaultImage.css({'opacity': 0.5});
+    thisImage.css({'opacity': 1});
+
+    $(thisImage).hover(function() {
+  	  $(this).css({'opacity': 1});
+  	}, function() {
+  	  $(this).css({'opacity': 1});
+  	});
 		
     // Move this section to a separate function
 
-    thisImage.css({'opacity': 1});
 
 		const newsTitle = $('[data-news="title"]');
 		newsTitle.html(title);
