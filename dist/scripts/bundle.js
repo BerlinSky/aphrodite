@@ -10068,24 +10068,28 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 	(0, _jquery2.default)('[data-mobileMenu="open"]').click(function () {
 		var mobileMenu = (0, _jquery2.default)('[data-mobileMenu="panel"]');
-		var windowWidth = (0, _jquery2.default)(window).width();
+		// const windowWidth = $( window ).width();
+		// console.log('windowWidth', windowWidth);
 
-		mobileMenu.show();
-		// mobileMenu.css({right: 0});
-
-		// mobileMenu.removeClass('magictime slideRight');
-		// mobileMenu.addClass('magictime slideLeft');
-
+		mobileMenu.css({ 'display': 'block' });
+		mobileMenu.css({ right: '-300px' });
+		mobileMenu.addClass('magictime slideLeft');
+		setTimeout(function () {
+			mobileMenu.css({ right: 0 });
+			mobileMenu.removeClass('slideLeft');
+		}, 1000);
 		// mobileMenu.fadeIn(1000);
 	});
 
 	(0, _jquery2.default)('[data-mobileMenu="close"]').click(function () {
 		var mobileMenu = (0, _jquery2.default)('[data-mobileMenu="panel"]');
 
-		// mobileMenu.removeClass('magictime slideLeft');
-		// mobileMenu.addClass('magictime slideRight');
-		// mobileMenu.css({left: -1000});
-		mobileMenu.hide();
+		mobileMenu.addClass('magictime slideRight');
+		setTimeout(function () {
+			// mobileMenu.css({right: 0});
+			mobileMenu.css({ 'display': 'none' });
+			mobileMenu.removeClass('slideRight');
+		}, 1000);
 
 		// mobileMenu.fadeOut(1000);
 	});
@@ -10116,27 +10120,6 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 		var thisPlate = new _Plate2.default(plate);
 		thisPlate.hightlightImage(thisImage);
 
-		// TODO: Move this section to a separate function
-		// const imageList = $( '[data-chamber="image"]');
-		// console.log('imageList',imageList);
-		// 	$.each(imageList, function (index, image) {
-		//   $(image).css({'opacity': 0.5});
-		//   $(image).hover(function() {
-		// 	  $(this).css({'opacity': 1});
-		// 	}, function() {
-		// 	  $(this).css({'opacity': 0.5});
-		// 	});
-		// });
-
-		//  thisImage.css({'opacity': 1});
-
-		//  $(thisImage).hover(function() {
-		//   $(this).css({'opacity': 1});
-		// }, function() {
-		//   $(this).css({'opacity': 1});
-		// });
-		// Move this section to a separate function
-
 		var newsTitle = (0, _jquery2.default)('[data-news="title"]');
 		newsTitle.html(title);
 
@@ -10153,12 +10136,8 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 		var plateDeg = plate.attr("data-deg");
 		plateDeg = parseInt(plateDeg);
 
-		// console.log("plateDeg", plateDeg);
-
 		plateDeg = direction === 'right' ? plateDeg += 60 : plateDeg -= 60;
 		plate.attr("data-deg", plateDeg);
-
-		// console.log("plateDeg", plateDeg);
 
 		var thisPlate = new _Plate2.default(plate);
 		thisPlate.rotate(plateDeg, 2);
