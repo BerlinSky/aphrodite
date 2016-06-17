@@ -7,27 +7,23 @@ $(function () {
 
 	const mainContainer = $('.mainContainer');
 	const imageLoad = imagesLoaded( mainContainer );
-// 	function onAlways( instance ) {
-//   console.log('all images are loaded');
-// }
-	imageLoad.on('always', function(instance) {
+	
+	const preloader = $('.preloadContainer');
+
+	imageLoad.on('always', () => {
 	  console.log('Alright, all images are loaded');
+	  preloader.addClass('loaded');
 	});
 
-	// $('.mainContainer').imagesLoaded()
-	//   .always( function( instance ) {
-	//     console.log('all images loaded');
-	//   })
-	//   .done( function( instance ) {
-	//     console.log('all images successfully loaded');
-	//   })
-	//   .fail( function() {
-	//     console.log('all images loaded, at least one is broken');
-	//   })
-	//   .progress( function( instance, image ) {
-	//     let result = image.isLoaded ? 'loaded' : 'broken';
-	//     console.log( 'image is ' + result + ' for ' + image.img.src );
- //  });
+	imageLoad.on('done', () => {
+	  console.log('Alright, all images are loaded');
+	  preloader.addClass('loaded');
+	});
+
+	imageLoad.on('fail', () => {
+	  console.log('Alright, all images are loaded');
+	  preloader.addClass('loaded');
+	});
 
 	const windowWidth = $( window ).width();
 	const wraper = $('[data-chamber="wraper"]');
@@ -157,13 +153,12 @@ $(function () {
 		circleDeg = parseInt(circleDeg);
 
     const calculator = new RotationCalculator();
-    let distanceLeft = calculator.distantLeft(plateDeg, circleDeg);
-    let distanceRight = calculator.distantRight(plateDeg, circleDeg);
+    const distanceLeft = calculator.distantLeft(plateDeg, circleDeg);
+    const distanceRight = calculator.distantRight(plateDeg, circleDeg);
 
-    let routeLeft = plateDeg + distanceLeft;
+    const routeLeft = plateDeg + distanceLeft;
+		const routeRight = plateDeg - distanceRight;
     // console.log("routeLeft", routeLeft);
-
-		let routeRight = plateDeg - distanceRight;
     // console.log("routeRight", routeRight);
 
 		let rotateDeg = routeRight;

@@ -10534,27 +10534,23 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 	var mainContainer = (0, _jquery2.default)('.mainContainer');
 	var imageLoad = (0, _imagesLoaded2.default)(mainContainer);
-	// 	function onAlways( instance ) {
-	//   console.log('all images are loaded');
-	// }
-	imageLoad.on('always', function (instance) {
+
+	var preloader = (0, _jquery2.default)('.preloadContainer');
+
+	imageLoad.on('always', function () {
 		console.log('Alright, all images are loaded');
+		preloader.addClass('loaded');
 	});
 
-	// $('.mainContainer').imagesLoaded()
-	//   .always( function( instance ) {
-	//     console.log('all images loaded');
-	//   })
-	//   .done( function( instance ) {
-	//     console.log('all images successfully loaded');
-	//   })
-	//   .fail( function() {
-	//     console.log('all images loaded, at least one is broken');
-	//   })
-	//   .progress( function( instance, image ) {
-	//     let result = image.isLoaded ? 'loaded' : 'broken';
-	//     console.log( 'image is ' + result + ' for ' + image.img.src );
-	//  });
+	imageLoad.on('done', function () {
+		console.log('Alright, all images are loaded');
+		preloader.addClass('loaded');
+	});
+
+	imageLoad.on('fail', function () {
+		console.log('Alright, all images are loaded');
+		preloader.addClass('loaded');
+	});
 
 	var windowWidth = (0, _jquery2.default)(window).width();
 	var wraper = (0, _jquery2.default)('[data-chamber="wraper"]');
@@ -10685,9 +10681,8 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 		var distanceRight = calculator.distantRight(plateDeg, circleDeg);
 
 		var routeLeft = plateDeg + distanceLeft;
-		// console.log("routeLeft", routeLeft);
-
 		var routeRight = plateDeg - distanceRight;
+		// console.log("routeLeft", routeLeft);
 		// console.log("routeRight", routeRight);
 
 		var rotateDeg = routeRight;
