@@ -10591,7 +10591,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 		// console.log('newsContent height', newsContent.height());
 
 		if (mainContainerParentHeight < 700) {
-			var newsContentTop = mainContainerParentHeight - newsContent.height() - 75;
+			var newsContentTop = mainContainerParentHeight - newsContent.height() - 25;
 			newsContent.css({ top: newsContentTop });
 		}
 	}

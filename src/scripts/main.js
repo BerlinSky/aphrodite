@@ -67,7 +67,7 @@ $(function () {
 	  // console.log('newsContent height', newsContent.height());
 
 	  if (mainContainerParentHeight < 700) { 
-		  const newsContentTop = mainContainerParentHeight - newsContent.height() - 75;
+		  const newsContentTop = mainContainerParentHeight - newsContent.height() - 25;
 	  	newsContent.css({top: newsContentTop});
 	  }
 	}
