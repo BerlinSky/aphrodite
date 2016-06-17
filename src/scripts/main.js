@@ -1,8 +1,34 @@
 import $ from 'jquery';
 import RotationCalculator from './RotationCalculator';
 import Plate from './Plate';
+import imagesLoaded from 'imagesLoaded';
 
 $(function () {
+
+	const mainContainer = $('.mainContainer');
+	const imageLoad = imagesLoaded( mainContainer );
+// 	function onAlways( instance ) {
+//   console.log('all images are loaded');
+// }
+	imageLoad.on('always', function(instance) {
+	  console.log('Alright, all images are loaded');
+	});
+
+	// $('.mainContainer').imagesLoaded()
+	//   .always( function( instance ) {
+	//     console.log('all images loaded');
+	//   })
+	//   .done( function( instance ) {
+	//     console.log('all images successfully loaded');
+	//   })
+	//   .fail( function() {
+	//     console.log('all images loaded, at least one is broken');
+	//   })
+	//   .progress( function( instance, image ) {
+	//     let result = image.isLoaded ? 'loaded' : 'broken';
+	//     console.log( 'image is ' + result + ' for ' + image.img.src );
+ //  });
+
 	const windowWidth = $( window ).width();
 	const wraper = $('[data-chamber="wraper"]');
 	const wraperWidth = wraper.width();
@@ -33,7 +59,7 @@ $(function () {
   	// console.log('windowWidth', windowWidth);
 
   	mobileMenu.css({'display': 'block'});
-  	mobileMenu.css({right: '-300px'});
+  	mobileMenu.css({right: '-320px'});
   	mobileMenu.addClass('magictime slideLeft');
 		setTimeout(function(){
 	  	mobileMenu.css({right: 0});
