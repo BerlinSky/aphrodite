@@ -164,7 +164,7 @@ $chamber-container-width: 1170px;
 }
 
 .chamberContainer__content {
-	background-color: green;
+	border: 1px solid green;
 	text-align: center;
 	position: absolute;
 	left: 0;
@@ -206,7 +206,7 @@ $chamber-container-width: 1170px;
 }
 
 .btn-primary {
-    background-color: #fac43d;
+  background-color: #fac43d;
   color: #000000;
   font-family: "Franklin Gothic Medium", "Franklin Gothic", "ITC Franklin Gothic", Arial, sans-serif;
   font-weight: 700;

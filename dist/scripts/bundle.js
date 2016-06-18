@@ -10586,8 +10586,32 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 		// console.log('mainContainerParent height', mainContainerParentHeight);
 		// console.log('newsContent height', newsContent.height());
 
+		var supplement = 0;
+		switch (true) {
+			case mainContainerParentHeight < 550:
+				// iphone 5
+				supplement = -50;
+				break;
+			case mainContainerParentHeight >= 480 && mainContainerParentHeight < 550:
+				// iPhone 6
+				supplement = -50;
+				break;
+			case mainContainerParentHeight >= 550 && mainContainerParentHeight < 620:
+				// iPhone 6 plus
+				supplement = 50;
+				break;
+			case mainContainerParentHeight >= 620 && mainContainerParentHeight < 680:
+				// iPad and iPad Mini
+				supplement = 40;
+				break;
+			default:
+				25;
+		}
+
 		if (mainContainerParentHeight < 700) {
-			var newsContentTop = mainContainerParentHeight - newsContent.height() - 25;
+			console.log('supplement', supplement);
+
+			var newsContentTop = mainContainerParentHeight - newsContent.height() - supplement;
 			newsContent.css({ top: newsContentTop });
 		}
 	}
