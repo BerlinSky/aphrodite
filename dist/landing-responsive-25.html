@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+
+  <title>aphrodite</title>
+
+  <meta charset="utf-8" />
+  <meta name="description" content="" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+
+  <!--Favicon -->
+  <link rel="icon" type="image/png" href="favicon.png" />
+
+  <link rel="stylesheet" href="styles/font-awesome.min.css">
+
+  <link rel="stylesheet" href="styles/main.css">
+
+</head>
+
+<body>
+  <div class="preloadContainer">
+    <div class="loader">
+      <div class="side"></div>
+      <div class="side"></div>
+      <div class="side"></div>
+      <div class="side"></div>
+      <div class="side"></div>
+      <div class="side"></div>
+      <div class="side"></div>
+      <div class="side"></div>
+    </div>
+  </div>
+  
+  <navigation class="l-stickyHeader l-navigation navigation">
+    <div class="l-navigation__section navigation__section">
+      <div class="nav__logo"><a href="#">Site Logo</a></div>
+    </div>
+
+    <div class="l-navigation__section navigation__section">
+      <div class="nav__menu"><a href="#">Tour</a></div>
+      <div class="nav__menu"><a href="#">Media</a></div>
+      <div class="nav__menu"><a href="#">Photos</a></div>
+      <div class="nav__menu"><a href="#">Videos</a></div>
+      <div class="nav__menu"><a href="#">Store</a></div>
+    </div>
+
+    <div class="l-navigation__section navigation__section serviceMenuBar">
+
+      <div class=""><a href="#">Log in</a></div>
+      <div class=""><a href="#">Join</a></div>
+    </div>
+
+    <div class="l-navigation__mobileNav navigation__mobileNav">
+      <a href="#" class="icon fa-bars" data-mobileMenu="open"></a>
+    </div>
+  </navigation>
+
+  <div class="l-stickyContent content">
+    <div class="mainContainer">
+      <div class="chamberContainerWraper" data-chamber="wraper">
+        <div class="chamberSliderNav">
+          <a class="chamberSliderNav__arrow chamberSliderNav__arrow--left" data-arrow="left">
+            <i class="fa fa-chevron-left"></i>
+          </a>
+          <a class="chamberSliderNav__arrow chamberSliderNav__arrow--right" data-arrow="right">
+            <i class="fa fa-chevron-right"></i>
+          </a>
+        </div>
+       <!--  <div class="chamberNews">
+          <div class="chamberNews__panel chamberNews__panel__title" data-news="title">Need to set default</div>
+          <div class="chamberNews__panel chamberNews__panel__teaser" data-news="teaser">Need to set default</div>
+          <div class="chamberNews__panel chamberNews__panel__link"><a data-news="link" href="http://">Learn More >></a></div>
+        </div> -->
+
+        <ul class="chamberContainer" data-chamber="container" data-deg="0">
+
+          <li class="chamberCircle" data-chamber="circle" data-message='{"title": "Promo for today", "teaser": "Teaser for Promo", "link": "http://www.promot.com" }' data-deg="0">
+            <img class="chamberCircle__image" data-chamber="image" data-image="selected" src="../images/chamber-logo.png" alt="">
+          </li>
+
+          <li class="chamberCircle" data-chamber="circle" data-message='{"title": "News for today #1", "teaser": "Teaser for now #1", "link": "http://www.news#1.com" }' data-deg="300">
+            <img class="chamberCircle__image" data-chamber="image" src="https://scontent.cdninstagram.com/t51.2885-15/s150x150/e35/c181.0.718.718/13166980_646267952180939_1228722018_n.jpg?ig_cache_key=MTI0MzU0NjIwNzcwNzc0MDQwMA%3D%3D.2.c" alt="">
+          </li>
+
+          <li class="chamberCircle" data-chamber="circle" data-message='{"title": "News for today #2", "teaser": "Teaser for now #2", "link": "http://www.news#2.com" }' data-deg="240">
+            <img class="chamberCircle__image" data-chamber="image" src="https://scontent.cdninstagram.com/t51.2885-15/e35/12446283_122137078193180_616784050_n.jpg?ig_cache_key=MTI0NTAxODgzMjgwODE5NjcwNA%3D%3D.2" alt="">
+          </li>
+
+          <li class="chamberCircle" data-chamber="circle" data-message='{"title": "News for today #3", "teaser": "Teaser for now #3", "link": "http://www.news#3.com" }' data-deg="180">
+            <img class="chamberCircle__image" data-chamber="image" src="https://scontent.cdninstagram.com/t51.2885-15/s640x640/sh0.08/e35/13166903_1578160432483473_1613564974_n.jpg?ig_cache_key=MTI0NDQwMTk0MzYwMjAxODQ5NQ%3D%3D.2.l" alt="">
+          </li>
+
+          <li class="chamberCircle" data-chamber="circle" data-message='{"title": "News for today #4", "teaser": "Teaser for now #4", "link": "http://www.news#4.com" }' data-deg="120">
+            <img class="chamberCircle__image" data-chamber="image" src="https://scontent.cdninstagram.com/t51.2885-15/s150x150/e35/c0.63.508.508/13116548_1781192652093744_1884386715_n.jpg?ig_cache_key=MTI0NzM3MDc0MDU4MzY0MzQ3Ng%3D%3D.2.c" alt="">
+          </li>
+
+          <li class="chamberCircle" data-chamber="circle" data-message='{"title": "News for today #5", "teaser": "Teaser for now #5", "link": "http://www.news#5.com" }' data-deg="60">
+            <img class="chamberCircle__image" data-chamber="image" src="https://scontent.cdninstagram.com/t51.2885-15/s640x640/sh0.08/e35/13166900_1021297674606322_474339627_n.jpg?ig_cache_key=MTI0NzIxNDk5MzA1NzAwNDQ3Mw%3D%3D.2.l" alt="">
+          </li>
+
+        </ul>
+      </div>
+
+      <div class="chamberContainer__content">
+        <div class="chamberContainer__content--teaser">
+          <div class="chamberContainer__content--title" data-news="title">
+              Main Chamber        </div>
+          <div class="chamberContainer__content--description" data-news="teaser">Main Chamber Test</div>
+        </div>
+        <a href="#" data-news="link"><button type="button" class="btn btn-primary">Learn More <i class="fa fa-angle-double-right" aria-hidden="true"></i></button></a>
+      </div>
+      
+    </div>
+  </div>
+
+  <footer class="l-stickyFooter l-footer footer">
+    <div class="l-footer__section l-footer__section__01 footer__section">
+    </div>
+    <div class="l-footer__section l-footer__section__02 footer__section">
+      <div class="l-footer__item footer__item">&copy; Application Footer Section</div>
+      <div class="l-footer__item footer__item"><a href="#">Help</a></div>
+      <div class="l-footer__item footer__item"><a href="#">Terms of Use</a></div>
+      <div class="l-footer__item footer__item"><a href="#">Privacy Policy</a></div>
+    </div>
+    <div class="l-footer__section l-footer__section__03 footer__section">
+      <div class="l-footer__social footer__social">
+        <a class="fa-stack fa-lg" href="#">
+          <i class="footer__socialCircle fa fa-circle fa-stack-2x"></i>
+          <i class="footer__socialIcon fa fa-envelope fa-stack-1x fa-inverse"></i>
+        </a>
+      </div>
+      <div class="l-footer__social footer__social">
+        <a class="fa-stack fa-lg" href="#">
+          <i class="footer__socialCircle fa fa-circle fa-stack-2x"></i>
+          <i class="footer__socialIcon fa fa-twitter fa-stack-1x fa-inverse"></i>
+        </a>
+      </div>
+      <div class="l-footer__social footer__social">
+        <a class="fa-stack fa-lg" href="#">
+          <i class="footer__socialCircle fa fa-circle fa-stack-2x"></i>
+          <i class="footer__socialIcon fa fa-facebook fa-stack-1x fa-inverse"></i>
+        </a>
+      </div>
+      <div class="l-footer__social footer__social">
+        <a class="fa-stack fa-lg" href="#">
+          <i class="footer__socialCircle fa fa-circle fa-stack-2x"></i>
+          <i class="footer__socialIcon fa fa-youtube fa-stack-1x fa-inverse"></i>
+        </a>
+      </div>
+      <div class="l-footer__social footer__social">
+         <a class="fa-stack fa-lg" href="#">
+          <i class="footer__socialCircle fa fa-circle fa-stack-2x"></i>
+          <i class="footer__socialIcon fa fa-music fa-stack-1x fa-inverse"></i>
+        </a>
+      </div>
+    </div>
+  </footer>
+ 
+  <div class="mobileMenu" data-mobileMenu="panel">
+    <a class="menuClose" data-mobileMenu="close">
+      <i class="fa fa-times fa-2x"></i>
+    </a>
+    <ul>
+      <li>Item 1</li>
+      <li>Item 2</li>
+      <li>Item 3</li>
+      <li>Item 4</li>
+      <li>Item 5</li>
+    </ul>
+  </div>
+
+ <!--  <div class="l-mobileFooter l-mobileFooter--fixed mobileFooter">
+    <a class="l-mobileFooter__menu mobileFooter__menu" href="#">
+      <i class="fa fa-home"></i>
+      Home
+    </a>
+    <a class="l-mobileFooter__menu mobileFooter__menu" href="#">
+      <i class="fa fa-bell"></i>
+      News
+    </a>
+    <a class="l-mobileFooter__menu mobileFooter__menu" href="#">
+      <i class="fa fa-user"></i>
+      Sign In
+    </a>
+  </div> -->
+
+  <script src="scripts/bundle.js"></script>
+</body>
+
+</html>
