@@ -2,13 +2,12 @@
 	position: fixed;
   left: 0px;
   bottom: 0px;
-  
   margin: 0;
-
   display: flex;
+  flex-wrap: wrap;
 
   &__section {
-  	flex: 1 1 100%;
+  	// flex: 1 1 100%;
   	display: flex;
   	flex-wrap: wrap;
   	justify-content: space-between;
@@ -16,14 +15,14 @@
 
 	// Placehoder section:
   &__section__01 {
-  	flex: 1 4 100%;
+  	flex: 1 1 auto;
     // background: white;
   }  
 
   // copyright etc. section:
   &__section__02 {
     background: crimson;
-    flex: 2 3 100%;
+    flex: 2 1 auto;
     justify-content: center;
     align-items: center; 
   }  
@@ -31,7 +30,15 @@
   // Social section:
    &__section__03 {
     // background: cyan;
-    flex: 1 4 100%;
+    flex: 1 1 auto;
+    display: flex;
+    justify-content: flex-end;
+  }  
+
+  // Team Brazil section:
+   &__section__04 {
+    // background: cyan;
+    flex: 1 1 100%;
     display: flex;
     justify-content: flex-end;
   }

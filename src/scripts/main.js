@@ -99,10 +99,24 @@ $(function () {
 	  	mobileMenu.css({right: 0});
 			mobileMenu.removeClass('slideLeft');
 		}, 1000);
+
+  	// const body = $('body');
+  	// body.addClass('is-mobileMenuOpen');
+
+  	$('html, body').on('touchmove', function(evt){ 
+  	     //prevent native touch activity like scrolling
+  	     evt.preventDefault(); 
+		     evt.stopPropagation();
+  	});
+
   	// mobileMenu.fadeIn(1000);
 	})
 
 	$('[data-mobileMenu="close"]').click(function() {
+		$('html, body').on('touchmove', function(e){ 
+			return true;
+		});
+
   	const mobileMenu = $('[data-mobileMenu="panel"]');
 
   	mobileMenu.addClass('magictime slideRight');
@@ -112,6 +126,8 @@ $(function () {
 	  	mobileMenu.removeClass('slideRight');
 		}, 1000);
 
+		// const body = $('body');
+	  // 	body.removeClass('is-mobileMenuOpen');
   	// mobileMenu.fadeOut(1000);
 	})
 

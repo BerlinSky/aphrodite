@@ -10628,10 +10628,24 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 			mobileMenu.css({ right: 0 });
 			mobileMenu.removeClass('slideLeft');
 		}, 1000);
+
+		// const body = $('body');
+		// body.addClass('is-mobileMenuOpen');
+
+		(0, _jquery2.default)('html, body').on('touchmove', function (evt) {
+			//prevent native touch activity like scrolling
+			evt.preventDefault();
+			evt.stopPropagation();
+		});
+
 		// mobileMenu.fadeIn(1000);
 	});
 
 	(0, _jquery2.default)('[data-mobileMenu="close"]').click(function () {
+		(0, _jquery2.default)('html, body').on('touchmove', function (e) {
+			return true;
+		});
+
 		var mobileMenu = (0, _jquery2.default)('[data-mobileMenu="panel"]');
 
 		mobileMenu.addClass('magictime slideRight');
@@ -10641,6 +10655,8 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 			mobileMenu.removeClass('slideRight');
 		}, 1000);
 
+		// const body = $('body');
+		// 	body.removeClass('is-mobileMenuOpen');
 		// mobileMenu.fadeOut(1000);
 	});
 
