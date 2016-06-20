@@ -5,6 +5,21 @@ import imagesLoaded from 'imagesLoaded';
 
 $(function () {
 
+	$( window ).load(function() { 
+		// console.log("onload");
+		const footer = $('.l-stickyFooter');
+		// const bodyHeight = $('body').height();
+		// const footerHeight = $(footer).height();
+
+		const isSafari = !!navigator.userAgent.match(/Version\/[\d\.]+.*Safari/);
+    if (isSafari) {
+       footer.addClass('l-stickyFooter--Safari');
+    }
+		// console.log("body height", bodyHeight);
+
+		// footer.css({ 'margin-top': (bodyHeight - footerHeight) });
+	});
+
 	const mainContainer = $('.mainContainer');
 	const imageLoad = imagesLoaded( mainContainer );
 	
@@ -106,16 +121,17 @@ $(function () {
   	$('html, body').on('touchmove', function(evt){ 
   	     //prevent native touch activity like scrolling
   	     evt.preventDefault(); 
-		     evt.stopPropagation();
   	});
 
   	// mobileMenu.fadeIn(1000);
 	})
 
 	$('[data-mobileMenu="close"]').click(function() {
-		$('html, body').on('touchmove', function(e){ 
-			return true;
-		});
+		// $('html, body').on('touchmove', function(e){ 
+		// 	return true;
+		// });
+
+		$('html, body').unbind('touchmove');
 
   	const mobileMenu = $('[data-mobileMenu="panel"]');
 
