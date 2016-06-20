@@ -10392,7 +10392,7 @@ var Plate = function () {
 	}, {
 		key: '_playGunFiringAudio',
 		value: function _playGunFiringAudio() {
-			var audio = new Audio('http://cdn.gunsnroses.com/site/Revolver_SmithWesson_RollChamber_Fienup_001b.mp3');
+			var audio = new Audio('http://cdn.gunsnroses.com/site/Revolver_SmithWesson_RollChamber_Fienup_001.mp3');
 			audio.play();
 		}
 	}, {
@@ -10534,13 +10534,15 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 	(0, _jquery2.default)(window).load(function () {
 		// console.log("onload");
-		var footer = (0, _jquery2.default)('.l-stickyFooter');
+		var page = (0, _jquery2.default)('html body');
 		// const bodyHeight = $('body').height();
 		// const footerHeight = $(footer).height();
 
 		var isSafari = !!navigator.userAgent.match(/Version\/[\d\.]+.*Safari/);
 		if (isSafari) {
-			footer.addClass('l-stickyFooter--Safari');
+			page.addClass('clearfix-safari');
+
+			// footer.addClass('l-stickyFooter--Safari');
 		}
 		// console.log("body height", bodyHeight);
 
@@ -10605,15 +10607,14 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 		switch (true) {
 			case mainContainerParentHeight < 550:
 				// iphone 5
-				supplement = -50;
+				supplement = -15;
 				break;
 			case mainContainerParentHeight >= 480 && mainContainerParentHeight < 550:
 				// iPhone 6
-				supplement = -50;
 				break;
 			case mainContainerParentHeight >= 550 && mainContainerParentHeight < 620:
 				// iPhone 6 plus
-				supplement = 50;
+				supplement = -10;
 				break;
 			case mainContainerParentHeight >= 620 && mainContainerParentHeight < 680:
 				// iPad and iPad Mini

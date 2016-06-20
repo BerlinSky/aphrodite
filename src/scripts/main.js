@@ -7,13 +7,15 @@ $(function () {
 
 	$( window ).load(function() { 
 		// console.log("onload");
-		const footer = $('.l-stickyFooter');
+		const page = $('html body');
 		// const bodyHeight = $('body').height();
 		// const footerHeight = $(footer).height();
 
 		const isSafari = !!navigator.userAgent.match(/Version\/[\d\.]+.*Safari/);
     if (isSafari) {
-       footer.addClass('l-stickyFooter--Safari');
+       page.addClass('clearfix-safari');
+
+       // footer.addClass('l-stickyFooter--Safari');
     }
 		// console.log("body height", bodyHeight);
 
@@ -78,21 +80,25 @@ $(function () {
 	  // console.log('newsContent height', newsContent.height());
 
 		let supplement = 0;
-    switch (true) {
-      case (mainContainerParentHeight < 550): // iphone 5
-        supplement = -50;
-        break;
-      case (mainContainerParentHeight >= 480 && mainContainerParentHeight < 550):  // iPhone 6
-        supplement = -50;
-        break;
-      case (mainContainerParentHeight >= 550 && mainContainerParentHeight < 620): // iPhone 6 plus
-        supplement = 50;
-        break; 
-      case (mainContainerParentHeight >= 620 && mainContainerParentHeight < 680): // iPad and iPad Mini
-        supplement = 40;
-        break;
-      default: 25;
-    }
+   	switch (true) {
+			case mainContainerParentHeight < 550:
+				// iphone 5
+				supplement = -15;
+				break;
+			case mainContainerParentHeight >= 480 && mainContainerParentHeight < 550:
+				// iPhone 6
+				break;
+			case mainContainerParentHeight >= 550 && mainContainerParentHeight < 620:
+				// iPhone 6 plus
+				supplement = -10;
+				break;
+			case mainContainerParentHeight >= 620 && mainContainerParentHeight < 680:
+				// iPad and iPad Mini
+				supplement = 40;
+				break;
+			default:
+				25;
+		}
 
 		if (mainContainerParentHeight < 700) {
     console.log('supplement', supplement);
