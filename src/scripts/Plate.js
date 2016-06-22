@@ -72,7 +72,7 @@ export default class Plate {
 	}
 
 	_playGunFiringAudio() {
-		const audio = new Audio('http://cdn.gunsnroses.com/site/Revolver_SmithWesson_RollChamber_Fienup_001.mp3');
+		const audio = new Audio('http://cdn.gunsnroses.com/site/Revolver_Colt45_ChamberSounds_01_FRONT_Fienup_001.mp3');
 		audio.play();
 	}
 

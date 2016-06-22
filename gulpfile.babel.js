@@ -12,9 +12,7 @@ import ifElse from 'gulp-if-else';
 import sass from 'gulp-sass';
 import sourcemaps from 'gulp-sourcemaps';
 import prefix from 'gulp-autoprefixer';
-// var fontAwesome = require('node-font-awesome');
 import fontAwesome from 'node-font-awesome';
-
 import util from 'gulp-util';
 
 const config = {

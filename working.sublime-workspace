@@ -1,0 +1,1874 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"flx",
+				"flex-wrap"
+			],
+			[
+				"par",
+				"parentHeight"
+			],
+			[
+				"new",
+				"newsContent"
+			],
+			[
+				"play",
+				"playGunFiringAudio"
+			],
+			[
+				"nex",
+				"nextImage"
+			],
+			[
+				"parse",
+				"parseInt	(main.js)"
+			],
+			[
+				"hi",
+				"hightlightImage	(Plate.js)"
+			],
+			[
+				"cie",
+				"circlePos"
+			],
+			[
+				"de",
+				"degreeLeft"
+			],
+			[
+				"pla",
+				"platePos"
+			],
+			[
+				"pl",
+				"platePos"
+			],
+			[
+				"dis",
+				"distanceRight"
+			],
+			[
+				"cir",
+				"circlePos"
+			],
+			[
+				"pal",
+				"plateDeg"
+			],
+			[
+				"cic",
+				"circleDeg"
+			],
+			[
+				"di",
+				"distanceLeft"
+			],
+			[
+				"rout",
+				"routeLeft"
+			],
+			[
+				"alt",
+				"alternateRoute"
+			],
+			[
+				"cri",
+				"circleDeg"
+			],
+			[
+				"wind",
+				"windowWidth"
+			],
+			[
+				"wra",
+				"wraperWidth"
+			],
+			[
+				"rota",
+				"rotateDeg"
+			],
+			[
+				"plat",
+				"plateElem"
+			],
+			[
+				"rot",
+				"rotateDeg"
+			],
+			[
+				"ro",
+				"rotateDirection"
+			],
+			[
+				"rto",
+				"rotateDirection"
+			],
+			[
+				"circle",
+				"circleDeg"
+			],
+			[
+				"tex",
+				"text-align	(main.css)"
+			],
+			[
+				"pos",
+				"position"
+			],
+			[
+				"pa",
+				"padding"
+			],
+			[
+				"v",
+				"video"
+			],
+			[
+				"st",
+				"styles"
+			],
+			[
+				"sc",
+				"scripts"
+			],
+			[
+				"brow",
+				"browserify"
+			],
+			[
+				"New",
+				"NewReader"
+			],
+			[
+				"mo",
+				"modernizr.custom.js"
+			],
+			[
+				"sa",
+				"sassVendors"
+			],
+			[
+				"ve",
+				"vendors/"
+			],
+			[
+				"s",
+				"styles/"
+			],
+			[
+				"libra",
+				"library	(AppNav.js)"
+			],
+			[
+				"L",
+				"Library	(main.js)"
+			],
+			[
+				"Mai",
+				"MainContent"
+			],
+			[
+				"App",
+				"AppNav"
+			],
+			[
+				"mat",
+				"material-ui/"
+			],
+			[
+				"React",
+				"React.Component	Component Template (ES2015)"
+			],
+			[
+				"na",
+				"navigation.css"
+			],
+			[
+				"cs",
+				"css/"
+			],
+			[
+				"sta",
+				"static"
+			],
+			[
+				"ex",
+				"extends	(MessageList.jsx)"
+			],
+			[
+				"cont",
+				"constructor	(MessageList.jsx)"
+			],
+			[
+				"dec",
+				"decorate"
+			],
+			[
+				"fire",
+				"firebaseRef"
+			],
+			[
+				"me",
+				"messages"
+			],
+			[
+				"mes",
+				"messageKey"
+			],
+			[
+				"m",
+				"main.scss"
+			],
+			[
+				"w",
+				"width"
+			],
+			[
+				"min",
+				"min-height"
+			],
+			[
+				"mi",
+				"middle"
+			],
+			[
+				"track",
+				"trackList"
+			],
+			[
+				"seq",
+				"seqNum"
+			],
+			[
+				"ar",
+				"arrayOf	React.PropTypes.arrayOf"
+			],
+			[
+				"Clie",
+				"ClientTRow"
+			],
+			[
+				"hea",
+				"headerData"
+			],
+			[
+				"Cli",
+				"ClientTHeader"
+			],
+			[
+				"se",
+				"searchCount"
+			],
+			[
+				"comp",
+				"componentDidMount	Life Cycle Method"
+			],
+			[
+				"re",
+				"react-dom.js"
+			],
+			[
+				"std",
+				"std::cerr"
+			],
+			[
+				"com",
+				"components	(app.js)"
+			],
+			[
+				"FORU",
+				"FORUM_ANSWER_MARKED_CORRECT	(ForumStore.js)"
+			],
+			[
+				"markAns",
+				"markAnswerCorrect	(ForumAnswers.react.js)"
+			],
+			[
+				"FOR",
+				"FORUM_ANSWER_MARKED_CORRECT	(ForumStore.js)"
+			],
+			[
+				"actio",
+				"actionType	(Forum.react.js)"
+			],
+			[
+				"answer",
+				"answerData"
+			],
+			[
+				"From",
+				"ForumStore"
+			],
+			[
+				"disp",
+				"dispatch	(dispatcher.js)"
+			],
+			[
+				"Foru",
+				"ForumAddAnswerBox	(ForumAddAnswerBox.react.js)"
+			],
+			[
+				"ForumA",
+				"ForumAnswer	(index.html)"
+			],
+			[
+				"clas",
+				"className"
+			],
+			[
+				"ForumQ",
+				"ForumQuestion.react.js"
+			],
+			[
+				"emi",
+				"eventemitter.js"
+			],
+			[
+				"no",
+				"node_modules/"
+			],
+			[
+				"all",
+				"allAnswers"
+			],
+			[
+				"desc",
+				"description	(index.html)"
+			],
+			[
+				"res",
+				"responsive	(index.html)"
+			],
+			[
+				"f",
+				"favicon_152.png	w:152 h:152"
+			],
+			[
+				"sl",
+				"slabText/"
+			],
+			[
+				"Not",
+				"NotFoundRoute"
+			],
+			[
+				"Ro",
+				"Router"
+			],
+			[
+				"cla",
+				"className"
+			],
+			[
+				"au",
+				"authorPage.js"
+			],
+			[
+				"Au",
+				"AuthorList"
+			],
+			[
+				"cre",
+				"createAuthorRow"
+			],
+			[
+				"Auth",
+				"AuthorApi"
+			],
+			[
+				"cl",
+				"className	Element"
+			],
+			[
+				"getEle",
+				"getElementById(${0:id})	Element"
+			],
+			[
+				"ren",
+				"render	(homePage.js)"
+			],
+			[
+				"reac",
+				"react	(homePage.js)"
+			],
+			[
+				"main",
+				"mainJs"
+			],
+			[
+				"applica",
+				"applicationList	(index.html)"
+			],
+			[
+				"anu",
+				"angular-mocks/"
+			],
+			[
+				"a",
+				"appList.controller.js"
+			],
+			[
+				"ap",
+				"applicationList	(ut.app.module.js)"
+			],
+			[
+				"console",
+				"console.log('$0');"
+			],
+			[
+				"log",
+				"console.log('$0');"
+			],
+			[
+				"co",
+				"ut.viz.controller.js"
+			],
+			[
+				"j",
+				"jquery.fancybox.pack.js"
+			],
+			[
+				"ut",
+				"ut.viz.chart.directive.js"
+			],
+			[
+				"ser",
+				"ut.viz.service.js"
+			],
+			[
+				"rand",
+				"random	(viz-003.html)"
+			],
+			[
+				"$int",
+				"$interval	AngularJS"
+			],
+			[
+				"d",
+				"d3.min.js"
+			],
+			[
+				"getT",
+				"getTime()	Date"
+			],
+			[
+				"ci",
+				"circles"
+			],
+			[
+				"ran",
+				"randPoint"
+			],
+			[
+				"bl",
+				"block"
+			],
+			[
+				"con",
+				"container"
+			],
+			[
+				"ba",
+				"background	(app.scss)"
+			],
+			[
+				"ima",
+				"images/"
+			],
+			[
+				"fun",
+				"function"
+			],
+			[
+				"el",
+				"elemName"
+			],
+			[
+				"app",
+				"appendMsg"
+			],
+			[
+				"bo",
+				"bower_components	(documentation.html)"
+			],
+			[
+				"ng",
+				"ng-tags-input.min.css"
+			],
+			[
+				"n",
+				"ng-tags-input.min.js"
+			],
+			[
+				"fu",
+				"function(){\n	$0\n})();	(function(){\n	$0\n})();"
+			],
+			[
+				"row",
+				"rowId"
+			],
+			[
+				"mod",
+				"modelTable	(app-registration.html)"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "src/index.html",
+			"settings":
+			{
+				"buffer_size": 8810,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "gulpfile.babel.js",
+			"settings":
+			{
+				"buffer_size": 2918,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/scripts/main.js",
+			"settings":
+			{
+				"buffer_size": 6480,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"contents": "\"use strict\";\n\n// Please update the proxy to your VM:  vmXYZ is to be replaced \n// the actual value of your VM:\nconst appUrl = \"http://gunsnrosesv3.vm722.lyv.livenation.com/\";\n\nvar gulp = require('gulp');\nvar sourcemaps = require('gulp-sourcemaps');\nvar prefix = require('gulp-autoprefixer');\nvar sass = require('gulp-sass');\nvar util = require('gulp-util');\nvar browserSync = require('browser-sync');\n\n// import browserify from 'browserify';\n// import source from 'vinyl-source-stream';\n// import buffer from 'vinyl-buffer';\n// import eslint from 'gulp-eslint';\n// import exorcist from 'exorcist';\n// import watchify from 'watchify';\n// import babelify from 'babelify';\n// import uglify from 'gulp-uglify';\n// import ifElse from 'gulp-if-else';\n\n\nvar config = {\n	port: 54,\n	devBaseUrl: appUrl,\n	path: {\n		sass: 'src/sass/**/*.scss',\n		css: [\n			''\n		],\n		font: [\n			''\n  	],\n  	jslib: [\n  		''\n  	],\n		src: './src',\n		dist: './dist',\n		target: '../htdocs',\n		phpModule: '../application'\n	}\n};\n\ngulp.task('browser-sync', function() {\n	// log('browser-sync watch path: '+ config.path.target + '/styles/css/*.css');\n\n	log('browser-sync watch proxy: '+ appUrl);\n\n  browserSync({\n    files: [\n    	config.path.target + '/styles/css/*.css',\n    	config.path.phpModule + '/**/*.phtml',\n    	config.path.phpModule + '/**/*.php'\n    ],\n    proxy: appUrl\n  });\n});\n\ngulp.task('sass', function () {\n	log('sass task starts');\n\n  gulp.src(config.path.sass)\n	  .pipe(sourcemaps.init())\n    .pipe(sass().on('error', sass.logError))\n    .pipe(prefix())\n    .pipe(sourcemaps.write())\n		.pipe(gulp.dest(config.path.target + '/styles/css'));\n\n	log('sass task ends');\n});\n\ngulp.task('watch', function() {\n	log('watch task starts');\n\n	gulp.watch(config.path.sass, ['sass']);\n\n	log('watch task ends');\n});\n\n// gulp.task('default', ['font', 'jslib', 'css', 'sass', 'js', 'open', 'watch']);\ngulp.task('default', ['sass', 'watch', 'browser-sync']);\n\n///////////\nfunction log(msg) {\n	if (typeof(msg) === 'object') {\n		for (var item in msg) {\n			if (msg.hasOwnProperty(item)) {\n				util.log(util.colors.blue(msg[item]));\n			}\n		}\n	}\n	else {\n		util.log(util.colors.blue(msg));\n	}\n}\n\n",
+			"file": "/Users/Scarecrow/Library/Caches/Cleanup At Startup/Transmit/5EBBAA36-5CB4-403D-ABCA-067959F0133A/gulpfile.babel.js",
+			"file_size": 2154,
+			"file_write_time": 131110043200000000,
+			"settings":
+			{
+				"buffer_size": 2156,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+		[
+			[
+				[
+					"Packages/SASS Build/SASS - Compressed.sublime-build",
+					""
+				],
+				[
+					"Packages/SASS Build/SASS.sublime-build",
+					""
+				]
+			],
+			[
+				"Packages/SASS Build/SASS.sublime-build",
+				""
+			]
+		]
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 251.0,
+		"last_filter": "markdown prov",
+		"selected_items":
+		[
+			[
+				"markdown prov",
+				"Markdown Preview: Save to HTML"
+			],
+			[
+				"markdown ch",
+				"Markdown Preview: Open Markdown Cheat sheet"
+			],
+			[
+				"markdown pr",
+				"Markdown Preview: Save to HTML"
+			],
+			[
+				"ma",
+				"Markdown Preview: Preview in Browser"
+			],
+			[
+				"in",
+				"View In Browser"
+			],
+			[
+				"ins",
+				"Package Control: Install Package"
+			],
+			[
+				"rem",
+				"Package Control: Remove Package"
+			],
+			[
+				"inst",
+				"Package Control: Install Package"
+			],
+			[
+				"remo",
+				"Package Control: Remove Package"
+			],
+			[
+				"Snippet: React:",
+				"Snippet: React: component skeleton"
+			],
+			[
+				"package",
+				"Package Control: Remove Package"
+			],
+			[
+				"pack",
+				"Package Control: Install Package"
+			],
+			[
+				"pac",
+				"Package Control: Install Package"
+			],
+			[
+				"Snippet: ",
+				"Snippet: React: component skeleton"
+			],
+			[
+				"i",
+				"Package Control: Install Package"
+			],
+			[
+				"instal",
+				"Package Control: Install Package"
+			],
+			[
+				"remov",
+				"Package Control: Remove Package"
+			],
+			[
+				"remove",
+				"Package Control: Remove Package"
+			],
+			[
+				"ter",
+				"Terminal: Open"
+			],
+			[
+				"clean",
+				"CleanCSS: Clean current file"
+			],
+			[
+				"ren",
+				"File: Rename"
+			],
+			[
+				"renam",
+				"File: Rename"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"remove ",
+				"Package Control: Remove Package"
+			],
+			[
+				"insta",
+				"Package Control: Install Package"
+			],
+			[
+				"installed",
+				"Package Control: Install Local Dependency"
+			],
+			[
+				"repo",
+				"Package Control: Add Repository"
+			]
+		],
+		"width": 512.0
+	},
+	"console":
+	{
+		"height": 229.0,
+		"history":
+		[
+			"pwd",
+			"clear",
+			"import urllib.request,os,hashlib; h = '2915d1851351e5ee549c20394736b442' + '8bc59f460fa1548d1514676163dafc88'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/Users/Scarecrow/Documents/5. Projects/aphrodite/dist/fonts",
+		"/Users/Scarecrow/Documents/5. Projects/aphrodite/dist/images",
+		"/Users/Scarecrow/Documents/5. Projects/aphrodite/src",
+		"/Users/Scarecrow/Documents/5. Projects/aphrodite/src/sass",
+		"/Users/Scarecrow/Documents/5. Projects/aphrodite/src/sass/state",
+		"/Users/Scarecrow/Documents/5. Projects/aphrodite/src/scripts",
+		"/Users/Scarecrow/Documents/5. Projects/angular2-quick-start"
+	],
+	"file_history":
+	[
+		"/Users/Scarecrow/Documents/5. Projects/aphrodite/package.json",
+		"/Users/Scarecrow/Library/Caches/Cleanup At Startup/Transmit/859CCA81-C6C4-462B-9BD3-ED70D90C3AAC/package.json",
+		"/Users/Scarecrow/Library/Caches/Cleanup At Startup/Transmit/A8C22EDE-2585-42E3-9ACB-607BDCC99955/package.json",
+		"/Users/Scarecrow/Library/Caches/Cleanup At Startup/Transmit/4DF776D8-4860-4D5B-A75C-63F537BBBF72/package.json",
+		"/Users/Scarecrow/Library/Caches/Cleanup At Startup/Transmit/59CA7968-9C85-4B07-A0E0-1D421593EBBE/gulpfile.js",
+		"/Users/Scarecrow/Library/Caches/Cleanup At Startup/Transmit/D7E7572E-F804-41A1-8F0F-3269E5244419/package.json",
+		"/Users/Scarecrow/Library/Caches/Cleanup At Startup/Transmit/509BCC81-1CE7-44EF-8231-3B83D5300959/package.json",
+		"/Users/Scarecrow/Library/Caches/Cleanup At Startup/Transmit/F4A5F841-5486-48B1-A55E-F03EBD0CEBCC/package.json",
+		"/Users/Scarecrow/Documents/5. Projects/aphrodite/src/sass/state/_all-states.scss",
+		"/Users/Scarecrow/Documents/5. Projects/aphrodite/src/sass/layout/_footer.scss",
+		"/Users/Scarecrow/Documents/5. Projects/aphrodite/src/scripts/Plate.js",
+		"/Users/Scarecrow/Documents/5. Projects/aphrodite/src/sass/main.scss",
+		"/Users/Scarecrow/Documents/5. Projects/aphrodite/gulpfile.babel.js",
+		"/Users/Scarecrow/Documents/5. Projects/aphrodite/src/scripts/main.js",
+		"/Users/Scarecrow/Documents/5. Projects/aphrodite/src/sass/modules/_brushed-metal.scss",
+		"/Users/Scarecrow/Documents/5. Projects/aphrodite/src/sass/modules/_all-modules.scss",
+		"/Users/Scarecrow/Documents/5. Projects/aphrodite/dist/landingfeatures-desktop-static.html",
+		"/Users/Scarecrow/Documents/5. Projects/aphrodite/src/sass/modules/_preload.scss",
+		"/Users/Scarecrow/Documents/5. Projects/aphrodite/src/sass/base/_magic-css.scss",
+		"/Users/Scarecrow/Library/Application Support/Sublime Text 3/Packages/User/Preferences.sublime-settings",
+		"/Users/Scarecrow/Documents/5. Projects/aphrodite/src/index.html",
+		"/Users/Scarecrow/Documents/5. Projects/aphrodite/src/sass/modules/_footer.scss",
+		"/Users/Scarecrow/Documents/5. Projects/aphrodite/src/scripts/RotationCalculator.js",
+		"/Users/Scarecrow/Documents/5. Projects/aphrodite/src/sass/modules/_mobile-menu.scss",
+		"/Users/Scarecrow/Documents/5. Projects/aphrodite/src/sass/base/_all-base.scss",
+		"/Users/Scarecrow/Documents/5. Projects/aphrodite/.gitignore",
+		"/Users/Scarecrow/Documents/5. Projects/magic/magic.css",
+		"/Users/Scarecrow/Documents/5. Projects/aphrodite/src/sass/layout/_all-layouts.scss",
+		"/Users/Scarecrow/Documents/5. Projects/aphrodite/src/sass/layout/_navigation.scss",
+		"/Users/Scarecrow/Documents/5. Projects/aphrodite/src/sass/layout/_site-container.scss",
+		"/Users/Scarecrow/Documents/5. Projects/aphrodite/src/sass/modules/_navigation.scss",
+		"/Users/Scarecrow/Documents/5. Projects/aphrodite/src/sass/modules/_main-container.scss",
+		"/Users/Scarecrow/Documents/5. Projects/aphrodite/know-git.md",
+		"/Users/Scarecrow/Documents/5. Projects/aphrodite/src/sass/layout/_base.scss",
+		"/Users/Scarecrow/Documents/5. Projects/aphrodite/src/scripts/main-base.js",
+		"/Users/Scarecrow/Documents/5. Projects/aphrodite/dist/styles/main.css",
+		"/Users/Scarecrow/Documents/5. Projects/aphrodite/dist/styles/landingfeatures-desktop-static.css",
+		"/Users/Scarecrow/Documents/5. Projects/aphrodite/git-demo2.junk",
+		"/Users/Scarecrow/Documents/5. Projects/aphrodite/src/landingfeatures-desktop-static.html",
+		"/Users/Scarecrow/Documents/5. Projects/aphrodite/src/sass/modules/_brushed-metal-base.scss",
+		"/Users/Scarecrow/Documents/5. Projects/aphrodite/src/stickyHeaderFooter.html",
+		"/Users/Scarecrow/Documents/5. Projects/aphrodite/dist/styles/stickyHeaderFooter.css",
+		"/Users/Scarecrow/Documents/5. Projects/aphrodite/dist/styles/desktop-navigation.css",
+		"/Users/Scarecrow/Documents/5. Projects/aphrodite/src/desktop-navigation.html",
+		"/Users/Scarecrow/Documents/5. Projects/aphrodite/src/index-base.html",
+		"/Users/Scarecrow/Documents/5. Projects/aphrodite/dist/styles/desktop-footer.css",
+		"/Users/Scarecrow/Documents/5. Projects/aphrodite/src/desktop-footer.html",
+		"/Users/Scarecrow/Documents/5. Projects/aphrodite/src/index-base2.html",
+		"/Users/Scarecrow/Documents/5. Projects/Leo/src/sass/brushed-metal-02.scss",
+		"/Users/Scarecrow/Documents/5. Projects/Leo/src/circular-nav.html",
+		"/Users/Scarecrow/Documents/5. Projects/Leo/src/sass/circular-nav.scss",
+		"/Users/Scarecrow/Documents/5. Projects/Leo/src/brushed-metal.html",
+		"/Users/Scarecrow/Documents/5. Projects/Leo/src/sass/brushed-metal.scss",
+		"/Users/Scarecrow/Documents/5. Projects/Leo/dist/styles/brushed-metal.css",
+		"/Users/Scarecrow/Documents/5. Projects/Leo/src/brushed-metal-02.html",
+		"/Users/Scarecrow/Documents/5. Projects/Leo/src/sass/flex-nav.scss",
+		"/Users/Scarecrow/Documents/5. Projects/Leo/src/flex-nav.html",
+		"/Users/Scarecrow/Documents/5. Projects/Leo/src/sass/tmp-nav.scss",
+		"/Users/Scarecrow/Documents/5. Projects/Leo/src/temp-nav.html",
+		"/Users/Scarecrow/Documents/5. Projects/Leo/src/gradient-01.html",
+		"/Users/Scarecrow/Documents/5. Projects/Leo/src/sass/gradient-01.scss",
+		"/Users/Scarecrow/Documents/5. Projects/Leo/src/sass/brushed-metal-002.scss",
+		"/Users/Scarecrow/Library/Application Support/Sublime Text 3/Packages/User/HTML.sublime-settings",
+		"/Users/Scarecrow/Documents/5. Projects/Leo/src/scripts/components/LandingNav.js",
+		"/Users/Scarecrow/Documents/5. Projects/Leo/src/flexform.html",
+		"/Users/Scarecrow/Documents/5. Projects/Leo/src/sass/flexform.scss",
+		"/Users/Scarecrow/Documents/5. Projects/Leo/dream-setup.md",
+		"/Users/Scarecrow/Documents/5. Projects/Leo/app/shopping-card.md",
+		"/Users/Scarecrow/Documents/5. Projects/ExpandingSearchBar/markdown-01.md",
+		"/Users/Scarecrow/Documents/5. Projects/Leo/dist/styles/flexform.css",
+		"/Users/Scarecrow/Documents/5. Projects/Leo/src/sass/states/gradient-01.scss",
+		"/Users/Scarecrow/Documents/5. Projects/ExpandingSearchBar/markdown-01.html",
+		"/Volumes/Munich/learning-project/learning-flexbox/What-The-Flexbox/flexbox-form/style.css",
+		"/Volumes/Munich/learning-project/learning-flexbox/What-The-Flexbox/flexbox-form/index.html",
+		"/Users/Scarecrow/Library/Application Support/Sublime Text 3/Packages/HTML-CSS-JS Prettify/.jsbeautifyrc",
+		"/Users/Scarecrow/Documents/5. Projects/WD2443Dmenu/styles.css",
+		"/Users/Scarecrow/Documents/5. Projects/WD2443Dmenu/template.html",
+		"/Users/Scarecrow/.oh-my-zsh/themes/cobalt2.zsh-theme",
+		"/Users/Scarecrow/.zshrc",
+		"/Users/Scarecrow/Documents/5. Projects/Leo/src/index.html",
+		"/Users/Scarecrow/Documents/5. Projects/sticky-navigation/index.html",
+		"/Users/Scarecrow/Documents/5. Projects/Leo/gulpfile.babel.js",
+		"/Users/Scarecrow/Documents/5. Projects/Leo/src/sass/modules/_all-modules.scss",
+		"/Users/Scarecrow/Documents/5. Projects/Leo/src/scripts/components/readers/Readers.js",
+		"/Users/Scarecrow/Documents/5. Projects/Leo/gulpfile.babel.js.backup",
+		"/Users/Scarecrow/Documents/5. Projects/Leo/src/scripts/main.jsx",
+		"/Users/Scarecrow/Documents/5. Projects/Leo/src/scripts/components/MainLayout.js",
+		"/Users/Scarecrow/Documents/5. Projects/Leo/src/scripts/components/MainLayout.jsx",
+		"/Users/Scarecrow/Documents/5. Projects/WatchUsBuild-React/gulpfile.babel.js",
+		"/Users/Scarecrow/Documents/5. Projects/Leo/dist/scripts/bundle.js",
+		"/Users/Scarecrow/Documents/5. Projects/Leo/app/scripts/main.jsx",
+		"/Users/Scarecrow/Documents/5. Projects/Leo/dist/index.html",
+		"/Users/Scarecrow/Documents/5. Projects/Leo/gulpfile2.js",
+		"/Users/Scarecrow/Documents/5. Projects/Leo/gulpfile.js",
+		"/Users/Scarecrow/Documents/5. Projects/Leo/package.json",
+		"/Users/Scarecrow/Documents/5. Projects/Leo/app/index.html",
+		"/Users/Scarecrow/Documents/5. Projects/reactjs-nightingale/gulpfile.js",
+		"/Users/Scarecrow/Documents/5. Projects/Leo/src/sass/layouts/_all-layouts.scss",
+		"/Users/Scarecrow/Documents/5. Projects/Leo/src/sass/base/_all-base.scss",
+		"/Users/Scarecrow/Documents/5. Projects/Leo/app/scripts/MainLayout.jsx",
+		"/Users/Scarecrow/Documents/5. Projects/Leo/src/sass/main.scss",
+		"/Users/Scarecrow/Documents/5. Projects/Leo/app/scripts/components/LandingNav.jsx",
+		"/Users/Scarecrow/Documents/5. Projects/Leo/app/scripts/components/readers/Readers.jsx",
+		"/Users/Scarecrow/Documents/5. Projects/WatchUsBuild-React/public/index.html",
+		"/Users/Scarecrow/Documents/5. Projects/LandingPagePanels/dist/index.html",
+		"/Users/Scarecrow/Documents/5. Projects/Leo/app/main.jsx",
+		"/Users/Scarecrow/Documents/5. Projects/immortality/app/index.html",
+		"/Users/Scarecrow/Documents/5. Projects/immortality/package.json",
+		"/Users/Scarecrow/Documents/5. Projects/immortality/.gitignore",
+		"/Users/Scarecrow/Documents/5. Projects/Leo/.gitignore",
+		"/Users/Scarecrow/Documents/5. Projects/immortality/app/layout.html",
+		"/Users/Scarecrow/Documents/5. Projects/reactjs-mc-finder/dist/index.html",
+		"/Users/Scarecrow/Documents/5. Projects/immortality/src/sass/layout.scss",
+		"/Users/Scarecrow/Documents/5. Projects/immortality/gulpfile.js",
+		"/Users/Scarecrow/Documents/5. Projects/CircleNavigation239/styles.css",
+		"/Users/Scarecrow/Documents/5. Projects/CircleNavigation239/index.html",
+		"/Users/Scarecrow/Documents/5. Projects/immortality/app/styles/layout.css",
+		"/Users/Scarecrow/Documents/5. Projects/immortality/src/sass/circularnav.scss",
+		"/Users/Scarecrow/Documents/5. Projects/immortality/app/scripts/main.js",
+		"/Users/Scarecrow/Documents/5. Projects/immortality/src/sass/main.scss",
+		"/Users/Scarecrow/Documents/5. Projects/immortality/app/styles/circularnav.css",
+		"/Users/Scarecrow/Documents/5. Projects/CircleNavigation239/menu.js",
+		"/Users/Scarecrow/Documents/5. Projects/immortality/app/circularnav.html",
+		"/Users/Scarecrow/Documents/5. Projects/immortality/dist/scripts/circularnav.js",
+		"/Users/Scarecrow/Documents/5. Projects/immortality/app/scripts/circularnav.js",
+		"/Users/Scarecrow/Documents/5. Projects/immortality/app/scripts/components/AppNav.js",
+		"/Users/Scarecrow/Documents/5. Projects/HeyLookWebTemplate/navigation.html",
+		"/Users/Scarecrow/Documents/5. Projects/CircularNavigation/index.html"
+	],
+	"find":
+	{
+		"height": 37.0
+	},
+	"find_in_files":
+	{
+		"height": 192.0,
+		"where_history":
+		[
+			"<current file>",
+			"<current file>,/Users/Scarecrow/Documents/5. Projects/aphrodite/src/sass",
+			"<current file>",
+			"<current file>,/Users/Scarecrow/Documents/5. Projects/ShowcaseOnTour2016/src/sass",
+			"<current file>",
+			"<current file>,/Users/Scarecrow/Documents/5. Projects/web03/vm/mastersite.com/htdocs",
+			"<current file>,/Users/Scarecrow/Documents/5. Projects/web03/vm/mastersite.com/application",
+			"<current file>,/Users/Scarecrow/Documents/5. Projects/web03/vm/showcase.ontour/development/src/sass",
+			"<current file>",
+			"<current file>,/Users/Scarecrow/Documents/LiveNation/cms3.lnmdigital.com/app/scripts/",
+			"<current file>,/Users/Scarecrow/Documents/LiveNation/cms3.lnmdigital.com/app/scripts/controllers/tour",
+			"<current file>,,/Users/Scarecrow/Documents/LiveNation/cms3.lnmdigital.com/app/scripts",
+			"<current file>,,/Users/Scarecrow/Documents/LiveNation/cms3.lnmdigital.com/app/scripts/**",
+			"<current file>,,/Users/Scarecrow/Documents/LiveNation/cms3.lnmdigital.com/app/scripts/*",
+			"<current file>,,/Users/Scarecrow/Documents/LiveNation/cms3.lnmdigital.com/app/scripts",
+			"<current file>,,/Users/Scarecrow/Documents/LiveNation/cms3.lnmdigital.com/app/styles",
+			"<current file>,,/Users/Scarecrow/Documents/LiveNation/cms3.lnmdigital.com/app/views",
+			"<current file>,,/Users/Scarecrow/Documents/LiveNation/cms3.lnmdigital.com/app/scripts",
+			"<current file>",
+			"<current file>,/Users/Scarecrow/Documents/5. Projects/ShowcaseOnTour2016/src/sass",
+			"<current file>",
+			"/Users/Scarecrow/Documents/5. Projects/ApplicationRegistration/src",
+			"<current file>,/Volumes/Munich/Pluralsight/angularjs-line-of-business-applications/10-angularjs-lob-exercise-files/productManagement/app/products",
+			"<current file>",
+			"<open files>",
+			"/Users/Scarecrow/Documents/5. Projects/ngPlaybook/Apps/forms",
+			"",
+			"<current file>",
+			"<current file>,<open files>",
+			"<current file>",
+			"<current file>,<open files>",
+			"<current file>",
+			"<open files>",
+			"",
+			"<open files>",
+			"<open files>,/Users/Scarecrow/Documents/5. Projects/ShowcaseOnTour",
+			"<open files>",
+			"<current file>,<open files>,/Users/Scarecrow/Documents/5. Projects/ngPlaybook/Apps/forms/js",
+			"<current file>,<open files>",
+			"<current file>",
+			"<current file>,<open files>",
+			"<current file>",
+			"<current file>,<open files>",
+			"<current file>",
+			""
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"exorcist",
+			"buffer",
+			"exorcist",
+			"babelify",
+			"register",
+			"imagesloaded",
+			"mp3",
+			"safari",
+			"footer",
+			"body",
+			"bodyHeight",
+			"modules",
+			"height",
+			"20",
+			"100",
+			"Social",
+			"let",
+			"instance",
+			"fail",
+			"done",
+			"preloader",
+			"mainContainer",
+			"preloadContainer",
+			"mainContainerParentHeight",
+			"mainContainer",
+			"mainContainerParent",
+			"mainContainer",
+			"newsContent",
+			"mainContainer",
+			"newsContentParent",
+			"mainContainer",
+			"content",
+			"body",
+			"mainContainer",
+			"onAlways",
+			"container",
+			"mainContainer",
+			"slideLeft",
+			"slideRight",
+			"right",
+			"windowWidth",
+			"hightlightImage",
+			"showNewsTeaser",
+			"currentImage",
+			"thisImage",
+			"selectImage",
+			"src",
+			"right",
+			"selectImage",
+			"nextImage",
+			"nextAngle",
+			"thisAngle",
+			"nextAngle",
+			"thisPlate",
+			"nextAngle",
+			"this",
+			"thisAngle",
+			"image",
+			"selected",
+			"chamber",
+			"image",
+			"thisImage",
+			"selectImage",
+			"console",
+			"defaultImage",
+			"value",
+			"image",
+			"imageList",
+			"obj",
+			"imageList",
+			"thisImage",
+			"image",
+			"width",
+			"link",
+			"newsLink",
+			"link",
+			"widht",
+			"$chamber-container-wraper-height",
+			"images",
+			"content",
+			"white",
+			"crimson",
+			"golgrd",
+			"cyan",
+			"left",
+			"slideLeft",
+			"slideRight",
+			"windowWidth",
+			"left",
+			"windowWidth",
+			"left",
+			"windowWidth",
+			"fadeIn",
+			"slideLeft",
+			"\n.",
+			"slideLeft",
+			"mobile",
+			"circlePos",
+			"{\n",
+			"degreeLeft",
+			"distanceLeft",
+			"const",
+			"platePos",
+			"factor",
+			"platePos",
+			"distanceLeft",
+			"distanceRight",
+			"circlePos",
+			"distanceLeft",
+			"distanceRight",
+			"circlePos",
+			"platePos",
+			"circlePos",
+			"platePos",
+			"circlePos",
+			"platePos",
+			"circlePos",
+			"circleDeg",
+			"plateDeg",
+			"jquery",
+			"distantLeft",
+			"distantRight",
+			"RotationCalculator",
+			"plateDeg",
+			"degreeRight",
+			"plateDeg",
+			"degreeLeft",
+			"degreeRight"
+		],
+		"highlight": false,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"chamberBoxDemension",
+			"div",
+			"l",
+			"li",
+			".flexForm",
+			"flexForm",
+			"scripts",
+			"dist",
+			"scripts",
+			"className",
+			"remove-banner-info",
+			"Link",
+			"className",
+			"1a9bd7",
+			".natureForm",
+			"32afe3",
+			"toLandingZone",
+			"toTargetHome",
+			"}",
+			"images/members/",
+			"images/img.youtube.com",
+			"images/business_sites/content",
+			"tour-more-btn",
+			"tour-event",
+			"tour-events",
+			"tour-table-img",
+			"tour-table-top",
+			"tours",
+			"tour-table",
+			"5",
+			"=\"layout-section-container",
+			"layout-section-container",
+			"extend_base",
+			"Link",
+			"event-item-one",
+			"event-name-one",
+			"",
+			"col-sm-6 ",
+			"col-sm-6",
+			"",
+			"ut-inline-box-container",
+			"  <div class=\"row ut-inline-box-conta\">",
+			"utScrollspy",
+			"LoadHobbyList",
+			"hobbyList",
+			"",
+			"elemName",
+			"fetchFormElement",
+			"ut-input",
+			"utInput",
+			"model.artist",
+			"ut-effect",
+			".ut-box",
+			"ut-box",
+			"ut-content",
+			"ut-box",
+			"ut-content",
+			"ut-square",
+			"detailed-item",
+			"display",
+			"tmot-more-info-item",
+			"tmot-more-info",
+			"current",
+			"tmot-bio-item",
+			"tmot-box-closer-inner",
+			"tmot-box-closer",
+			"",
+			"tmot-news-piece",
+			"tmot-news-inner",
+			"tmot-news-items",
+			"tmot-news",
+			"tmot-memo-box",
+			" tmot-memo-box",
+			" ",
+			"",
+			"biolist",
+			"static-content-02",
+			"static-content-01",
+			"bio",
+			"morenews",
+			"more-news",
+			"#more-news",
+			"more-news",
+			"news-list",
+			"pagelanding-zone",
+			"pagelanding",
+			"ln-bg-dark.jpg",
+			"#1a9bd7",
+			"ln-news-detail.html",
+			"2014",
+			"2013",
+			"",
+			"News",
+			"searchDataService",
+			"UtTableController",
+			"<div class=\"panel panel-body\">",
+			"<div class=\"panel panel-body\">\n              <div class=\"media\">\n                <a class=\"pull-left\" href=\"#\">\n                  <i class=\"fa fa-expeditedssl fa-2x\"></i>\n                </a>\n                <div class=\"media-body\">\n                  <h4>App Name - [Code]</h4>\n                  <p class=\"text-muted\">\n                    <span ng-bind=\"model.app.selected.appName\"></span> [\n                    <span ng-bind=\"model.app.selected.appId\"></span>\n                    ]\n                  </p>\n                </div>\n              </div>\n          </div>",
+			"app",
+			"<p class=\"text-muted\">\n                    VectorLab, Inc.",
+			"expeditedssl",
+			"application",
+			"Application Name / Title",
+			"model",
+			"utRegister",
+			"ut-register",
+			"model",
+			"address",
+			"description",
+			"tm-table",
+			"1:1",
+			"2:1",
+			"hamlet",
+			"#586660",
+			"hamlet"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": false,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 1,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "src/index.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 8810,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								5370,
+								5370
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content"
+							],
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/HTML/HTML.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 887.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "gulpfile.babel.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2918,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								568,
+								568
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content"
+							],
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/JavaScriptNext - ES6 Syntax/JavaScriptNext.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "src/scripts/main.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 6480,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								486,
+								486
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content"
+							],
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/JavaScriptNext - ES6 Syntax/JavaScriptNext.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "/Users/Scarecrow/Library/Caches/Cleanup At Startup/Transmit/5EBBAA36-5CB4-403D-ABCA-067959F0133A/gulpfile.babel.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2156,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								100,
+								100
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content"
+							],
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/JavaScriptNext - ES6 Syntax/JavaScriptNext.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 27.0
+	},
+	"input":
+	{
+		"height": 99.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.doc":
+	{
+		"height": 0.0
+	},
+	"output.exec":
+	{
+		"height": 76.0
+	},
+	"output.find_results":
+	{
+		"height": 249.0
+	},
+	"output.sftp":
+	{
+		"height": 112.0
+	},
+	"pinned_build_system": "",
+	"project": "working.sublime-project",
+	"replace":
+	{
+		"height": 50.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"pack",
+				"package.json"
+			],
+			[
+				"mai",
+				"src/scripts/main.js"
+			],
+			[
+				"main.js",
+				"src/scripts/main.js"
+			],
+			[
+				"main",
+				"src/sass/main.scss"
+			],
+			[
+				"gul",
+				"gulpfile.babel.js"
+			],
+			[
+				"_all-mo",
+				"src/sass/modules/_all-modules.scss"
+			],
+			[
+				"inde",
+				"src/index.html"
+			],
+			[
+				"_bru",
+				"src/sass/modules/_brushed-metal.scss"
+			],
+			[
+				"_foo",
+				"src/sass/modules/_footer.scss"
+			],
+			[
+				"_brush",
+				"src/sass/modules/_brushed-metal.scss"
+			],
+			[
+				"_footer",
+				"src/sass/modules/_footer.scss"
+			],
+			[
+				"_f",
+				"src/sass/layout/_footer.scss"
+			],
+			[
+				"footer",
+				"src/sass/layout/_footer.scss"
+			],
+			[
+				"",
+				"Leo/src/brushed-metal.html"
+			],
+			[
+				"mark",
+				"ExpandingSearchBar/markdown-01.md"
+			],
+			[
+				"tmp",
+				"Leo/src/sass/tmp-nav.scss"
+			],
+			[
+				"101",
+				"ShowcaseOnTour/bower_components/FlexSlider/demo/fonts/webfonts/geo-medium/svg/1110FC_0.svg"
+			],
+			[
+				"app-mai",
+				"poc201509/app-main-form.html"
+			],
+			[
+				"ut.tabl",
+				"KingLearTable/js/ut-table/ut.table.service.js"
+			],
+			[
+				"all-partial",
+				"ShowcaseOnTour/sass/module/partial/_all-partial.scss"
+			],
+			[
+				"all-par",
+				"ShowcaseOnTour/.sass-cache/3c910d8c1defbfaeb3c55f1250dd729cfb90558a/_all-partial.scssc"
+			],
+			[
+				"index.html",
+				"ShowcaseOnTour/index.html"
+			],
+			[
+				"grad",
+				"ShowcaseOnTour/css/gradients.css"
+			],
+			[
+				"repon",
+				"ShowcaseOnTour/css/responsive.css"
+			],
+			[
+				"reset",
+				"ShowcaseOnTour/css/reset.css"
+			],
+			[
+				"gree",
+				"ShowcaseOnTour/css/colors/green.css"
+			],
+			[
+				"samp",
+				"ShowcaseOnTour/sample-project.html"
+			],
+			[
+				"sty",
+				"ShowcaseOnTour/css/style.css"
+			],
+			[
+				"nt.tab",
+				"KingLearTable/js/ut-table/ut.table.controller.js"
+			],
+			[
+				"app-lis",
+				"poc201509/app-list-detail.html"
+			],
+			[
+				"tab",
+				"KingLearTable/table-ng.html"
+			],
+			[
+				"table-n",
+				"KingLearTable/table-ng-grid.html"
+			],
+			[
+				"ut.table",
+				"KingLearTable/js/ut-table/ut.table.controller.js"
+			],
+			[
+				"ut.ta",
+				"KingLearTable/js/ut-table/ut.table.module.js"
+			],
+			[
+				"ut.t",
+				"KingLearTable/js/ut-table/ut.table.module.js"
+			],
+			[
+				"ut.table.ser",
+				"KingLearTable/js/ut-table/ut.table.service.js"
+			],
+			[
+				"table",
+				"KingLearTable/table-ng.html"
+			],
+			[
+				"app.html",
+				"poc201509/app-list.html"
+			],
+			[
+				"app.m",
+				"KingLearTable/js/app.module.js"
+			],
+			[
+				"clean",
+				"Flatlab Main Files/admin/template_content/assets/ckeditor/lang/en-au.js"
+			],
+			[
+				"edit",
+				"Flatlab Main Files/admin/template_content/editable_table.html"
+			],
+			[
+				"form-search.css",
+				"7-clean-and-responsive-forms/assets/form-search.css"
+			],
+			[
+				"sear",
+				"7-clean-and-responsive-forms/form-search.html"
+			],
+			[
+				"p",
+				"KingLearTable/page.html"
+			],
+			[
+				"table-grid.ht",
+				"KingLearTable/table-ng-grid.html"
+			],
+			[
+				"tan",
+				"KingLearTable/table-ng.html"
+			],
+			[
+				"app-ng",
+				"KingLearTable/js/app-ng.js"
+			],
+			[
+				"app.c",
+				"KingLearTable/css/app.css"
+			],
+			[
+				"page-f",
+				"KingLearTable/page-flex.html"
+			],
+			[
+				"pag",
+				"artists-tmot/page.html"
+			],
+			[
+				"app-n",
+				"KingLearTable/js/app-ng.js"
+			],
+			[
+				"modu",
+				"KingLearTable/js/app.module.js"
+			],
+			[
+				"t",
+				"KingLearTable/table.html"
+			],
+			[
+				"ta",
+				"KingLearTable/css/table.css"
+			],
+			[
+				"layo",
+				"assets/slidingheader/layout-simple.css"
+			],
+			[
+				"index",
+				"index.html"
+			],
+			[
+				"icon",
+				"assets/bootstrap/fonts/glyphicons-halflings-regular.svg"
+			],
+			[
+				"sy",
+				"assets/style.css"
+			],
+			[
+				"offices",
+				"web03-OnTour/application/modules/facebook/views/scripts/index/facebookassociate.phtml"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 380.0
+	},
+	"select_symbol":
+	{
+		"height": 354.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 484.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 223.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
