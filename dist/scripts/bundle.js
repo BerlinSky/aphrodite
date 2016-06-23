@@ -9833,53 +9833,14 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 		rotateChambers();
 	});
 
-	function rotateChambers() {
-		var plate = (0, _jquery2.default)(".cylinderContainer");
-
-		var p = 2;
-		var deg = plate.attr("data-deg");
-
-		deg = parseInt(deg);
-		deg += 60;
-
-		var transformStyle = "rotate(" + deg + "deg)";
-
-		// console.log(transformStyle);
-
-		plate.css('-webkit-transform', transformStyle);
-		plate.css('-moz-transform', transformStyle);
-		plate.css('transform', transformStyle);
-		plate.css('-webkit-transition', '-webkit-transform ' + p + 's');
-		plate.css('transition', 'transform ' + p + 's');
-
-		plate.attr("data-deg", deg);
-	}
-
-	function revolve() {
-		var p = 2;
-
-		(0, _jquery2.default)(".chamber").map(function () {
-			// p++;
-			var item = (0, _jquery2.default)(this);
-			var deg = item.attr("data-deg");
-			deg = parseInt(deg);
-			deg += 60;
-
-			// console.log(deg);
-
-			var transformStyle = "rotate(" + deg + "deg) translate(10em) rotate(" + -1 * deg + "deg)";
-
-			// console.log(transformStyle);
-
-			item.css('-webkit-transform', transformStyle);
-			item.css('-moz-transform', transformStyle);
-			item.css('transform', transformStyle);
-			item.css('-webkit-transition', '-webkit-transform ' + p + 's');
-			item.css('transition', 'transform ' + p + 's');
-
-			(0, _jquery2.default)(this).attr("data-deg", deg);
-		});
-	}
+	function hasParent(e, p) {
+		if (!e) return false;
+		var el = e.target || e.srcElement || e || false;
+		while (el && el != p) {
+			el = el.parentNode || false;
+		}
+		return el !== false;
+	};
 });
 
 },{"jquery":1}]},{},[2])
