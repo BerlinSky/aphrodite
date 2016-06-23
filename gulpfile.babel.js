@@ -26,7 +26,7 @@ const config = {
 	}
 }
 
-watchify.args.debug = true;
+// watchify.args.debug = true;
 
 const sync = browserSync.create({port: 10010, browser: "google chrome"});
 
