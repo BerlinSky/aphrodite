@@ -12,6 +12,7 @@ import ifElse from 'gulp-if-else';
 import sass from 'gulp-sass';
 import sourcemaps from 'gulp-sourcemaps';
 import prefix from 'gulp-autoprefixer';
+import cssnano from 'gulp-cssnano';
 // var fontAwesome = require('node-font-awesome');
 import fontAwesome from 'node-font-awesome';
 
@@ -85,6 +86,7 @@ gulp.task('sass', () => {
       includePaths: [fontAwesome.scssPath]
 	    }).on('error', sass.logError))
     .pipe(prefix())
+    .pipe(cssnano())
     .pipe(sourcemaps.write())
 		.pipe(gulp.dest(config.paths.css));
 
