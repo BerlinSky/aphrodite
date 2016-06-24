@@ -9,7 +9,7 @@ import watchify from 'watchify';
 import babelify from 'babelify';
 import uglify from 'gulp-uglify';
 import ifElse from 'gulp-if-else';
-import sass from 'gulp-sass';
+import sassLint from 'gulp-sass-lint';
 import sourcemaps from 'gulp-sourcemaps';
 import prefix from 'gulp-autoprefixer';
 import fontAwesome from 'node-font-awesome';
@@ -72,6 +72,16 @@ gulp.task('html', () => {
 		.pipe(gulp.dest(config.paths.dist));
 
 	log('html task ends');
+});
+
+gulp.task('lintsass', () => {
+	log('lintsass task starts');
+
+  gulp.src([config.paths.sass])
+    .pipe(sassLint())
+    .pipe(sassLint.format());
+
+	log('lintsass task ends');
 });
 
 gulp.task('sass', () => {

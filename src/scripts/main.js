@@ -94,18 +94,19 @@ $(function () {
 				break;
 			case mainContainerParentHeight >= 620 && mainContainerParentHeight < 680:
 				// iPad and iPad Mini
-				supplement = 40;
+				// supplement = 40;
 				break;
 			default:
 				25;
 		}
 
-		if (mainContainerParentHeight < 700) {
-    console.log('supplement', supplement);
+		// if (mainContainerParentHeight < 700) {
+  //   console.log('supplement', supplement);
 
-			var newsContentTop = mainContainerParentHeight - newsContent.height() - supplement;
-			newsContent.css({ top: newsContentTop });
-		}
+		// 	var newsContentTop = mainContainerParentHeight - newsContent.height() - supplement;
+		// 	newsContent.css({ top: newsContentTop });
+		// }
+		
 	}
 
 	$('[data-mobileMenu="open"]').click(function() {
