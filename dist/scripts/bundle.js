@@ -9968,7 +9968,6 @@ var SelectTm = function () {
 				});
 			});
 
-			// close the select element if the target it´s not the select element or one of its descendants..
 			document.addEventListener('click', function (ev) {
 				var target = ev.target;
 				if (self._isOpen() && target !== self.selEl && !self._hasParent(target, self.selEl)) {
@@ -9976,7 +9975,6 @@ var SelectTm = function () {
 				}
 			});
 
-			// keyboard navigation events
 			this.selEl.addEventListener('keydown', function (ev) {
 				var keyCode = ev.keyCode || ev.which;
 
@@ -10118,19 +10116,25 @@ var _jquery = require('jquery');
 
 var _jquery2 = _interopRequireDefault(_jquery);
 
-var _SelectFx = require('./SelectFx');
+var _SelectTm = require('./SelectTm');
 
-var _SelectFx2 = _interopRequireDefault(_SelectFx);
+var _SelectTm2 = _interopRequireDefault(_SelectTm);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 (0, _jquery2.default)(function () {
 
-   document.querySelectorAll('select.cs-select').forEach(function (elem) {
-      var selectTm = new _SelectFx2.default(elem);
-      selectTm.decorate();
-   });
+  (0, _jquery2.default)('select.cs-select').each(function (index, value) {
+    // const elem = $(this);
+    var selectTm = new _SelectTm2.default(this);
+    selectTm.decorate();
+  });
+
+  // document.querySelectorAll( 'select.cs-select' ).forEach( function(elem) { 
+  //   const selectTm = new SelectTm(elem);
+  //   selectTm.decorate();
+  // });
 });
 
-},{"./SelectFx":2,"jquery":1}]},{},[3])
+},{"./SelectTm":2,"jquery":1}]},{},[3])
 //# sourceMappingURL=bundle.js.map

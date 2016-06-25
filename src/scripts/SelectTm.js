@@ -122,7 +122,6 @@ export default class SelectTm {
 			} );
 		} );
 
-		// close the select element if the target it´s not the select element or one of its descendants..
 		document.addEventListener( 'click', function(ev) {
 			var target = ev.target;
 			if( self._isOpen() && target !== self.selEl && !self._hasParent( target, self.selEl ) ) {
@@ -130,7 +129,6 @@ export default class SelectTm {
 			}
 		} );
 
-		// keyboard navigation events
 		this.selEl.addEventListener( 'keydown', function( ev ) {
 			var keyCode = ev.keyCode || ev.which;
 
