@@ -1,9 +1,12 @@
 import $ from 'jquery';
 
-export default class Person {
-	constructor(el, options) {
-		this.el = el;
-		console.log("this.el", this.el);
+export default class SelectTm {
+	constructor(elem) {
+		this.elem = elem;
+	}
+
+	decorate(options) {
+		console.log("this.elem", this.elem);
 
 		this.options = this._extend( {}, this.options );
 		this._extend( this.options, options );
@@ -11,12 +14,8 @@ export default class Person {
 		this._init();
 
 		this.options = {
-			// if true all the links will open in a new tab.
-			// if we want to be redirected when we click an option, we need to define a data-link attr on the option of the native select element
 			newTab : true,
-			// when opening the select element, the default placeholder (if any) is shown
 			stickyPlaceholder : true,
-			// callback when changing the value
 			onChange : function( val ) { return false; }
 		};
 	}
@@ -31,107 +30,94 @@ export default class Person {
 	}
 
 	_init() {
-		// check if we are using a placeholder for the native select box
-		// we assume the placeholder is disabled and selected by default
-		var selectedOpt = this.el.querySelector( 'option[selected]' );
+		let selectedOpt = this.elem.querySelector( 'option[selected]' );
 		this.hasDefaultPlaceholder = selectedOpt && selectedOpt.disabled;
 
-		// get selected option (either the first option with attr selected or just the first option)
-		this.selectedOpt = selectedOpt || this.el.querySelector( 'option' );
+		this.selectedOpt = selectedOpt || this.elem.querySelector( 'option' );
 
-		// create structure
 		this._createSelectEl();
-
-		// all options
 		this.selOpts = [].slice.call( this.selEl.querySelectorAll( 'li[data-option]' ) );
-		
-		// total options
 		this.selOptsCount = this.selOpts.length;
 		
-		// current index
 		this.current = this.selOpts.indexOf( this.selEl.querySelector( 'li.cs-selected' ) ) || -1;
 		
-		// placeholder elem
 		this.selPlaceholder = this.selEl.querySelector( 'span.cs-placeholder' );
 
-		// init events
 		this._initEvents();
 	}
 
 	_createSelectEl() {
-		var self = this, options = '', createOptionHTML = function(el) {
-			var optclass = '', classes = '', link = '';
+		let self = this, options = '', createOptionHTML = function(elem) {
+			let optclass = '', classes = '', link = '';
 
-			if( el.selectedOpt && !this.foundSelected && !this.hasDefaultPlaceholder ) {
+			if( elem.selectedOpt && !this.foundSelected && !this.hasDefaultPlaceholder ) {
 				classes += 'cs-selected ';
 				this.foundSelected = true;
 			}
-			// extra classes
-			if( el.getAttribute( 'data-class' ) ) {
-				classes += el.getAttribute( 'data-class' );
+
+			if( elem.getAttribute( 'data-class' ) ) {
+				classes += elem.getAttribute( 'data-class' );
 			}
-			// link options
-			if( el.getAttribute( 'data-link' ) ) {
-				link = 'data-link=' + el.getAttribute( 'data-link' );
+
+			if( elem.getAttribute( 'data-link' ) ) {
+				link = 'data-link=' + elem.getAttribute( 'data-link' );
 			}
 
 			if( classes !== '' ) {
 				optclass = 'class="' + classes + '" ';
 			}
 
-			var extraAttributes = '';
+			let extraAttributes = '';
 
-			[].forEach.call(el.attributes, function(attr) {
-				var name = attr['name'];
+			[].forEach.call(elem.attributes, function(attr) {
+				let name = attr['name'];
 
 				if(name.indexOf('data-') + ['data-option', 'data-value'].indexOf(name) == -1){
 					extraAttributes += name + "='" + attr['value'] + "' ";
 				}
 			} );
 
-			return '<li ' + optclass + link + extraAttributes + ' data-option data-value="' + el.value + '"><span>' + el.textContent + '</span></li>';
+			return '<li ' + optclass + link + extraAttributes + ' data-option data-value="' + elem.value + '"><span>' + elem.textContent + '</span></li>';
 		};
 
-		[].slice.call( this.el.children ).forEach( function(el) {
-			if( el.disabled ) { return; }
+		[].slice.call( this.elem.children ).forEach( function(elem) {
+			if( elem.disabled ) { return; }
 
-			var tag = el.tagName.toLowerCase();
+			var tag = elem.tagName.toLowerCase();
 
 			if( tag === 'option' ) {
-				options += createOptionHTML(el);
+				options += createOptionHTML(elem);
 			}
 			else if( tag === 'optgroup' ) {
-				options += '<li class="cs-optgroup"><span>' + el.label + '</span><ul>';
-				[].slice.call( el.children ).forEach( function(opt) {
+				options += '<li class="cs-optgroup"><span>' + elem.label + '</span><ul>';
+				[].slice.call( elem.children ).forEach( function(opt) {
 					options += createOptionHTML(opt);
 				} );
 				options += '</ul></li>';
 			}
 		} );
 
-		var opts_el = '<div class="cs-options"><ul>' + options + '</ul></div>';
+		let opts_el = '<div class="cs-options"><ul>' + options + '</ul></div>';
 		this.selEl = document.createElement( 'div' );
-		this.selEl.className = this.el.className;
-		this.selEl.tabIndex = this.el.tabIndex;
+		this.selEl.className = this.elem.className;
+		this.selEl.tabIndex = this.elem.tabIndex;
 		this.selEl.innerHTML = '<span class="cs-placeholder">' + this.selectedOpt.textContent + '</span>' + opts_el;
-		this.el.parentNode.appendChild( this.selEl );
-		this.selEl.appendChild( this.el );
+		this.elem.parentNode.appendChild( this.selEl );
+		this.selEl.appendChild( this.elem );
 	}
 
 	_initEvents() {
 		var self = this;
 
-		// open/close select
 		this.selPlaceholder.addEventListener( 'click', function() {
 			self._toggleSelect();
 		} );
 
-		// clicking the options
 		this.selOpts.forEach( function(opt, idx) {
 			opt.addEventListener( 'click', function() {
 				self.current = idx;
 				self._changeOption();
-				// close select elem
+				
 				self._toggleSelect();
 			} );
 		} );
@@ -235,7 +221,7 @@ export default class Person {
 		this.selPlaceholder.textContent = opt.textContent;
 		
 		// change native select element´s value
-		this.el.value = opt.getAttribute( 'data-value' );
+		this.elem.value = opt.getAttribute( 'data-value' );
 
 		// remove class cs-selected from old selected option and add it to current selected option
 		var oldOpt = this.selEl.querySelector( 'li.cs-selected' );
@@ -258,16 +244,16 @@ export default class Person {
 		}
 
 		// callback
-		this.options.onChange( this.el.value );
+		this.options.onChange( this.elem.value );
 	}
 
 	_hasParent( e, p ) {
 		if (!e) return false;
-		var el = e.target||e.srcElement||e||false;
-		while (el && el != p) {
-			el = el.parentNode||false;
+		var elem = e.target||e.srcElement||e||false;
+		while (elem && elem != p) {
+			elem = elem.parentNode||false;
 		}
-		return (el!==false);
+		return (elem!==false);
 	}
 
 }
