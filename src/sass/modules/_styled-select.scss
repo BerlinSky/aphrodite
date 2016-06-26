@@ -1,5 +1,4 @@
-/* Default custom select styles */
-div.cs-select {
+div.styledSelect {
 	display: inline-block;
 	vertical-align: middle;
 	position: relative;
@@ -9,22 +8,18 @@ div.cs-select {
 	width: 100%;
 	max-width: 500px;
 	-webkit-touch-callout: none;
-	-webkit-user-select: none;
-	-khtml-user-select: none;
-	-moz-user-select: none;
-	-ms-user-select: none;
 	user-select: none;
 }
 
-div.cs-select:focus {
+div.styledSelect:focus {
 	outline: none; /* For better accessibility add a style for this in your skin */
 }
 
-.cs-select select {
+.styledSelect select {
 	display: none;
 }
 
-.cs-select span {
+.styledSelect span {
 	display: block;
 	position: relative;
 	cursor: pointer;
@@ -35,12 +30,12 @@ div.cs-select:focus {
 }
 
 /* Placeholder and selected option */
-.cs-select > span {
+.styledSelect > span {
 	padding-right: 3em;
 }
 
-.cs-select > span::after,
-.cs-select .cs-selected span::after {
+.styledSelect > span::after,
+.styledSelect .cs-selected span::after {
 	speak: none;
 	position: absolute;
 	top: 50%;
@@ -50,17 +45,17 @@ div.cs-select:focus {
 	-moz-osx-font-smoothing: grayscale;
 }
 
-.cs-select > span::after {
+.styledSelect > span::after {
 	content: '\25BE';
 	right: 1em;
 }
 
-.cs-select .cs-selected span::after {
+.styledSelect .cs-selected span::after {
 	content: '\2713';
 	margin-left: 1em;
 }
 
-.cs-select.cs-active > span::after {
+.styledSelect.cs-active > span::after {
 	-webkit-transform: translateY(-50%) rotate(180deg);
 	transform: translateY(-50%) rotate(180deg);
 }
@@ -70,7 +65,7 @@ div.cs-active {
 }
 
 /* Options */
-.cs-select .cs-options {
+.styledSelect .cs-options {
 	position: absolute;
 	overflow: hidden;
 	width: 100%;
@@ -78,31 +73,31 @@ div.cs-active {
 	visibility: hidden;
 }
 
-.cs-select.cs-active .cs-options {
+.styledSelect.cs-active .cs-options {
 	visibility: visible;
 }
 
-.cs-select ul {
+.styledSelect ul {
 	list-style: none;
 	margin: 0;
 	padding: 0;
 	width: 100%;
 }
 
-.cs-select ul span {
+.styledSelect ul span {
 	padding: 1em;
 }
 
-.cs-select ul li.cs-focus span {
+.styledSelect ul li.cs-focus span {
 	background-color: #ddd;
 }
 
 /* Optgroup and optgroup label */
-.cs-select li.cs-optgroup ul {
+.styledSelect li.cs-optgroup ul {
 	padding-left: 1em;
 }
 
-.cs-select li.cs-optgroup > span {
+.styledSelect li.cs-optgroup > span {
 	cursor: default;
 }
 
@@ -133,7 +128,6 @@ div.cs-skin-border {
 .cs-skin-border > span {
 	border: 5px solid #000;
 	border-color: inherit;
-	-webkit-transition: background 0.2s, border-color 0.2s;
 	transition: background 0.2s, border-color 0.2s;
 }
 
@@ -153,7 +147,6 @@ div.cs-skin-border {
 	color: #ddd9c9;
 	font-size: 1.5em;
 	opacity: 1;
-	-webkit-transition: opacity 0.2s;
 	transition: opacity 0.2s;
 }
 
@@ -167,19 +160,16 @@ div.cs-skin-border {
 	color: #2980b9;
 	font-size: 0.75em;
 	opacity: 0;
-	-webkit-transition: opacity 0.2s, visibility 0s 0.2s;
 	transition: opacity 0.2s, visibility 0s 0.2s;
 }
 
 .cs-skin-border.cs-active .cs-options {
 	opacity: 1;
-	-webkit-transition: opacity 0.2s;
 	transition: opacity 0.2s;
 }
 
 .cs-skin-border ul span {
 	padding: 1em 2em;
-	-webkit-backface-visibility: hidden;
 	backface-visibility: hidden;
 }
 

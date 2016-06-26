@@ -9817,6 +9817,28 @@ return jQuery;
 },{}],2:[function(require,module,exports){
 'use strict';
 
+var _jquery = require('jquery');
+
+var _jquery2 = _interopRequireDefault(_jquery);
+
+var _selectTm = require('./selectTm');
+
+var _selectTm2 = _interopRequireDefault(_selectTm);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+(0, _jquery2.default)(function () {
+
+  (0, _jquery2.default)('select.js-styledSelect').each(function (index, value) {
+    // const elem = $(this);
+    var selectTm = new _selectTm2.default(this);
+    selectTm.decorate();
+  });
+});
+
+},{"./selectTm":3,"jquery":1}],3:[function(require,module,exports){
+'use strict';
+
 Object.defineProperty(exports, "__esModule", {
 	value: true
 });
@@ -9831,14 +9853,14 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-var SelectTm = function () {
-	function SelectTm(elem) {
-		_classCallCheck(this, SelectTm);
+var StyledSelect = function () {
+	function StyledSelect(elem) {
+		_classCallCheck(this, StyledSelect);
 
 		this.elem = elem;
 	}
 
-	_createClass(SelectTm, [{
+	_createClass(StyledSelect, [{
 		key: 'decorate',
 		value: function decorate(options) {
 			console.log("this.elem", this.elem);
@@ -10104,37 +10126,10 @@ var SelectTm = function () {
 		}
 	}]);
 
-	return SelectTm;
+	return StyledSelect;
 }();
 
-exports.default = SelectTm;
+exports.default = StyledSelect;
 
-},{"jquery":1}],3:[function(require,module,exports){
-'use strict';
-
-var _jquery = require('jquery');
-
-var _jquery2 = _interopRequireDefault(_jquery);
-
-var _SelectTm = require('./SelectTm');
-
-var _SelectTm2 = _interopRequireDefault(_SelectTm);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-(0, _jquery2.default)(function () {
-
-  (0, _jquery2.default)('select.cs-select').each(function (index, value) {
-    // const elem = $(this);
-    var selectTm = new _SelectTm2.default(this);
-    selectTm.decorate();
-  });
-
-  // document.querySelectorAll( 'select.cs-select' ).forEach( function(elem) { 
-  //   const selectTm = new SelectTm(elem);
-  //   selectTm.decorate();
-  // });
-});
-
-},{"./SelectTm":2,"jquery":1}]},{},[3])
+},{"jquery":1}]},{},[2])
 //# sourceMappingURL=bundle.js.map

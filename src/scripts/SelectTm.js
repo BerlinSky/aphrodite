@@ -1,6 +1,6 @@
 import $ from 'jquery';
 
-export default class SelectTm {
+export default class StyledSelect {
 	constructor(elem) {
 		this.elem = elem;
 	}
