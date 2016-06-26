@@ -48,11 +48,10 @@ div.styledSelect:focus {
 }
 
 .styledSelect > span::after,
-.styledSelect .cs-selected span::after {
+.styledSelect .styledSelect--selected span::after {
 	speak: none;
 	position: absolute;
 	top: 50%;
-	-webkit-transform: translateY(-50%);
 	transform: translateY(-50%);
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
@@ -63,21 +62,21 @@ div.styledSelect:focus {
 	right: 1em;
 }
 
-.styledSelect .cs-selected span::after {
+.styledSelect .styledSelect--selected span::after {
 	content: '\2713';
 	margin-left: 1em;
 }
 
-.styledSelect.cs-active > span::after {
+.styledSelect.styledSelect__active > span::after {
 	-webkit-transform: translateY(-50%) rotate(180deg);
 	transform: translateY(-50%) rotate(180deg);
 }
 
-div.cs-active {
+div.styledSelect__active {
 	z-index: 200;
 }
 
-.styledSelect .cs-options {
+.styledSelect .styledSelect__options {
 	position: absolute;
 	overflow: hidden;
 	width: 100%;
@@ -85,7 +84,7 @@ div.cs-active {
 	visibility: hidden;
 }
 
-.styledSelect.cs-active .cs-options {
+.styledSelect.styledSelect__active .styledSelect__options {
 	visibility: visible;
 }
 
@@ -104,11 +103,11 @@ div.cs-active {
 	background-color: #ddd;
 }
 
-.styledSelect li.cs-optgroup ul {
+.styledSelect li.styledSelect__optgroup ul {
 	padding-left: 1em;
 }
 
-.styledSelect li.cs-optgroup > span {
+.styledSelect li.styledSelect__optgroup > span {
 	cursor: default;
 }
 
@@ -132,7 +131,7 @@ div.styledSelect--primary {
 }
 
 .styledSelect--primary > span::after,
-.styledSelect--primary .cs-selected span::after {
+.styledSelect--primary .styledSelect--selected span::after {
 	font-family: 'icomoon';
 	content: '\e000';
 }
@@ -142,31 +141,28 @@ div.styledSelect--primary {
 	opacity: 0;
 }
 
-.styledSelect--primary .cs-selected span::after {
+.styledSelect--primary .styledSelect--selected span::after {
 	content: '\e00e';
-	// color: #ddd9c9;
 	color: #000000;
 	font-size: 1.5rem;
 	opacity: 1;
 	transition: opacity 0.2s;
 }
 
-.styledSelect--primary.cs-active > span {
+.styledSelect--primary.styledSelect__active > span {
 	background: #fff;
 	border-color: #fff;
-	// color: #2980b9;
 	color: #000000;
 }
 
-.styledSelect--primary .cs-options {
-	// color: #2980b9;
+.styledSelect--primary .styledSelect__options {
 	color: #000000;
 	font-size: 1.0rem;
 	opacity: 0;
 	transition: opacity 0.2s, visibility 0s 0.2s;
 }
 
-.styledSelect--primary.cs-active .cs-options {
+.styledSelect--primary.styledSelect__active .styledSelect__options {
 	opacity: 1;
 	transition: opacity 0.2s;
 }
@@ -176,7 +172,7 @@ div.styledSelect--primary {
 	backface-visibility: hidden;
 }
 
-.styledSelect--primary .cs-options li span:hover,
+.styledSelect--primary .styledSelect__options li span:hover,
 .styledSelect--primary li.cs-focus span {
 	background: #f5f3ec;
 }

@@ -9821,22 +9821,21 @@ var _jquery = require('jquery');
 
 var _jquery2 = _interopRequireDefault(_jquery);
 
-var _selectTm = require('./selectTm');
+var _styledSelect = require('./styledSelect');
 
-var _selectTm2 = _interopRequireDefault(_selectTm);
+var _styledSelect2 = _interopRequireDefault(_styledSelect);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 (0, _jquery2.default)(function () {
-
   (0, _jquery2.default)('select.js-styledSelect').each(function (index, value) {
     // const elem = $(this);
-    var selectTm = new _selectTm2.default(this);
+    var selectTm = new _styledSelect2.default(this);
     selectTm.decorate();
   });
 });
 
-},{"./selectTm":3,"jquery":1}],3:[function(require,module,exports){
+},{"./styledSelect":3,"jquery":1}],3:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -9900,9 +9899,9 @@ var StyledSelect = function () {
 			this.selOpts = [].slice.call(this.selEl.querySelectorAll('li[data-option]'));
 			this.selOptsCount = this.selOpts.length;
 
-			this.current = this.selOpts.indexOf(this.selEl.querySelector('li.cs-selected')) || -1;
+			this.current = this.selOpts.indexOf(this.selEl.querySelector('li.styledSelect--selected')) || -1;
 
-			this.selPlaceholder = this.selEl.querySelector('span.cs-placeholder');
+			this.selPlaceholder = this.selEl.querySelector('span.styledSelect__placeholder');
 
 			this._initEvents();
 		}
@@ -9917,7 +9916,7 @@ var StyledSelect = function () {
 				    link = '';
 
 				if (elem.selectedOpt && !this.foundSelected && !this.hasDefaultPlaceholder) {
-					classes += 'cs-selected ';
+					classes += 'styledSelect--selected ';
 					this.foundSelected = true;
 				}
 
@@ -9956,7 +9955,7 @@ var StyledSelect = function () {
 				if (tag === 'option') {
 					options += createOptionHTML(elem);
 				} else if (tag === 'optgroup') {
-					options += '<li class="cs-optgroup"><span>' + elem.label + '</span><ul>';
+					options += '<li class="styledSelect__optgroup"><span>' + elem.label + '</span><ul>';
 					[].slice.call(elem.children).forEach(function (opt) {
 						options += createOptionHTML(opt);
 					});
@@ -9964,11 +9963,11 @@ var StyledSelect = function () {
 				}
 			});
 
-			var opts_el = '<div class="cs-options"><ul>' + options + '</ul></div>';
+			var opts_el = '<div class="styledSelect__options"><ul>' + options + '</ul></div>';
 			this.selEl = document.createElement('div');
 			this.selEl.className = this.elem.className;
 			this.selEl.tabIndex = this.elem.tabIndex;
-			this.selEl.innerHTML = '<span class="cs-placeholder">' + this.selectedOpt.textContent + '</span>' + opts_el;
+			this.selEl.innerHTML = '<span class="styledSelect__placeholder">' + this.selectedOpt.textContent + '</span>' + opts_el;
 			this.elem.parentNode.appendChild(this.selEl);
 			this.selEl.appendChild(this.elem);
 		}
@@ -10048,15 +10047,15 @@ var StyledSelect = function () {
 					// update placeholder text
 					this.selPlaceholder.textContent = this.selOpts[this.current].textContent;
 				}
-				// classie.remove( this.selEl, 'cs-active' );
-				(0, _jquery2.default)(this.selEl).removeClass('cs-active');
+				// classie.remove( this.selEl, 'styledSelect__active' );
+				(0, _jquery2.default)(this.selEl).removeClass('styledSelect__active');
 			} else {
 				if (this.hasDefaultPlaceholder && this.options.stickyPlaceholder) {
 					// everytime we open we wanna see the default placeholder text
 					this.selPlaceholder.textContent = this.selectedOpt.textContent;
 				}
-				// classie.add( this.selEl, 'cs-active' );
-				(0, _jquery2.default)(this.selEl).addClass('cs-active');
+				// classie.add( this.selEl, 'styledSelect__active' );
+				(0, _jquery2.default)(this.selEl).addClass('styledSelect__active');
 			}
 		}
 	}, {
@@ -10071,8 +10070,8 @@ var StyledSelect = function () {
 	}, {
 		key: '_isOpen',
 		value: function _isOpen(opt) {
-			// return classie.has( this.selEl, 'cs-active' );
-			return (0, _jquery2.default)(this.selEl).hasClass('cs-active');
+			// return classie.has( this.selEl, 'styledSelect__active' );
+			return (0, _jquery2.default)(this.selEl).hasClass('styledSelect__active');
 		}
 	}, {
 		key: '_changeOption',
@@ -10092,14 +10091,14 @@ var StyledSelect = function () {
 			// change native select element´s value
 			this.elem.value = opt.getAttribute('data-value');
 
-			// remove class cs-selected from old selected option and add it to current selected option
-			var oldOpt = this.selEl.querySelector('li.cs-selected');
+			// remove class styledSelect--selected from old selected option and add it to current selected option
+			var oldOpt = this.selEl.querySelector('li.styledSelect--selected');
 			if (oldOpt) {
-				// classie.remove( oldOpt, 'cs-selected' );
-				(0, _jquery2.default)(oldOpt).removeClass('cs-selected');
+				// classie.remove( oldOpt, 'styledSelect--selected' );
+				(0, _jquery2.default)(oldOpt).removeClass('styledSelect--selected');
 			}
-			// classie.add( opt, 'cs-selected' );
-			(0, _jquery2.default)(opt).addClass('cs-selected');
+			// classie.add( opt, 'styledSelect--selected' );
+			(0, _jquery2.default)(opt).addClass('styledSelect--selected');
 
 			// if there´s a link defined
 			if (opt.getAttribute('data-link')) {

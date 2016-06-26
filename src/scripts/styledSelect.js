@@ -39,9 +39,9 @@ export default class StyledSelect {
 		this.selOpts = [].slice.call( this.selEl.querySelectorAll( 'li[data-option]' ) );
 		this.selOptsCount = this.selOpts.length;
 		
-		this.current = this.selOpts.indexOf( this.selEl.querySelector( 'li.cs-selected' ) ) || -1;
+		this.current = this.selOpts.indexOf( this.selEl.querySelector( 'li.styledSelect--selected' ) ) || -1;
 		
-		this.selPlaceholder = this.selEl.querySelector( 'span.cs-placeholder' );
+		this.selPlaceholder = this.selEl.querySelector( 'span.styledSelect__placeholder' );
 
 		this._initEvents();
 	}
@@ -51,7 +51,7 @@ export default class StyledSelect {
 			let optclass = '', classes = '', link = '';
 
 			if( elem.selectedOpt && !this.foundSelected && !this.hasDefaultPlaceholder ) {
-				classes += 'cs-selected ';
+				classes += 'styledSelect--selected ';
 				this.foundSelected = true;
 			}
 
@@ -89,7 +89,7 @@ export default class StyledSelect {
 				options += createOptionHTML(elem);
 			}
 			else if( tag === 'optgroup' ) {
-				options += '<li class="cs-optgroup"><span>' + elem.label + '</span><ul>';
+				options += '<li class="styledSelect__optgroup"><span>' + elem.label + '</span><ul>';
 				[].slice.call( elem.children ).forEach( function(opt) {
 					options += createOptionHTML(opt);
 				} );
@@ -97,11 +97,11 @@ export default class StyledSelect {
 			}
 		} );
 
-		let opts_el = '<div class="cs-options"><ul>' + options + '</ul></div>';
+		let opts_el = '<div class="styledSelect__options"><ul>' + options + '</ul></div>';
 		this.selEl = document.createElement( 'div' );
 		this.selEl.className = this.elem.className;
 		this.selEl.tabIndex = this.elem.tabIndex;
-		this.selEl.innerHTML = '<span class="cs-placeholder">' + this.selectedOpt.textContent + '</span>' + opts_el;
+		this.selEl.innerHTML = '<span class="styledSelect__placeholder">' + this.selectedOpt.textContent + '</span>' + opts_el;
 		this.elem.parentNode.appendChild( this.selEl );
 		this.selEl.appendChild( this.elem );
 	}
@@ -179,16 +179,16 @@ export default class StyledSelect {
 				// update placeholder text
 				this.selPlaceholder.textContent = this.selOpts[ this.current ].textContent;
 			}
-			// classie.remove( this.selEl, 'cs-active' );
-			$( this.selEl ).removeClass( 'cs-active' );
+			// classie.remove( this.selEl, 'styledSelect__active' );
+			$( this.selEl ).removeClass( 'styledSelect__active' );
 		}
 		else {
 			if( this.hasDefaultPlaceholder && this.options.stickyPlaceholder ) {
 				// everytime we open we wanna see the default placeholder text
 				this.selPlaceholder.textContent = this.selectedOpt.textContent;
 			}
-			// classie.add( this.selEl, 'cs-active' );
-			$( this.selEl ).addClass( 'cs-active' );
+			// classie.add( this.selEl, 'styledSelect__active' );
+			$( this.selEl ).addClass( 'styledSelect__active' );
 		}
 	}
 
@@ -201,8 +201,8 @@ export default class StyledSelect {
 	}
 
 	_isOpen(opt) {
-		// return classie.has( this.selEl, 'cs-active' );
-		return $( this.selEl ).hasClass( 'cs-active' );
+		// return classie.has( this.selEl, 'styledSelect__active' );
+		return $( this.selEl ).hasClass( 'styledSelect__active' );
 	}
 
 	_changeOption () {
@@ -221,14 +221,14 @@ export default class StyledSelect {
 		// change native select element´s value
 		this.elem.value = opt.getAttribute( 'data-value' );
 
-		// remove class cs-selected from old selected option and add it to current selected option
-		var oldOpt = this.selEl.querySelector( 'li.cs-selected' );
+		// remove class styledSelect--selected from old selected option and add it to current selected option
+		var oldOpt = this.selEl.querySelector( 'li.styledSelect--selected' );
 		if( oldOpt ) {
-			// classie.remove( oldOpt, 'cs-selected' );
-			$( oldOpt ).removeClass( 'cs-selected' );
+			// classie.remove( oldOpt, 'styledSelect--selected' );
+			$( oldOpt ).removeClass( 'styledSelect--selected' );
 		}
-		// classie.add( opt, 'cs-selected' );
-		$( opt ).addClass( 'cs-selected' );
+		// classie.add( opt, 'styledSelect--selected' );
+		$( opt ).addClass( 'styledSelect--selected' );
 
 		// if there´s a link defined
 		if( opt.getAttribute( 'data-link' ) ) {
