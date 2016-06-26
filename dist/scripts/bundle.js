@@ -10047,14 +10047,11 @@ var StyledSelect = function () {
 					// update placeholder text
 					this.selPlaceholder.textContent = this.selOpts[this.current].textContent;
 				}
-				// classie.remove( this.selEl, 'styledSelect__active' );
 				(0, _jquery2.default)(this.selEl).removeClass('styledSelect__active');
 			} else {
 				if (this.hasDefaultPlaceholder && this.options.stickyPlaceholder) {
-					// everytime we open we wanna see the default placeholder text
 					this.selPlaceholder.textContent = this.selectedOpt.textContent;
 				}
-				// classie.add( this.selEl, 'styledSelect__active' );
 				(0, _jquery2.default)(this.selEl).addClass('styledSelect__active');
 			}
 		}
@@ -10063,14 +10060,12 @@ var StyledSelect = function () {
 		value: function _removeFocus(opt) {
 			var focusEl = this.selEl.querySelector('li.cs-focus');
 			if (focusEl) {
-				// classie.remove( focusEl, 'cs-focus' );
 				(0, _jquery2.default)(focusEl).removeClass('cs-focus');
 			}
 		}
 	}, {
 		key: '_isOpen',
 		value: function _isOpen(opt) {
-			// return classie.has( this.selEl, 'styledSelect__active' );
 			return (0, _jquery2.default)(this.selEl).hasClass('styledSelect__active');
 		}
 	}, {
@@ -10094,10 +10089,8 @@ var StyledSelect = function () {
 			// remove class styledSelect--selected from old selected option and add it to current selected option
 			var oldOpt = this.selEl.querySelector('li.styledSelect--selected');
 			if (oldOpt) {
-				// classie.remove( oldOpt, 'styledSelect--selected' );
 				(0, _jquery2.default)(oldOpt).removeClass('styledSelect--selected');
 			}
-			// classie.add( opt, 'styledSelect--selected' );
 			(0, _jquery2.default)(opt).addClass('styledSelect--selected');
 
 			// if there´s a link defined
