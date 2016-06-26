@@ -43,7 +43,6 @@ div.styledSelect:focus {
 	text-overflow: ellipsis;
 }
 
-/* Placeholder and selected option */
 .styledSelect > span {
 	padding-right: 3em;
 }
@@ -78,7 +77,6 @@ div.cs-active {
 	z-index: 200;
 }
 
-/* Options */
 .styledSelect .cs-options {
 	position: absolute;
 	overflow: hidden;
@@ -106,7 +104,6 @@ div.cs-active {
 	background-color: #ddd;
 }
 
-/* Optgroup and optgroup label */
 .styledSelect li.cs-optgroup ul {
 	padding-left: 1em;
 }
@@ -117,17 +114,19 @@ div.cs-active {
 
 div.styledSelect--primary {
 	background: transparent;
-	font-size: 2em;
-	font-weight: 700;
+  font-size: 1.0rem;
+	font-weight: 400;
 	max-width: 600px;
 }
 
 @media screen and (max-width: 30em) {
-	div.styledSelect--primary { font-size: 1em; }
+	div.styledSelect--primary { 
+		font-size: 1rem; 
+	}
 }
 
 .styledSelect--primary > span {
-	border: 5px solid #000;
+	border: 2px solid #000;
 	border-color: inherit;
 	transition: background 0.2s, border-color 0.2s;
 }
@@ -145,8 +144,9 @@ div.styledSelect--primary {
 
 .styledSelect--primary .cs-selected span::after {
 	content: '\e00e';
-	color: #ddd9c9;
-	font-size: 1.5em;
+	// color: #ddd9c9;
+	color: #000000;
+	font-size: 1.5rem;
 	opacity: 1;
 	transition: opacity 0.2s;
 }
@@ -154,12 +154,14 @@ div.styledSelect--primary {
 .styledSelect--primary.cs-active > span {
 	background: #fff;
 	border-color: #fff;
-	color: #2980b9;
+	// color: #2980b9;
+	color: #000000;
 }
 
 .styledSelect--primary .cs-options {
-	color: #2980b9;
-	font-size: 0.75em;
+	// color: #2980b9;
+	color: #000000;
+	font-size: 1.0rem;
 	opacity: 0;
 	transition: opacity 0.2s, visibility 0s 0.2s;
 }
